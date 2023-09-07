@@ -1,6 +1,7 @@
 import React from 'react';
 import { GoogleMap, LoadScript, MarkerF } from '@react-google-maps/api';
 
+import { pointsOfInterest } from '../PointsOfInterest'
 
 interface GoogleMapsComponentProps {
   userLocation: {
@@ -36,6 +37,10 @@ const GoogleMapsComponent: React.FC<GoogleMapsComponentProps> = ({ userLocation,
             }
           }}
         />
+          {/* Map over pointsOfInterest and render markers for each POI */}
+          {pointsOfInterest.map((poi, index) => (
+          <MarkerF key={index} position={poi.coordinates} title={poi.name} />
+        ))}
       </GoogleMap>
     </LoadScript>
   );
