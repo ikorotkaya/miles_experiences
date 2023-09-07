@@ -7,9 +7,10 @@ interface GoogleMapsComponentProps {
     lat: number;
     lng: number;
   };
+  onMarkerDragEnd: (position: { lat: number; lng: number }) => void;
 }
 
-const GoogleMapsComponent: React.FC<GoogleMapsComponentProps> = ({ userLocation }) => {
+const GoogleMapsComponent: React.FC<GoogleMapsComponentProps> = ({ userLocation, onMarkerDragEnd }) => {
   const containerStyle = {
     width: '100%',
     height: '800px',
@@ -26,7 +27,15 @@ const GoogleMapsComponent: React.FC<GoogleMapsComponentProps> = ({ userLocation 
     <LoadScript googleMapsApiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY || ''}>
       <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={14}>
         {/* Add markers, polygons, or other map elements here */}
-        <MarkerF position={center} />
+        <MarkerF
+          position={center}
+          draggable={true}
+          onDragEnd={(e) => {
+            if (e.latLng) {
+              onMarkerDragEnd({ lat: e.latLng.lat(), lng: e.latLng.lng() });
+            }
+          }}
+        />
       </GoogleMap>
     </LoadScript>
   );

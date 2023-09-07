@@ -19,11 +19,22 @@ export default function Main() {
       console.error('Geolocation not available in this browser.');
     }
   };
+
+  const handleMarkerDragEnd = (newPosition: { lat: number; lng: number }) => {
+    // Handle the new position of the marker here
+    setUserLocation(newPosition);
+  };
+
   return (
     <main>
       <div className="flex justify-center max-w-screen-lg">
       <button onClick={getUserLocation}>Get My Location</button>
-      {userLocation && <GoogleMapsComponent userLocation={userLocation} />}
+      {userLocation &&         
+        <GoogleMapsComponent 
+          userLocation={userLocation} 
+          onMarkerDragEnd={handleMarkerDragEnd} 
+        />
+      }
       </div>
     </main>
   );
