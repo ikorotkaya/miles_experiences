@@ -1,5 +1,5 @@
 import React from 'react';
-import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
+import { GoogleMap, LoadScript, MarkerF } from '@react-google-maps/api';
 
 
 interface GoogleMapsComponentProps {
@@ -19,12 +19,14 @@ const GoogleMapsComponent: React.FC<GoogleMapsComponentProps> = ({ userLocation 
     lat: userLocation.lat,
     lng: userLocation.lng,
   };
+
+  console.log('userLocation', userLocation)
   
   return (
     <LoadScript googleMapsApiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY || ''}>
       <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={14}>
         {/* Add markers, polygons, or other map elements here */}
-        <Marker position={center} />
+        <MarkerF position={center} />
       </GoogleMap>
     </LoadScript>
   );
