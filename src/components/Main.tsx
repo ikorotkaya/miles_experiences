@@ -23,6 +23,7 @@ export default function Main() {
     }
   };
 
+
   const handleMarkerDragEnd = (newPosition: { lat: number; lng: number }) => {
     // Handle the new position of the marker here
     setUserLocation(newPosition);
