@@ -7,7 +7,7 @@ export default function Footer() {
         Made with {" "}
         <img
           draggable="false"
-          className="w-6 h-6 px-1"
+          className="w-6 h-6 px-1 font-ibmplexmono-regular  "
           alt="❤️"
           src="https://twemoji.maxcdn.com/v/13.0.2/svg/2764.svg"
         /> {" "}
