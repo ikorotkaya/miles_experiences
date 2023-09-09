@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import GoogleMapsComponent from "./GoogleMap";
 import POIMenu from "./POIMenu";
 
@@ -24,6 +24,10 @@ export default function Main() {
     }
   };
 
+  useEffect(() => {
+    getUserLocation();
+  }, []);
+
   const handleMarkerDragEnd = (newPosition: { lat: number; lng: number }) => {
     // Handle the new position of the marker here
     setUserLocation(newPosition);
@@ -31,14 +35,6 @@ export default function Main() {
 
   return (
     <main className="flex-grow">
-      <div className="flex items-center justify-center">
-        <button
-          className="w-64 text-2xl bg-black text-white border-black border-2 p-6 m-6  hover:bg-white hover:text-black ease-in-out duration-150  "
-          onClick={getUserLocation}
-        >
-          Get My Location
-        </button>
-      </div>
       {userLocation && (
         <div className="grid gap-4 grid-cols-3 mb-6">
           <div className="col-span-2">

@@ -2,6 +2,8 @@ import { pointsOfInterest } from "../PointsOfInterest";
 import { haversineDistance } from "../utils/haversine";
 import { useEffect, useState } from "react";
 
+import { rideCost } from "../utils/calculateRideCost";
+
 const POIMenu: React.FC<{ userLocation: { lat: number; lng: number } | null }> = ({ userLocation }) => {
   const [sortedPOIs, setSortedPOIs] = useState<[string, number][]>([]);
 
@@ -28,6 +30,8 @@ const POIMenu: React.FC<{ userLocation: { lat: number; lng: number } | null }> =
     }
   }, [userLocation]);
 
+
+
   return (
     <div className="flex flex-col bg-black text-white">
       <div className="flex justify-center">
@@ -42,8 +46,8 @@ const POIMenu: React.FC<{ userLocation: { lat: number; lng: number } | null }> =
           return (
             <div key={poi.id} className="flex flex-col border-2 border-white rounded-lg p-4 m-2">
               <h2 className="text-xl font-bold">{poi.name}</h2>
-              {/* <p className="text-sm">{poi.description}</p> */}
               <p className="text-sm">Distance: {distance.toFixed(2)} km</p>
+              <p className="text-sm">Approximate cost: {rideCost(distance)}€</p>
             </div>
           );  
         })}
