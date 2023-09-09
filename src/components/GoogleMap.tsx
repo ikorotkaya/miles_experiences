@@ -3,7 +3,6 @@ import { GoogleMap, LoadScript, MarkerF } from '@react-google-maps/api';
 
 import { pointsOfInterest } from '../PointsOfInterest'
 
-
 interface GoogleMapsComponentProps {
   userLocation: {
     lat: number;
@@ -13,6 +12,7 @@ interface GoogleMapsComponentProps {
 }
 
 const GoogleMapsComponent: React.FC<GoogleMapsComponentProps> = ({ userLocation, onMarkerDragEnd }) => {
+
   const containerStyle = {
     width: '100%',
     height: '800px',
@@ -22,8 +22,6 @@ const GoogleMapsComponent: React.FC<GoogleMapsComponentProps> = ({ userLocation,
     lat: userLocation.lat,
     lng: userLocation.lng,
   };
-
-
   
   return (
     <div>
@@ -39,7 +37,6 @@ const GoogleMapsComponent: React.FC<GoogleMapsComponentProps> = ({ userLocation,
               }
             }}
           />
-            {/* Map over pointsOfInterest and render markers for each POI */}
             {pointsOfInterest.map((poi, index) => (
             <MarkerF key={index} position={poi.coordinates} title={poi.name} />
           ))}

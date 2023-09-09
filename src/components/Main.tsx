@@ -30,7 +30,7 @@ export default function Main() {
   };
 
   return (
-    <main className="flex-grow" >
+    <main className="flex-grow">
       <div className="flex items-center justify-center">
         <button
           className="w-64 text-2xl bg-black text-white border-black border-2 p-6 m-6  hover:bg-white hover:text-black ease-in-out duration-150  "
@@ -39,17 +39,17 @@ export default function Main() {
           Get My Location
         </button>
       </div>
-      <div className="grid gap-4 grid-cols-3 mb-6">
-        <div className='col-span-2'>
-          {userLocation && (
+      {userLocation && (
+        <div className="grid gap-4 grid-cols-3 mb-6">
+          <div className="col-span-2">
             <GoogleMapsComponent
               userLocation={userLocation}
               onMarkerDragEnd={handleMarkerDragEnd}
             />
-          )}
+          </div>
+          <POIMenu userLocation={userLocation} />
         </div>
-        <POIMenu userLocation={userLocation} />
-      </div>
+      )}
     </main>
   );
 }

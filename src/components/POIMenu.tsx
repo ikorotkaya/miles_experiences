@@ -1,51 +1,52 @@
 import { pointsOfInterest } from "../PointsOfInterest";
-
-
-function haversineDistance (coords1: { lat: number; lng: number }, coords2: { lat: number; lng: number }) {
-  var R = 6371.0710; // Radius of the Earth in miles
-  var rlat1 = coords1.lat * (Math.PI/180); // Convert degrees to radians
-  var rlat2 = coords2.lat * (Math.PI/180); // Convert degrees to radians
-  var difflat = rlat2-rlat1; // Radian difference (latitudes)
-  var difflon = (coords2.lng-coords1.lng) * (Math.PI/180); // Radian difference (longitudes)
-
-  var d = 2 * R * Math.asin(Math.sqrt(Math.sin(difflat/2)*Math.sin(difflat/2)+Math.cos(rlat1)*Math.cos(rlat2)*Math.sin(difflon/2)*Math.sin(difflon/2)));
-  return d;
-}
+import { haversineDistance } from "../utils/haversine";
+import { useEffect, useState } from "react";
 
 const POIMenu: React.FC<{ userLocation: { lat: number; lng: number } | null }> = ({ userLocation }) => {
+  const [sortedPOIs, setSortedPOIs] = useState<[string, number][]>([]);
 
-  if (!userLocation) {
-    return null;
-  }
+  useEffect(() => {
+    // Calculate distances for each POI and store them in an object
+    const distances: { [key: string]: number } = {};
 
-  const center = {
-    lat: userLocation.lat,
-    lng: userLocation.lng,
-  };
-
-  const distance1 = (haversineDistance(center, pointsOfInterest[0].coordinates)).toFixed(2)
-  const cost1 = (Number(distance1) * 0.99).toFixed(2)
-
-  console.log("Distance Potsdam " + distance1)
+    if (userLocation) {
+      for (const poi of pointsOfInterest) {
+        const distance = haversineDistance(
+          userLocation,
+          poi.coordinates
+        );
+        distances[poi.id] = distance;
+      }
+  
+      // Convert the object to an array and sort it by distance in ascending order
+      const sortedArray = Object.entries(distances).sort(
+        (a, b) => a[1] - b[1]
+      );
+  
+      // Set the sorted POIs in the state
+      setSortedPOIs(sortedArray);
+    }
+  }, [userLocation]);
 
   return (
     <div className="flex flex-col bg-black text-white">
       <div className="flex justify-center">
-        <h1 className="text-3xl font-bold m-4">Points of Interest</h1>
+        <h1 className="text-3xl font-bold m-6">Points of Interest</h1>
       </div>
       <div className="flex flex-col mx-5">
-        {pointsOfInterest.map((poi) => (
-          <div key={poi.name} className="flex flex-row mb-3">
-            <img className="w-48 h-48 object-cover mr-3" src={poi.image} alt={poi.name}/>
-            <div className="flex flex-col">
+        {sortedPOIs.map(([id, distance]) => {
+          const poi = pointsOfInterest.find((poi) => poi.id === id);
+          if (!poi) {
+            return null;
+          }
+          return (
+            <div key={poi.id} className="flex flex-col border-2 border-white rounded-lg p-4 m-2">
               <h2 className="text-xl font-bold">{poi.name}</h2>
-              <p className="text-lg">{"Distance: " + distance1}</p>
-              <p className="text-lg">{"Cost: " + cost1}</p>
-              {/* <p className="text-lg">{poi.description}</p> */}
+              {/* <p className="text-sm">{poi.description}</p> */}
+              <p className="text-sm">Distance: {distance.toFixed(2)} km</p>
             </div>
-          </div>
-        ))
-        }
+          );  
+        })}
       </div>
     </div>
   );
