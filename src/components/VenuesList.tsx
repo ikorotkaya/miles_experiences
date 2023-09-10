@@ -1,10 +1,18 @@
-import { pointsOfInterest } from "../PointsOfInterest";
 import { haversineDistance } from "../utils/haversine";
 import { useEffect, useState } from "react";
 
 import { rideCost } from "../utils/calculateRideCost";
 
-const POIMenu: React.FC<{ userLocation: { lat: number; lng: number } | null }> = ({ userLocation }) => {
+type VenuesListProps = {
+  userLocation: {
+    lat: number;  
+    lng: number;
+  } | null;
+  venues: any[];
+};
+
+
+const VenuesList: React.FC<VenuesListProps> = ({ userLocation, venues }) => {
   const [sortedPOIs, setSortedPOIs] = useState<[string, number][]>([]);
 
   useEffect(() => {
@@ -12,12 +20,12 @@ const POIMenu: React.FC<{ userLocation: { lat: number; lng: number } | null }> =
     const distances: { [key: string]: number } = {};
 
     if (userLocation) {
-      for (const poi of pointsOfInterest) {
+      for (const venue of venues) {
         const distance = haversineDistance(
           userLocation,
-          poi.coordinates
+          venue.coordinates
         );
-        distances[poi.id] = distance;
+        distances[venue.id] = distance;
       }
   
       // Convert the object to an array and sort it by distance in ascending order
@@ -28,9 +36,7 @@ const POIMenu: React.FC<{ userLocation: { lat: number; lng: number } | null }> =
       // Set the sorted POIs in the state
       setSortedPOIs(sortedArray);
     }
-  }, [userLocation]);
-
-
+  }, [userLocation, venues]);
 
   return (
     <div className="flex flex-col bg-black">
@@ -39,15 +45,15 @@ const POIMenu: React.FC<{ userLocation: { lat: number; lng: number } | null }> =
       </div>
       <div className="flex flex-col mx-5">
         {sortedPOIs.map(([id, distance]) => {
-          const poi = pointsOfInterest.find((poi) => poi.id === id);
-          if (!poi) {
+          const venue = venues.find((venue) => venue.id === id);
+          if (!venue) {
             return null;
           }
           return (
-            <div key={poi.id} className="flex flex-row border-white border-4 hover:text-white hover:bg-black p-4 m-2  bg-white text-black hover:cursor-pointer">
-              <img src={poi.image} alt={poi.name} className="w-36 h-36 object-cover" />
+            <div key={venue.id} className="flex flex-row border-white border-4 hover:text-white hover:bg-black p-4 m-2  bg-white text-black hover:cursor-pointer">
+              <img src={venue.image} alt={venue.name} className="w-36 h-36 object-cover" />
               <div className="flex flex-col ml-4 ">
-                <h2 className="text-2xl font-bold mb-4">{poi.name}</h2>
+                <h2 className="text-2xl font-bold mb-4">{venue.name}</h2>
                 <p className="text-base">Distance: {distance.toFixed(2)} km</p>
                 <p className="text-base">Approximate cost: {rideCost(distance)}€</p>
               </div>
@@ -59,4 +65,4 @@ const POIMenu: React.FC<{ userLocation: { lat: number; lng: number } | null }> =
   );
 }
 
-export default POIMenu;
+export default VenuesList;
