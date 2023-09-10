@@ -1,12 +1,18 @@
 import React, { useEffect, useState } from "react";
 import GoogleMapsComponent from "./GoogleMap";
-import POIMenu from "./POIMenu";
+import VenuesList from "./VenuesList";  
+
+import rawVenues from "../data/venues";
 
 export default function Main() {
   const [userLocation, setUserLocation] = useState<{
     lat: number;
     lng: number;
   } | null>(null);
+  
+  const [venues, setVenues] = useState<any[]>([]);
+
+  // const [selectedVenue, setSelectedVenue] = useState<any | null>(null);
 
   const getUserLocation = () => {
     if ("geolocation" in navigator) {
@@ -26,12 +32,15 @@ export default function Main() {
 
   useEffect(() => {
     getUserLocation();
+    setVenues(rawVenues);
   }, []);
 
   const handleMarkerDragEnd = (newPosition: { lat: number; lng: number }) => {
     // Handle the new position of the marker here
     setUserLocation(newPosition);
   };
+
+  console.log(venues);
 
   return (
     <main className="flex-grow">
@@ -41,9 +50,10 @@ export default function Main() {
             <GoogleMapsComponent
               userLocation={userLocation}
               onMarkerDragEnd={handleMarkerDragEnd}
+              venues={venues}
             />
           </div>
-          <POIMenu userLocation={userLocation} />
+          <VenuesList venues={venues} userLocation={userLocation} />
         </div>
       )}
     </main>
