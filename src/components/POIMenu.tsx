@@ -33,9 +33,9 @@ const POIMenu: React.FC<{ userLocation: { lat: number; lng: number } | null }> =
 
 
   return (
-    <div className="flex flex-col bg-black text-white">
-      <div className="flex justify-center">
-        <h1 className="text-3xl font-bold m-6">Points of Interest</h1>
+    <div className="flex flex-col bg-black">
+      <div className="flex justify-center text-white">
+        <h1 className="text-6xl font-bold m-8">Experiences</h1>
       </div>
       <div className="flex flex-col mx-5">
         {sortedPOIs.map(([id, distance]) => {
@@ -44,10 +44,13 @@ const POIMenu: React.FC<{ userLocation: { lat: number; lng: number } | null }> =
             return null;
           }
           return (
-            <div key={poi.id} className="flex flex-col border-2 border-white rounded-lg p-4 m-2">
-              <h2 className="text-xl font-bold">{poi.name}</h2>
-              <p className="text-sm">Distance: {distance.toFixed(2)} km</p>
-              <p className="text-sm">Approximate cost: {rideCost(distance)}€</p>
+            <div key={poi.id} className="flex flex-row border-white border-4 hover:text-white hover:bg-black p-4 m-2  bg-white text-black hover:cursor-pointer">
+              <img src={poi.image} alt={poi.name} className="w-36 h-36 object-cover" />
+              <div className="flex flex-col ml-4 ">
+                <h2 className="text-2xl font-bold mb-4">{poi.name}</h2>
+                <p className="text-base">Distance: {distance.toFixed(2)} km</p>
+                <p className="text-base">Approximate cost: {rideCost(distance)}€</p>
+              </div>
             </div>
           );  
         })}
