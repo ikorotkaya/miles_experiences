@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import GoogleMapsComponent from "./GoogleMap";
-import VenuesList from "./VenuesList";  
+import Experiences from "./Experiences";  
 
 import rawVenues from "../data/venues";
 
@@ -53,7 +53,7 @@ export default function Main() {
               venues={venues}
             />
           </div>
-          <VenuesList venues={venues} userLocation={userLocation} />
+          <Experiences venues={venues} userLocation={userLocation} />
         </div>
       )}
     </main>

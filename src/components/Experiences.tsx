@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 
 import { rideCost } from "../utils/calculateRideCost";
 
-type VenuesListProps = {
+type ExperiencesProps = {
   userLocation: {
     lat: number;  
     lng: number;
@@ -12,7 +12,7 @@ type VenuesListProps = {
 };
 
 
-const VenuesList: React.FC<VenuesListProps> = ({ userLocation, venues }) => {
+const Experiences: React.FC<ExperiencesProps> = ({ userLocation, venues }) => {
   const [sortedPOIs, setSortedPOIs] = useState<[string, number][]>([]);
 
   useEffect(() => {
@@ -65,4 +65,4 @@ const VenuesList: React.FC<VenuesListProps> = ({ userLocation, venues }) => {
   );
 }
 
-export default VenuesList;
+export default Experiences;
