@@ -12,8 +12,6 @@ export default function Main() {
   
   const [venues, setVenues] = useState<any[]>([]);
 
-  // const [selectedVenue, setSelectedVenue] = useState<any | null>(null);
-
   const getUserLocation = () => {
     if ("geolocation" in navigator) {
       navigator.geolocation.getCurrentPosition(
