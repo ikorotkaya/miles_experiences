@@ -65,8 +65,8 @@ const GoogleMapsComponent: React.FC<GoogleMapsComponentProps> = ({ userLocation,
             >
               {selectedVenueId === venue.id && <InfoWindowF position={venue.coordinates} onCloseClick={() => handleMarkerClick(null)} options={{disableAutoPan: true}}>
                 <div>
-                  <h2>{venue.name}</h2>
-                  <p>{venue.address}</p>
+                  <h2 className='text-xl font-bold mb-2'>{venue.name}</h2>
+                  <img className='block w-64' src={venue.image} alt={venue.name} />
                 </div>
               </InfoWindowF>}
             </MarkerF>
