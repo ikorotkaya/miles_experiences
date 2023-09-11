@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { GoogleMap, LoadScript, MarkerF, InfoWindowF } from '@react-google-maps/api';
 import carMarker from "../images/car-marker.png"
+import pinIcon from "../images/pin.svg"
 
 interface GoogleMapsComponentProps {
   userLocation: {
@@ -56,12 +57,18 @@ const GoogleMapsComponent: React.FC<GoogleMapsComponentProps> = ({ userLocation,
               }
             }}
           />}
-          {venues.map((venue, index) => (
+          {isGoogleMapsLoaded && venues.map((venue, index) => (
             <MarkerF 
               key={index} 
               position={venue.coordinates} 
               title={venue.name}               
               onClick={() => handleMarkerClick(venue.id)}
+              options={{
+                icon: {
+                  url: pinIcon,
+                  scaledSize: new window.google.maps.Size(32, 48)
+                }
+              }}
             >
               {selectedVenueId === venue.id && <InfoWindowF position={venue.coordinates} onCloseClick={() => handleMarkerClick(null)} options={{disableAutoPan: true}}>
                 <div>
