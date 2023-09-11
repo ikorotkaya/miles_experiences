@@ -38,8 +38,6 @@ export default function Main() {
     setUserLocation(newPosition);
   };
 
-  console.log(venues);
-
   return (
     <main className="flex-grow">
       {userLocation && (

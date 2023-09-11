@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { GoogleMap, LoadScript, MarkerF, InfoWindowF } from '@react-google-maps/api';
 import carMarker from "../images/car-marker.png"
-import pinIcon from "../images/pin.svg"
+import pinIcon from "../images/pin-icon.svg"
+import pinActiveIcon from "../images/pin-active-icon.svg"
 
 interface GoogleMapsComponentProps {
   userLocation: {
@@ -15,6 +16,7 @@ interface GoogleMapsComponentProps {
 const GoogleMapsComponent: React.FC<GoogleMapsComponentProps> = ({ userLocation, onMarkerDragEnd, venues }) => {
 
   const [selectedVenueId, setSelectedVenueId] = useState<any>(null);
+  const [hoverVenueId, setHoverVenueId] = useState<any>(null);
   const [center, setCenter] = useState<any>(userLocation);
   const [isGoogleMapsLoaded, setIsGoogleMapsLoaded] = useState(false);
 
@@ -32,7 +34,6 @@ const GoogleMapsComponent: React.FC<GoogleMapsComponentProps> = ({ userLocation,
     if (venueId) {
       setCenter(venues.find((venue) => venue.id === venueId)?.coordinates);
     }
-    console.log(venueId);
   };
 
   return (
@@ -63,12 +64,14 @@ const GoogleMapsComponent: React.FC<GoogleMapsComponentProps> = ({ userLocation,
               position={venue.coordinates} 
               title={venue.name}               
               onClick={() => handleMarkerClick(venue.id)}
+              onMouseOver={() => setHoverVenueId(venue.id)}
+              onMouseOut={() => setHoverVenueId(null)}
               options={{
                 icon: {
-                  url: pinIcon,
+                  url: hoverVenueId === venue.id || selectedVenueId === venue.id ? pinActiveIcon : pinIcon,
                   scaledSize: new window.google.maps.Size(32, 48)
                 }
-              }}
+              }}              
             >
               {selectedVenueId === venue.id && <InfoWindowF position={venue.coordinates} onCloseClick={() => handleMarkerClick(null)} options={{disableAutoPan: true}}>
                 <div>
