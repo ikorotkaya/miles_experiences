@@ -41,14 +41,16 @@ const GoogleMapsComponent: React.FC<GoogleMapsComponentProps> = ({ userLocation,
       <LoadScript 
         googleMapsApiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY || ''}
         onLoad={handleGoogleMapsLoad} >
-        <GoogleMap mapContainerStyle={containerStyle} center={{lat: center.lat, lng: center.lng}} zoom={13} >
+        <GoogleMap 
+          mapContainerStyle={containerStyle} 
+          center={center} zoom={13} >
           {/* Add markers, polygons, or other map elements here */}
           {isGoogleMapsLoaded && <MarkerF
             position={userLocation}
             draggable={true}
             onDragEnd={(e) => {
               if (e.latLng) {
-                onMarkerDragEnd({ lat: e.latLng.lat(), lng: e.latLng.lng() });
+                onMarkerDragEnd({ lat: e.latLng.lat(), lng: e.latLng.lng() });                
               }
             }}
             options={{
