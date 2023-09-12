@@ -4,6 +4,10 @@
 
 Miles Experiences is your new companion for exploring Berlin and its surroundings, built into the Miles carsharing app.
 
+## Credits
+
+All venues and images were taken from the https://denkmaltag.berlin.de/, all rights to these images belong to [Landesdenkmal­amt, Berlin](https://www.berlin.de/landesdenkmalamt/).
+
 ## Contributions
 
 Contributions to the Miles Experiences app are welcome! If you have any suggestions, bug reports, or feature requests, feel free to submit an issue or a pull request.
