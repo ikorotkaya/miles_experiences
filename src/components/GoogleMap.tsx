@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { GoogleMap, LoadScript, MarkerF, InfoWindowF } from '@react-google-maps/api';
+import React, { useEffect, useState } from 'react';
+import { GoogleMap, LoadScript, MarkerF, InfoWindowF, DirectionsRenderer } from '@react-google-maps/api';
 import carMarker from "../images/car-marker.png"
 import pinIcon from "../images/pin-icon.svg"
 import pinActiveIcon from "../images/pin-active-icon.svg"
@@ -36,6 +36,33 @@ const GoogleMapsComponent: React.FC<GoogleMapsComponentProps> = ({ userLocation,
     }
   };
 
+  //  show the route on the map from the user's location to the selected venue when the user clicks on the venue marker
+  const [directions, setDirections] = useState<any>(null);
+
+
+  useEffect(() => {
+    if (userLocation && selectedVenueId) {
+      const directionsService = new google.maps.DirectionsService();
+      directionsService.route(
+        {
+          origin: userLocation,
+          destination: venues.find((venue) => venue.id === selectedVenueId)?.coordinates,
+          travelMode: google.maps.TravelMode.DRIVING,
+        },
+        (result, status) => {
+          if (status === google.maps.DirectionsStatus.OK) {
+            setDirections(null);
+            setTimeout(() => {
+              setDirections(result);
+            })
+          } else {
+            console.error(`error fetching directions ${result}`);
+          }
+        }
+      );
+    }
+  }, [userLocation, selectedVenueId, venues]);
+
   return (
     <div>
       <LoadScript 
@@ -43,8 +70,9 @@ const GoogleMapsComponent: React.FC<GoogleMapsComponentProps> = ({ userLocation,
         onLoad={handleGoogleMapsLoad} >
         <GoogleMap 
           mapContainerStyle={containerStyle} 
-          center={center} zoom={13} >
-          {/* Add markers, polygons, or other map elements here */}
+          center={center} zoom={12} 
+          >
+          { directions && <DirectionsRenderer directions={directions} /> }
           {isGoogleMapsLoaded && <MarkerF
             position={userLocation}
             draggable={true}
