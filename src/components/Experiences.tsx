@@ -53,9 +53,9 @@ const Experiences: React.FC<ExperiencesProps> = ({ userLocation, venues }) => {
             <div key={venue.id} className="flex flex-row border-white border-4 hover:text-white hover:bg-black p-4 m-2  bg-white text-black hover:cursor-pointer">
               <img src={venue.image} alt={venue.name} className="w-36 h-36 object-cover" />
               <div className="flex flex-col ml-4 ">
-                <h2 className="text-l font-bold mb-4">{venue.name}</h2>
-                <p className="text-base">Distance: {distance.toFixed(2)} km</p>
-                <p className="text-base">Approximate cost: {rideCost(distance)}€</p>
+                <h2 className="text-m font-bold mb-4">{venue.name}</h2>
+                <p className="text-sm">Approx. distance: {distance.toFixed(2)} km</p>
+                <p className="text-sm">Approximate cost: {rideCost(distance)}€</p>
               </div>
             </div>
           );  
