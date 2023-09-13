@@ -32,18 +32,27 @@ const GoogleMapsComponent: React.FC<GoogleMapsComponentProps> = ({
   const [isGoogleMapsLoaded, setIsGoogleMapsLoaded] = useState(false);
   const [mapHeight, setMapHeight] = useState(0);
 
-  const getMapHeight = () => {
-    let mapContainer = document.getElementById("app__map");
-    if (mapContainer) {
-      let mapContainerHeight = mapContainer.clientHeight;
-      setMapHeight(mapContainerHeight);
+  const updateMapHeight = () => {
+    const header = document.getElementById("header");
+    const footer = document.getElementById("footer");
+    
+    if(header && footer) {
+      const headerHeight = header.clientHeight;
+      const footerHeight = footer.clientHeight;
+      const windowHeight = window.innerHeight;
+      
+      const newMapHeight = windowHeight - headerHeight - footerHeight;
+
+      setMapHeight(newMapHeight);
     }
   };
 
   useEffect(() => {
-    getMapHeight();
-    window.addEventListener("resize", getMapHeight);
-    return () => window.removeEventListener("resize", getMapHeight);
+    updateMapHeight();
+    
+    window.addEventListener("resize", updateMapHeight);
+
+    return () => window.removeEventListener("resize", updateMapHeight);
   }, []);
 
   const containerStyle = {

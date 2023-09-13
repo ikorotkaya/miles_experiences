@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Footer() {
   return (
-    <footer className="bg-black w-full row-start-3 col-start-1 col-span-2">
+    <footer id="footer" className="bg-black w-full row-start-3 col-start-1 col-span-2">
       <div className="h-full flex text-zinc-500 text-xl items-center mx-2.5 pl-px ">
         Made with {" "}
         <img
