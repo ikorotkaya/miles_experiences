@@ -30,10 +30,25 @@ const GoogleMapsComponent: React.FC<GoogleMapsComponentProps> = ({
   const [hoverVenueId, setHoverVenueId] = useState<any>(null);
   const [center, setCenter] = useState<any>(userLocation);
   const [isGoogleMapsLoaded, setIsGoogleMapsLoaded] = useState(false);
+  const [mapHeight, setMapHeight] = useState(0);
+
+  const getMapHeight = () => {
+    let mapContainer = document.getElementById("app__map");
+    if (mapContainer) {
+      let mapContainerHeight = mapContainer.clientHeight;
+      setMapHeight(mapContainerHeight);
+    }
+  };
+
+  useEffect(() => {
+    getMapHeight();
+    window.addEventListener("resize", getMapHeight);
+    return () => window.removeEventListener("resize", getMapHeight);
+  }, []);
 
   const containerStyle = {
-    width: '100%',
-    height: '500px', 
+    width: "100%",
+    height: mapHeight + "px",
   };
 
   const handleGoogleMapsLoad = () => {
@@ -72,7 +87,6 @@ const GoogleMapsComponent: React.FC<GoogleMapsComponentProps> = ({
   }, [userLocation, selectedVenueId, venues]);
 
   let routeDistance = directions?.routes[0]?.legs[0]?.distance?.text;
-  console.log(routeDistance);
   let routeDuration = directions?.routes[0]?.legs[0]?.duration?.text;
 
   return (
@@ -136,18 +150,20 @@ const GoogleMapsComponent: React.FC<GoogleMapsComponentProps> = ({
                     onCloseClick={() => handleMarkerClick(null)}
                     options={{ disableAutoPan: true }}
                   >
-                    <div>
+                    <div className="w-64">
                       <h2 className="text-xl font-bold mb-2">{venue.name}</h2>
                       <img
                         className="block w-64 mb-3"
                         src={venue.image}
                         alt={venue.name}
                       />
-                      <p className="text-sm">Distance: {routeDistance}</p>
-                      <p className="text-sm">Duration: {routeDuration}</p>
-                      <p className="text-sm">
-                        Cost: {rideCost(parseFloat(routeDistance))}€
-                      </p>
+                      <div className="flex flex-col items-left">
+                        <p className="text-sm">Distance: {routeDistance}</p>
+                        <p className="text-sm">Duration: {routeDuration}</p>
+                        <p className="text-sm">
+                          Cost: {rideCost(parseFloat(routeDistance))}€
+                        </p>
+                      </div>
                     </div>
                   </InfoWindowF>
                 )}

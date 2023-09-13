@@ -2,8 +2,8 @@ import React from "react";
 
 export default function Footer() {
   return (
-    <footer className="bg-black w-full row-span-3 col-span-1">
-      <div className="flex text-zinc-500 text-xl h-24 items-center my-0 mx-2.5 pl-px ">
+    <footer className="bg-black w-full row-start-3 col-start-1 col-span-2">
+      <div className="h-full flex text-zinc-500 text-xl items-center mx-2.5 pl-px ">
         Made with {" "}
         <img
           draggable="false"
