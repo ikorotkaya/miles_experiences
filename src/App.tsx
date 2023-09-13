@@ -8,10 +8,12 @@ import "./App.css";
 
 export default function App() {
   return (
-    <div>
-      <Header />
-      <Main />
-      <Footer />
+    <div className="w-full h-full fixed top-0 left-0">
+      <div className="h-full grid grid-rows-[100px,1fr,100px] overflow-hidden ">
+        <Header />
+        <Main />
+        <Footer />
+      </div>
     </div>
   );
 }

@@ -39,27 +39,29 @@ const Experiences: React.FC<ExperiencesProps> = ({ userLocation, venues }) => {
   }, [userLocation, venues]);
 
   return (
-    <div className="flex flex-col bg-black h-96 overflow-y-scroll">
-      <div className="flex justify-center text-white">
-        <h1 className="text-4xl font-bold m-8">Experiences</h1>
-      </div>
-      <div className="flex flex-col mx-2">
-        {sortedPOIs.map(([id, distance]) => {
-          const venue = venues.find((venue) => venue.id === id);
-          if (!venue) {
-            return null;
-          }
-          return (
-            <div key={venue.id} className="flex flex-row border-white border-4 hover:text-white hover:bg-black p-4 m-2  bg-white text-black hover:cursor-pointer">
-              <img src={venue.image} alt={venue.name} className="w-36 h-36 object-cover" />
-              <div className="flex flex-col ml-4 ">
-                <h2 className="text-m font-bold mb-4">{venue.name}</h2>
-                <p className="text-sm">Approx. distance: {distance.toFixed(2)} km</p>
-                <p className="text-sm">Approximate cost: {rideCost(distance)}€</p>
+    <div className="col-start-2 col-span-1">
+      <div className="flex flex-col bg-black">
+        <div className="flex justify-center text-white">
+          <h1 className="text-4xl font-bold m-8">Experiences</h1>
+        </div>
+        <div className="flex flex-col mx-2">
+          {sortedPOIs.map(([id, distance]) => {
+            const venue = venues.find((venue) => venue.id === id);
+            if (!venue) {
+              return null;
+            }
+            return (
+              <div key={venue.id} className="flex flex-row border-white border-4 hover:text-white hover:bg-black p-4 m-2  bg-white text-black hover:cursor-pointer">
+                <img src={venue.image} alt={venue.name} className="w-36 h-36 object-cover" />
+                <div className="flex flex-col ml-4 ">
+                  <h2 className="text-m font-bold mb-4">{venue.name}</h2>
+                  <p className="text-sm">Approx. distance: {distance.toFixed(2)} km</p>
+                  <p className="text-sm">Approximate cost: {rideCost(distance)}€</p>
+                </div>
               </div>
-            </div>
-          );  
-        })}
+            );  
+          })}
+        </div>
       </div>
     </div>
   );

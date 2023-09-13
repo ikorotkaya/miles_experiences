@@ -39,17 +39,19 @@ export default function Main() {
   };
 
   return (
-    <main className="flex-grow">
+    <main className="row-span-2 col-span-1">
       {userLocation && (
-        <div className="grid gap-4 grid-cols-3 m-4">
-          <div className="col-span-2">
+        <div className="grid gap-4 grid-cols-[2fr,1fr] m-4">
+          <div className="col-span-1">
             <GoogleMapsComponent
               userLocation={userLocation}
               onMarkerDragEnd={handleMarkerDragEnd}
               venues={venues}
             />
           </div>
-          <Experiences venues={venues} userLocation={userLocation} />
+          <div className="">
+            <Experiences venues={venues} userLocation={userLocation} />
+          </div>
         </div>
       )}
     </main>
