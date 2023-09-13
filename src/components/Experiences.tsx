@@ -39,11 +39,11 @@ const Experiences: React.FC<ExperiencesProps> = ({ userLocation, venues }) => {
   }, [userLocation, venues]);
 
   return (
-    <div className="flex flex-col bg-black">
+    <div className="flex flex-col bg-black h-96 overflow-y-scroll">
       <div className="flex justify-center text-white">
         <h1 className="text-4xl font-bold m-8">Experiences</h1>
       </div>
-      <div className="flex flex-col mx-5">
+      <div className="flex flex-col mx-2">
         {sortedPOIs.map(([id, distance]) => {
           const venue = venues.find((venue) => venue.id === id);
           if (!venue) {

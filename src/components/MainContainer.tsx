@@ -41,7 +41,7 @@ export default function Main() {
   return (
     <main className="flex-grow">
       {userLocation && (
-        <div className="grid gap-6 grid-cols-3 m-6">
+        <div className="grid gap-4 grid-cols-3 m-4">
           <div className="col-span-2">
             <GoogleMapsComponent
               userLocation={userLocation}

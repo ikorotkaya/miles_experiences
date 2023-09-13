@@ -32,8 +32,8 @@ const GoogleMapsComponent: React.FC<GoogleMapsComponentProps> = ({
   const [isGoogleMapsLoaded, setIsGoogleMapsLoaded] = useState(false);
 
   const containerStyle = {
-    width: "100%",
-    height: "800px",
+    width: '100%',
+    height: '500px', 
   };
 
   const handleGoogleMapsLoad = () => {
@@ -76,7 +76,7 @@ const GoogleMapsComponent: React.FC<GoogleMapsComponentProps> = ({
   let routeDuration = directions?.routes[0]?.legs[0]?.duration?.text;
 
   return (
-    <div>
+    <div className="flex-grow">
       <LoadScript
         googleMapsApiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY || ""}
         onLoad={handleGoogleMapsLoad}
