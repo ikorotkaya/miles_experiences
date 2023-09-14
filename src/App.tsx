@@ -15,6 +15,10 @@ export default function App() {
 
   const [venues, setVenues] = useState<any[]>([]);
 
+  const getDefaultLocation = () => {
+    return { lat: 52.521918, lng: 13.413215 };
+  };
+
   const getUserLocation = () => {
     if ("geolocation" in navigator) {
       navigator.geolocation.getCurrentPosition(
@@ -24,10 +28,12 @@ export default function App() {
         },
         (error) => {
           console.error("Error getting user location:", error);
+          setUserLocation(getDefaultLocation());
         }
       );
     } else {
       console.error("Geolocation not available in this browser.");
+      setUserLocation(getDefaultLocation());
     }
   };
 
