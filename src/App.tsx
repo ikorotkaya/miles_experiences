@@ -19,25 +19,25 @@ export default function App() {
     return { lat: 52.521918, lng: 13.413215 };
   };
 
-  const getUserLocation = () => {
-    if ("geolocation" in navigator) {
-      navigator.geolocation.getCurrentPosition(
-        (position) => {
-          const { latitude, longitude } = position.coords;
-          setUserLocation({ lat: latitude, lng: longitude });
-        },
-        (error) => {
-          console.error("Error getting user location:", error);
-          setUserLocation(getDefaultLocation());
-        }
-      );
-    } else {
-      console.error("Geolocation not available in this browser.");
-      setUserLocation(getDefaultLocation());
-    }
-  };
-
+  
   useEffect(() => {
+    const getUserLocation = () => {
+      if ("geolocation" in navigator) {
+        navigator.geolocation.getCurrentPosition(
+          (position) => {
+            const { latitude, longitude } = position.coords;
+            setUserLocation({ lat: latitude, lng: longitude });
+          },
+          (error) => {
+            console.error("Error getting user location:", error);
+            setUserLocation(getDefaultLocation());
+          }
+        );
+      } else {
+        console.error("Geolocation not available in this browser.");
+        setUserLocation(getDefaultLocation());
+      }
+    };
     getUserLocation();
     setVenues(rawVenues);
   }, []);
