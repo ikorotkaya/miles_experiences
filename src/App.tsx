@@ -18,7 +18,6 @@ export default function App() {
   const getDefaultLocation = () => {
     return { lat: 52.521918, lng: 13.413215 };
   };
-
   
   useEffect(() => {
     const getUserLocation = () => {
@@ -51,7 +50,7 @@ export default function App() {
       <div className="app__inner h-full grid grid-rows-[100px,1fr,100px] grid-cols-[2fr,1fr] overflow-hidden ">
         <Header />
         {userLocation && (
-          <div className="app__map row-start-2 col-start-1" id="app__map">
+          <div className="app__map row-start-2 col-start-1 md:col-span-1 col-span-2" id="app__map">
             <GoogleMapsComponent
               userLocation={userLocation}
               onMarkerDragEnd={handleMarkerDragEnd}
@@ -60,7 +59,7 @@ export default function App() {
           </div>
         )}
         {userLocation && (
-          <div className="app__experiences row-start-2 col-start-2 overflow-y-scroll overflow-x-hidden">
+          <div className="hidden md:block app__experiences row-start-2 col-start-2 overflow-y-scroll overflow-x-hidden">
             <Experiences venues={venues} userLocation={userLocation} />
           </div>
         )}
