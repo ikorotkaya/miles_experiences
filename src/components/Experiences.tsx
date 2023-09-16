@@ -35,7 +35,7 @@ const Experiences: React.FC<ExperiencesProps> = ({ userLocation, venues }) => {
   return (
     <div className="w-full flex flex-col bg-black">
       <div className="flex justify-center text-white">
-        <h1 className="text-4xl font-bold m-8">Experiences</h1>
+        <h1 className="text-4xl font-bold m-10">Experiences</h1>
       </div>
       <div className="flex flex-col mx-2">
         {sortedPOIs.map(([id, distance]) => {
@@ -46,7 +46,7 @@ const Experiences: React.FC<ExperiencesProps> = ({ userLocation, venues }) => {
           return (
             <div
               key={venue.id}
-              className="flex flex-row border-white border-4 hover:text-white hover:bg-black p-4 m-2  bg-white text-black hover:cursor-pointer"
+              className="flex flex-row border-white border-4 hover:text-white hover:bg-black p-4 m-2  bg-white text-black"
             >
               <img
                 src={venue.image}
