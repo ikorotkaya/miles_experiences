@@ -4,31 +4,22 @@ import {
   LoadScript,
   MarkerF,
   InfoWindowF,
-  DirectionsRenderer,
+  DirectionsRenderer  
 } from "@react-google-maps/api";
 import carMarker from "../images/car-marker.png";
 import pinIcon from "../images/pin-icon.svg";
 import pinActiveIcon from "../images/pin-active-icon.svg";
-
 import { rideCost } from "../utils/calculateRideCost";
-
-interface GoogleMapsComponentProps {
-  userLocation: {
-    lat: number;
-    lng: number;
-  };
-  onMarkerDragEnd: (position: { lat: number; lng: number }) => void;
-  venues: any[];
-}
+import { LatLng, GoogleMapsComponentProps  } from "../types";
 
 const GoogleMapsComponent: React.FC<GoogleMapsComponentProps> = ({
   userLocation,
   onMarkerDragEnd,
   venues,
 }) => {
-  const [selectedVenueId, setSelectedVenueId] = useState<any>(null);
-  const [hoverVenueId, setHoverVenueId] = useState<any>(null);
-  const [center, setCenter] = useState<any>(userLocation);
+  const [selectedVenueId, setSelectedVenueId] = useState<number | null>(null);
+  const [hoverVenueId, setHoverVenueId] = useState<number | null>(null);
+  const [center, setCenter] = useState<LatLng>(userLocation);
   const [isGoogleMapsLoaded, setIsGoogleMapsLoaded] = useState(false);
   const [mapHeight, setMapHeight] = useState(0);
 
@@ -64,44 +55,60 @@ const GoogleMapsComponent: React.FC<GoogleMapsComponentProps> = ({
     setIsGoogleMapsLoaded(true);
   };
 
-  const handleMarkerClick = (venueId: any) => {
+  const handleMarkerClick = (venueId: number | null) => {
     setSelectedVenueId(venueId);
-    if (venueId) {
-      setCenter(venues.find((venue) => venue.id === venueId)?.coordinates);
+    
+    if (venueId !== null) {
+      const selectedVenue = venues.find((venue) => venue.id === venueId);
+      const newCenter = selectedVenue?.coordinates || null;
+
+      if(newCenter) {
+        const centerCoordinates: LatLng = {
+          lat: newCenter.lat,
+          lng: newCenter.lng
+        }
+        
+        setCenter(centerCoordinates);
+      }
     }
-    console.log("Center->>>>" + center.lat + " " + center.lng)
   };
 
-  const [directions, setDirections] = useState<any>(null);
+  const [directions, setDirections] = useState<google.maps.DirectionsResult | null>(null);
 
   useEffect(() => {
-    if (userLocation && selectedVenueId) {
-      const directionsService = new google.maps.DirectionsService();
-      directionsService.route(
-        {
-          origin: userLocation,
-          destination: venues.find((venue) => venue.id === selectedVenueId)
-            ?.coordinates,
-          travelMode: google.maps.TravelMode.DRIVING,
-        },
-        (result, status) => {
-          if (status === google.maps.DirectionsStatus.OK) {
-            setDirections(result);
-          } else {
-            console.error(`error fetching directions ${result}`);
+    if (selectedVenueId !== null) {
+      const selectedVenue = venues.find((venue) => venue.id === selectedVenueId);
+      const destinationCoordinates = selectedVenue?.coordinates;
+
+      if (destinationCoordinates) {
+        const directionsService = new google.maps.DirectionsService();
+        directionsService.route(
+          {
+            origin: userLocation,
+            destination: destinationCoordinates,
+            travelMode: google.maps.TravelMode.DRIVING,
+          },
+          (result, status) => {
+            if (status === google.maps.DirectionsStatus.OK) {
+              setDirections(result);
+            } else {
+              console.error(`error fetching directions ${result}`);
+            }
           }
-        }
-      );
+        );
+      }
     }
   }, [userLocation, selectedVenueId, venues]);
 
-  let routeDistance = directions?.routes[0]?.legs[0]?.distance?.text;
-  let routeDuration = directions?.routes[0]?.legs[0]?.duration?.text;
+  const routeDistance = directions?.routes[0]?.legs[0]?.distance?.text;
+  const routeDuration = directions?.routes[0]?.legs[0]?.duration?.text;
 
   return (
     <div>
       <LoadScript
-        googleMapsApiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY || ""}
+        googleMapsApiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY !== undefined
+          ? process.env.REACT_APP_GOOGLE_MAPS_API_KEY
+          : ""}
         onLoad={handleGoogleMapsLoad}
       >
         <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={12}>
@@ -166,13 +173,15 @@ const GoogleMapsComponent: React.FC<GoogleMapsComponentProps> = ({
                         src={venue.image}
                         alt={venue.name}
                       />
-                      <div className="flex flex-col items-left">
-                        <p className="text-sm">Distance: {routeDistance}</p>
-                        <p className="text-sm">Duration: {routeDuration}</p>
-                        <p className="text-sm">
-                          Cost: {rideCost(parseFloat(routeDistance))}€
-                        </p>
-                      </div>
+                      { routeDistance !== undefined && 
+                        <div className="flex flex-col items-left">
+                          <p className="text-sm">Distance: {routeDistance}</p>
+                          <p className="text-sm">Duration: {routeDuration}</p>
+                          <p className="text-sm">
+                            Cost: {rideCost(parseFloat(routeDistance))}€
+                          </p>
+                        </div>
+                      }
                     </div>
                   </InfoWindowF>
                 )}

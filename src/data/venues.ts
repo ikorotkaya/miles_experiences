@@ -1,6 +1,6 @@
 const rawVenues = [
   {
-    "id": "5270",
+    "id": 5270,
     "name": "IV. Städtische Irrenanstalt (Genesungsheim)",
     "coordinates": {
       "lng": 13.4904715,
@@ -9,7 +9,7 @@ const rawVenues = [
     "image": "/images/venues/5270.jpg"
   },
   {
-    "id": "5253",
+    "id": 5253,
     "name": "Städtische Zentrale Buch",
     "coordinates": {
       "lng": 13.508387804031374,
@@ -18,7 +18,7 @@ const rawVenues = [
     "image": "/images/venues/5253.jpg"
   },
   {
-    "id": "5468",
+    "id": 5468,
     "name": "Dorf Lübars mit LabSaal",
     "coordinates": {
       "lng": 13.3563911,
@@ -27,7 +27,7 @@ const rawVenues = [
     "image": "/images/venues/5468.jpg"
   },
   {
-    "id": "5261",
+    "id": 5261,
     "name": "Stadtgut Blankenfelde",
     "coordinates": {
       "lng": 13.392548561096191,
@@ -36,7 +36,7 @@ const rawVenues = [
     "image": "/images/venues/5261.jpg"
   },
   {
-    "id": "5600",
+    "id": 5600,
     "name": "Lapidarium im Museum Reinickendorf",
     "coordinates": {
       "lng": 13.318682468581807,
@@ -45,7 +45,7 @@ const rawVenues = [
     "image": "/images/venues/5600.jpg"
   },
   {
-    "id": "5514",
+    "id": 5514,
     "name": "werkstatt denkmal: Hermsdorfer Wasserturm",
     "coordinates": {
       "lng": 13.318682468581807,
@@ -54,7 +54,7 @@ const rawVenues = [
     "image": "/images/venues/5514.jpg"
   },
   {
-    "id": "5458",
+    "id": 5458,
     "name": "Haus Hannah Höch und Hausgarten",
     "coordinates": {
       "lng": 13.236082482058102,
@@ -63,7 +63,7 @@ const rawVenues = [
     "image": "/images/venues/5458.jpg"
   },
   {
-    "id": "5327",
+    "id": 5327,
     "name": "Dorfkirche Heiligensee",
     "coordinates": {
       "lng": 13.21260452270508,
@@ -72,7 +72,7 @@ const rawVenues = [
     "image": "/images/venues/5327.jpg"
   },
   {
-    "id": "5555",
+    "id": 5555,
     "name": "Dorfkirche Französisch Buchholz",
     "coordinates": {
       "lng": 13.433918952941896,
@@ -81,7 +81,7 @@ const rawVenues = [
     "image": "/images/venues/5555.jpg"
   },
   {
-    "id": "5596",
+    "id": 5596,
     "name": "Ev. Königin-Luise-Kirche",
     "coordinates": {
       "lng": 13.3135878,
@@ -90,7 +90,7 @@ const rawVenues = [
     "image": "/images/venues/5596.jpg"
   },
   {
-    "id": "5556",
+    "id": 5556,
     "name": "Kirche St.-Johannes Evangelist",
     "coordinates": {
       "lng": 13.4364968,
@@ -99,7 +99,7 @@ const rawVenues = [
     "image": "/images/venues/5556.jpg"
   },
   {
-    "id": "5529",
+    "id": 5529,
     "name": "Ev. Gemeindezentrum Apostel Johannes – FÄLLT AUS",
     "coordinates": {
       "lng": 13.3601863,
@@ -108,7 +108,7 @@ const rawVenues = [
     "image": "/images/venues/5529.jpg"
   },
   {
-    "id": "5386",
+    "id": 5386,
     "name": "Ev. Dorfkirche Alt-Wittenau",
     "coordinates": {
       "lng": 13.32544267502994,
@@ -117,7 +117,7 @@ const rawVenues = [
     "image": "/images/venues/5386.jpg"
   },
   {
-    "id": "5537",
+    "id": 5537,
     "name": "Humboldt-Bibliothek",
     "coordinates": {
       "lng": 13.280664721943513,
@@ -126,7 +126,7 @@ const rawVenues = [
     "image": "/images/venues/5537.jpg"
   },
   {
-    "id": "5273",
+    "id": 5273,
     "name": "Spaziergang durch das Gelände der Karl-Bonhoeffer-Nervenklinik",
     "coordinates": {
       "lng": 13.324613571166994,
@@ -135,7 +135,7 @@ const rawVenues = [
     "image": "/images/venues/5273.jpg"
   },
   {
-    "id": "5308",
+    "id": 5308,
     "name": "Russisch-Orthodoxer Friedhof mit Kapelle",
     "coordinates": {
       "lng": 13.3015639,
@@ -144,7 +144,7 @@ const rawVenues = [
     "image": "/images/venues/5308.jpg"
   },
   {
-    "id": "5372",
+    "id": 5372,
     "name": "Ev. Dorfkirche Alt-Reinickendorf",
     "coordinates": {
       "lng": 13.35213303565979,
@@ -153,7 +153,7 @@ const rawVenues = [
     "image": "/images/venues/5372.jpg"
   },
   {
-    "id": "5248",
+    "id": 5248,
     "name": "Schulfarm Insel Scharfenberg",
     "coordinates": {
       "lng": 13.246787621941355,
@@ -162,7 +162,7 @@ const rawVenues = [
     "image": "/images/venues/5248.jpg"
   },
   {
-    "id": "5599",
+    "id": 5599,
     "name": "Gedenkstätte Historischer Ort Krumpuhler Weg",
     "coordinates": {
       "lng": 13.288669,
@@ -171,7 +171,7 @@ const rawVenues = [
     "image": "/images/venues/5599.jpg"
   },
   {
-    "id": "5512",
+    "id": 5512,
     "name": "Kath. St.-Marien-Kirche",
     "coordinates": {
       "lng": 13.360549,
@@ -180,7 +180,7 @@ const rawVenues = [
     "image": "/images/venues/5512.jpg"
   },
   {
-    "id": "5435",
+    "id": 5435,
     "name": "Ateliermuseum der Bildhauerin Ruthild Hahne",
     "coordinates": {
       "lng": 13.391271800000027,
@@ -189,7 +189,7 @@ const rawVenues = [
     "image": "/images/venues/5435.jpg"
   },
   {
-    "id": "5310",
+    "id": 5310,
     "name": "Weiße Stadt",
     "coordinates": {
       "lng": 13.3516128,
@@ -198,7 +198,7 @@ const rawVenues = [
     "image": "/images/venues/5310.jpg"
   },
   {
-    "id": "5471",
+    "id": 5471,
     "name": "Ev. Johannesstift Spandau",
     "coordinates": {
       "lng": 13.1988184,
@@ -207,7 +207,7 @@ const rawVenues = [
     "image": "/images/venues/5471.jpg"
   },
   {
-    "id": "5427",
+    "id": 5427,
     "name": "Dorfkirche Heinersdorf",
     "coordinates": {
       "lng": 13.4405274,
@@ -216,7 +216,7 @@ const rawVenues = [
     "image": "/images/venues/5427.jpg"
   },
   {
-    "id": "5367",
+    "id": 5367,
     "name": "Villenkolonie Valentinswerder",
     "coordinates": {
       "lng": 13.229298591613771,
@@ -225,7 +225,7 @@ const rawVenues = [
     "image": "/images/venues/5367.jpg"
   },
   {
-    "id": "5543",
+    "id": 5543,
     "name": "Kolonistenhaus von 1782 und die Kolonie an der Panke",
     "coordinates": {
       "lng": 13.3839458,
@@ -234,7 +234,7 @@ const rawVenues = [
     "image": "/images/venues/5543.jpg"
   },
   {
-    "id": "5377",
+    "id": 5377,
     "name": "Siedlung am Schillerpark",
     "coordinates": {
       "lng": 13.347304,
@@ -243,7 +243,7 @@ const rawVenues = [
     "image": "/images/venues/5377.jpg"
   },
   {
-    "id": "5271",
+    "id": 5271,
     "name": "Ev. Stephanuskirche",
     "coordinates": {
       "lng": 13.386991705494504,
@@ -252,7 +252,7 @@ const rawVenues = [
     "image": "/images/venues/5271.jpg"
   },
   {
-    "id": "5379",
+    "id": 5379,
     "name": "Hutfabrik Gattel",
     "coordinates": {
       "lng": 13.3853061,
@@ -261,7 +261,7 @@ const rawVenues = [
     "image": "/images/venues/5379.jpg"
   },
   {
-    "id": "5321",
+    "id": 5321,
     "name": "Umspannwerk Christiania",
     "coordinates": {
       "lng": 13.3839152,
@@ -270,7 +270,7 @@ const rawVenues = [
     "image": "/images/venues/5321.jpg"
   },
   {
-    "id": "5283",
+    "id": 5283,
     "name": "Überreste des Kurbades Luisenbad",
     "coordinates": {
       "lng": 13.379496221905537,
@@ -279,7 +279,7 @@ const rawVenues = [
     "image": "/images/venues/5283.jpg"
   },
   {
-    "id": "5415",
+    "id": 5415,
     "name": "Straßenbahnbetriebshof Gesundbrunnen – Uferstudios",
     "coordinates": {
       "lng": 13.3773698,
@@ -288,7 +288,7 @@ const rawVenues = [
     "image": "/images/venues/5415.jpg"
   },
   {
-    "id": "5278",
+    "id": 5278,
     "name": "Straßenbahnbetriebshof Gesundbrunnen – Uferhallen",
     "coordinates": {
       "lng": 13.37416747167497,
@@ -297,7 +297,7 @@ const rawVenues = [
     "image": "/images/venues/5278.jpg"
   },
   {
-    "id": "5461",
+    "id": 5461,
     "name": "Wohnanlage Afrikanische Straße von Ludwig Mies van der Rohe",
     "coordinates": {
       "lng": 13.3380141,
@@ -306,7 +306,7 @@ const rawVenues = [
     "image": "/images/venues/5461.jpg"
   },
   {
-    "id": "5398",
+    "id": 5398,
     "name": ".GUT Am Flughafen 1",
     "coordinates": {
       "lng": 13.286247253417969,
@@ -315,7 +315,7 @@ const rawVenues = [
     "image": "/images/venues/5398.jpg"
   },
   {
-    "id": "5523",
+    "id": 5523,
     "name": "werkstatt denkmal: Filmvorführung zu Oscar Blumenthal",
     "coordinates": {
       "lng": 13.44146668066886,
@@ -324,7 +324,7 @@ const rawVenues = [
     "image": "/images/venues/5523.jpg"
   },
   {
-    "id": "5506",
+    "id": 5506,
     "name": "Flughafen Tegel",
     "coordinates": {
       "lng": 13.29798460006714,
@@ -333,7 +333,7 @@ const rawVenues = [
     "image": "/images/venues/5506.jpg"
   },
   {
-    "id": "5351",
+    "id": 5351,
     "name": "Haus Lemke",
     "coordinates": {
       "lng": 13.490528696694309,
@@ -342,7 +342,7 @@ const rawVenues = [
     "image": "/images/venues/5351.jpg"
   },
   {
-    "id": "5318",
+    "id": 5318,
     "name": "Gutshaus Hohenschönhausen",
     "coordinates": {
       "lng": 13.5056415,
@@ -351,7 +351,7 @@ const rawVenues = [
     "image": "/images/venues/5318.jpg"
   },
   {
-    "id": "5429",
+    "id": 5429,
     "name": "Atelierhaus Wiesenstraße 29",
     "coordinates": {
       "lng": 13.371528000000012,
@@ -360,7 +360,7 @@ const rawVenues = [
     "image": "/images/venues/5429.jpg"
   },
   {
-    "id": "5392",
+    "id": 5392,
     "name": "Gethsemanekirche",
     "coordinates": {
       "lng": 13.416479999999979,
@@ -369,7 +369,7 @@ const rawVenues = [
     "image": "/images/venues/5392.jpg"
   },
   {
-    "id": "5309",
+    "id": 5309,
     "name": "Wohnstadt Carl-Legien",
     "coordinates": {
       "lng": 13.4335178,
@@ -378,7 +378,7 @@ const rawVenues = [
     "image": "/images/venues/5309.jpg"
   },
   {
-    "id": "5436",
+    "id": 5436,
     "name": "Ulis Museumsladen",
     "coordinates": {
       "lng": 13.2081599,
@@ -387,7 +387,7 @@ const rawVenues = [
     "image": "/images/venues/5436.jpg"
   },
   {
-    "id": "5470",
+    "id": 5470,
     "name": "Krematorium Wedding",
     "coordinates": {
       "lng": 13.3665464,
@@ -396,7 +396,7 @@ const rawVenues = [
     "image": "/images/venues/5470.jpg"
   },
   {
-    "id": "5492",
+    "id": 5492,
     "name": "Friedhof der Jüdischen Gemeinde",
     "coordinates": {
       "lng": 13.4579698,
@@ -405,7 +405,7 @@ const rawVenues = [
     "image": "/images/venues/5492.jpg"
   },
   {
-    "id": "5331",
+    "id": 5331,
     "name": "Bremer Höhe",
     "coordinates": {
       "lng": 13.4130222,
@@ -414,7 +414,7 @@ const rawVenues = [
     "image": "/images/venues/5331.jpg"
   },
   {
-    "id": "5457",
+    "id": 5457,
     "name": "Kath. St.-Joseph-Kirche",
     "coordinates": {
       "lng": 13.363026499999933,
@@ -423,7 +423,7 @@ const rawVenues = [
     "image": "/images/venues/5457.jpg"
   },
   {
-    "id": "5511",
+    "id": 5511,
     "name": "Reichsforschungssiedlung Haselhorst",
     "coordinates": {
       "lng": 13.2361878,
@@ -432,7 +432,7 @@ const rawVenues = [
     "image": "/images/venues/5511.jpg"
   },
   {
-    "id": "5540",
+    "id": 5540,
     "name": "Zimmermeister Brunzel – Bauen und Wohnen in Prenzlauer Berg um 1900",
     "coordinates": {
       "lng": 13.4214133,
@@ -441,7 +441,7 @@ const rawVenues = [
     "image": "/images/venues/5540.jpg"
   },
   {
-    "id": "5274",
+    "id": 5274,
     "name": "Maschinenfabrik Richard Heike – Villa Heike",
     "coordinates": {
       "lng": 13.49843170012404,
@@ -450,7 +450,7 @@ const rawVenues = [
     "image": "/images/venues/5274.jpg"
   },
   {
-    "id": "5587",
+    "id": 5587,
     "name": "werkstatt denkmal: Erforschung der Architektur- und Wohngeschichte im Mühlenkiezviertel",
     "coordinates": {
       "lng": 13.440864,
@@ -459,7 +459,7 @@ const rawVenues = [
     "image": "/images/venues/5587.jpg"
   },
   {
-    "id": "5320",
+    "id": 5320,
     "name": "Stasi-Gefängnis Hohenschönhausen",
     "coordinates": {
       "lng": 13.5001488,
@@ -468,7 +468,7 @@ const rawVenues = [
     "image": "/images/venues/5320.jpg"
   },
   {
-    "id": "5336",
+    "id": 5336,
     "name": "Ev. Osterkirche",
     "coordinates": {
       "lng": 13.354631780983034,
@@ -477,7 +477,7 @@ const rawVenues = [
     "image": "/images/venues/5336.jpg"
   },
   {
-    "id": "5526",
+    "id": 5526,
     "name": "Ev. Christophoruskirche",
     "coordinates": {
       "lng": 13.2668221,
@@ -486,7 +486,7 @@ const rawVenues = [
     "image": "/images/venues/5526.jpg"
   },
   {
-    "id": "5364",
+    "id": 5364,
     "name": "St. Elisabeth-Stift",
     "coordinates": {
       "lng": 13.409149200000002,
@@ -495,7 +495,7 @@ const rawVenues = [
     "image": "/images/venues/5364.jpg"
   },
   {
-    "id": "5525",
+    "id": 5525,
     "name": "Zitadelle Spandau",
     "coordinates": {
       "lng": 13.211316235636957,
@@ -504,7 +504,7 @@ const rawVenues = [
     "image": "/images/venues/5525.jpg"
   },
   {
-    "id": "5464",
+    "id": 5464,
     "name": "Kath. Gedenkkirche Maria-Regina Martyrum",
     "coordinates": {
       "lng": 13.298481014374644,
@@ -513,7 +513,7 @@ const rawVenues = [
     "image": "/images/venues/5464.jpg"
   },
   {
-    "id": "5465",
+    "id": 5465,
     "name": "Ev. Gedenkkirche im Gemeindezentrum Plötzensee",
     "coordinates": {
       "lng": 13.300074247060937,
@@ -522,7 +522,7 @@ const rawVenues = [
     "image": "/images/venues/5465.jpg"
   },
   {
-    "id": "5317",
+    "id": 5317,
     "name": "Großsiedlung Siemensstadt (Ringsiedlung)",
     "coordinates": {
       "lng": 13.276548385620119,
@@ -531,7 +531,7 @@ const rawVenues = [
     "image": "/images/venues/5317.jpg"
   },
   {
-    "id": "5263",
+    "id": 5263,
     "name": "Fahrradtour zu Bauten Hermann Blankensteins",
     "coordinates": {
       "lng": 13.419203390164899,
@@ -540,7 +540,7 @@ const rawVenues = [
     "image": "/images/venues/5263.jpg"
   },
   {
-    "id": "5433",
+    "id": 5433,
     "name": "Spandovia Sacra – Museum von St. Nikolai Spandau",
     "coordinates": {
       "lng": 13.2054986,
@@ -549,7 +549,7 @@ const rawVenues = [
     "image": "/images/venues/5433.jpg"
   },
   {
-    "id": "5266",
+    "id": 5266,
     "name": "Schultheiss Brauerei",
     "coordinates": {
       "lng": 13.414199352264406,
@@ -558,7 +558,7 @@ const rawVenues = [
     "image": "/images/venues/5266.jpg"
   },
   {
-    "id": "5432",
+    "id": 5432,
     "name": "Ev. St. Nikolai-Kirche",
     "coordinates": {
       "lng": 13.2053512,
@@ -567,7 +567,7 @@ const rawVenues = [
     "image": "/images/venues/5432.jpg"
   },
   {
-    "id": "5322",
+    "id": 5322,
     "name": "Stadtbad Oderberger Straße",
     "coordinates": {
       "lng": 13.41052953267133,
@@ -576,7 +576,7 @@ const rawVenues = [
     "image": "/images/venues/5322.jpg"
   },
   {
-    "id": "5519",
+    "id": 5519,
     "name": "Wohnung Hans Scharoun",
     "coordinates": {
       "lng": 13.2728369,
@@ -585,7 +585,7 @@ const rawVenues = [
     "image": "/images/venues/5519.jpg"
   },
   {
-    "id": "5565",
+    "id": 5565,
     "name": "Magazin Westhafen (ehem. Getreidespeicher)",
     "coordinates": {
       "lng": 13.3417491,
@@ -594,7 +594,7 @@ const rawVenues = [
     "image": "/images/venues/5565.jpg"
   },
   {
-    "id": "5330",
+    "id": 5330,
     "name": "Elektropolis Siemensstadt",
     "coordinates": {
       "lng": 13.272600173950197,
@@ -603,7 +603,7 @@ const rawVenues = [
     "image": "/images/venues/5330.jpg"
   },
   {
-    "id": "5593",
+    "id": 5593,
     "name": "Litfaßsäulen am Kollwitzplatz",
     "coordinates": {
       "lng": 13.418190479278566,
@@ -612,7 +612,7 @@ const rawVenues = [
     "image": "/images/venues/5593.jpg"
   },
   {
-    "id": "5361",
+    "id": 5361,
     "name": "Atelierwohnung Hans Scharoun",
     "coordinates": {
       "lng": 13.2818876,
@@ -621,7 +621,7 @@ const rawVenues = [
     "image": "/images/venues/5361.jpg"
   },
   {
-    "id": "5324",
+    "id": 5324,
     "name": "Ev. Segenskirche mit Stadtkloster",
     "coordinates": {
       "lng": 13.4119927,
@@ -630,7 +630,7 @@ const rawVenues = [
     "image": "/images/venues/5324.jpg"
   },
   {
-    "id": "5326",
+    "id": 5326,
     "name": "Gedenkort Güterbahnhof Moabit",
     "coordinates": {
       "lng": 13.353474140167238,
@@ -639,7 +639,7 @@ const rawVenues = [
     "image": "/images/venues/5326.jpg"
   },
   {
-    "id": "5437",
+    "id": 5437,
     "name": "Zionskirche",
     "coordinates": {
       "lng": 13.403985500335695,
@@ -648,7 +648,7 @@ const rawVenues = [
     "image": "/images/venues/5437.jpg"
   },
   {
-    "id": "5466",
+    "id": 5466,
     "name": "Nordbahnhof",
     "coordinates": {
       "lng": 13.387445935261194,
@@ -657,7 +657,7 @@ const rawVenues = [
     "image": "/images/venues/5466.jpg"
   },
   {
-    "id": "5438",
+    "id": 5438,
     "name": "Gedenkstätte Günter Litfin",
     "coordinates": {
       "lng": 13.369535207748415,
@@ -666,7 +666,7 @@ const rawVenues = [
     "image": "/images/venues/5438.jpg"
   },
   {
-    "id": "5391",
+    "id": 5391,
     "name": "Ev. Immanuelkirche",
     "coordinates": {
       "lng": 13.42156,
@@ -675,7 +675,7 @@ const rawVenues = [
     "image": "/images/venues/5391.jpg"
   },
   {
-    "id": "5469",
+    "id": 5469,
     "name": "Schneiders Brauerei im Schweizer Garten",
     "coordinates": {
       "lng": 13.4281278,
@@ -684,7 +684,7 @@ const rawVenues = [
     "image": "/images/venues/5469.jpg"
   },
   {
-    "id": "5334",
+    "id": 5334,
     "name": "Brauerei Pfefferberg",
     "coordinates": {
       "lng": 13.4118347,
@@ -693,7 +693,7 @@ const rawVenues = [
     "image": "/images/venues/5334.jpg"
   },
   {
-    "id": "5300",
+    "id": 5300,
     "name": "Jüdisches Kinderheim",
     "coordinates": {
       "lng": 13.4080798,
@@ -702,7 +702,7 @@ const rawVenues = [
     "image": "/images/venues/5300.jpg"
   },
   {
-    "id": "5517",
+    "id": 5517,
     "name": "Kath. Herz-Jesu-Kirche",
     "coordinates": {
       "lng": 13.409563061163366,
@@ -711,7 +711,7 @@ const rawVenues = [
     "image": "/images/venues/5517.jpg"
   },
   {
-    "id": "5449",
+    "id": 5449,
     "name": "Ev. Heilige-Geist-Kirche",
     "coordinates": {
       "lng": 13.346543312072754,
@@ -720,7 +720,7 @@ const rawVenues = [
     "image": "/images/venues/5449.jpg"
   },
   {
-    "id": "5612",
+    "id": 5612,
     "name": "Museum für Naturkunde Berlin",
     "coordinates": {
       "lng": 13.379432878573652,
@@ -729,7 +729,7 @@ const rawVenues = [
     "image": "/images/venues/5612.jpg"
   },
   {
-    "id": "5414",
+    "id": 5414,
     "name": "Friedhof I der Ev. Georgen-Parochialgemeinde",
     "coordinates": {
       "lng": 13.424499034881594,
@@ -738,7 +738,7 @@ const rawVenues = [
     "image": "/images/venues/5414.jpg"
   },
   {
-    "id": "5459",
+    "id": 5459,
     "name": "Vom Marienheim zum Sprachenkonvikt",
     "coordinates": {
       "lng": 13.390939235687256,
@@ -747,7 +747,7 @@ const rawVenues = [
     "image": "/images/venues/5459.jpg"
   },
   {
-    "id": "5406",
+    "id": 5406,
     "name": "Alter Friedhof der St. Nikolai- und St. Mariengemeinde",
     "coordinates": {
       "lng": 13.4179988,
@@ -756,7 +756,7 @@ const rawVenues = [
     "image": "/images/venues/5406.jpg"
   },
   {
-    "id": "5515",
+    "id": 5515,
     "name": "Kath. St.-Adalbert-Kirche",
     "coordinates": {
       "lng": 13.395734816259875,
@@ -765,7 +765,7 @@ const rawVenues = [
     "image": "/images/venues/5515.jpg"
   },
   {
-    "id": "5272",
+    "id": 5272,
     "name": "Dorotheenstädtischer Friedhof I",
     "coordinates": {
       "lng": 13.383944034576418,
@@ -774,7 +774,7 @@ const rawVenues = [
     "image": "/images/venues/5272.jpg"
   },
   {
-    "id": "5307",
+    "id": 5307,
     "name": "Ev. Gustav-Adolf-Kirche",
     "coordinates": {
       "lng": 13.298942233389262,
@@ -783,7 +783,7 @@ const rawVenues = [
     "image": "/images/venues/5307.jpg"
   },
   {
-    "id": "5319",
+    "id": 5319,
     "name": "Alter Garnisonfriedhof",
     "coordinates": {
       "lng": 13.4032601,
@@ -792,7 +792,7 @@ const rawVenues = [
     "image": "/images/venues/5319.jpg"
   },
   {
-    "id": "5613",
+    "id": 5613,
     "name": "Denkmaltour: Märchenbrunnen im Volkspark Friedrichshain",
     "coordinates": {
       "lng": 13.425679206848146,
@@ -801,7 +801,7 @@ const rawVenues = [
     "image": "/images/venues/5613.jpg"
   },
   {
-    "id": "5269",
+    "id": 5269,
     "name": "Museum Kesselhaus Herzberge",
     "coordinates": {
       "lng": 13.512033412808368,
@@ -810,7 +810,7 @@ const rawVenues = [
     "image": "/images/venues/5269.jpg"
   },
   {
-    "id": "5575",
+    "id": 5575,
     "name": "Ehem. Zentralvieh- und Schlachthof Berlin",
     "coordinates": {
       "lng": 13.4548751,
@@ -819,7 +819,7 @@ const rawVenues = [
     "image": "/images/venues/5575.jpg"
   },
   {
-    "id": "5315",
+    "id": 5315,
     "name": "Weltfriedensglocke Berlin im Volkspark Friedrichshain",
     "coordinates": {
       "lng": 13.434172530935712,
@@ -828,7 +828,7 @@ const rawVenues = [
     "image": "/images/venues/5315.jpg"
   },
   {
-    "id": "5580",
+    "id": 5580,
     "name": "Auf einem Spaziergang durch Mitte",
     "coordinates": {
       "lng": 13.411495685577394,
@@ -837,7 +837,7 @@ const rawVenues = [
     "image": "/images/venues/5580.jpg"
   },
   {
-    "id": "5545",
+    "id": 5545,
     "name": "U144 Untergrundmuseum",
     "coordinates": {
       "lng": 13.390787617432439,
@@ -846,7 +846,7 @@ const rawVenues = [
     "image": "/images/venues/5545.jpg"
   },
   {
-    "id": "5509",
+    "id": 5509,
     "name": "Sophienkirche",
     "coordinates": {
       "lng": 13.3990178,
@@ -855,7 +855,7 @@ const rawVenues = [
     "image": "/images/venues/5509.jpg"
   },
   {
-    "id": "5581",
+    "id": 5581,
     "name": "SPANDAU: Traditionsfahrt auf den historischen Buslinien 31 und 80",
     "coordinates": {
       "lng": 13.24127197265625,
@@ -864,7 +864,7 @@ const rawVenues = [
     "image": "/images/venues/5581.jpg"
   },
   {
-    "id": "5365",
+    "id": 5365,
     "name": "Haus Dittmar",
     "coordinates": {
       "lng": 13.600256617732803,
@@ -873,7 +873,7 @@ const rawVenues = [
     "image": "/images/venues/5365.jpg"
   },
   {
-    "id": "5494",
+    "id": 5494,
     "name": "Neue Synagoge Berlin – Centrum Judaicum",
     "coordinates": {
       "lng": 13.394168615341187,
@@ -882,7 +882,7 @@ const rawVenues = [
     "image": "/images/venues/5494.jpg"
   },
   {
-    "id": "5299",
+    "id": 5299,
     "name": "Ökumenische Gedenkstätte für Genozidopfer im Osmanischen Reich",
     "coordinates": {
       "lng": 13.279166221618654,
@@ -891,7 +891,7 @@ const rawVenues = [
     "image": "/images/venues/5299.jpg"
   },
   {
-    "id": "5572",
+    "id": 5572,
     "name": "Das Kasernenviertel in Berlin-Moabit",
     "coordinates": {
       "lng": 13.36015820503235,
@@ -900,7 +900,7 @@ const rawVenues = [
     "image": "/images/venues/5572.jpg"
   },
   {
-    "id": "5247",
+    "id": 5247,
     "name": "Lernort Keibelstraße",
     "coordinates": {
       "lng": 13.4162252,
@@ -909,7 +909,7 @@ const rawVenues = [
     "image": "/images/venues/5247.jpg"
   },
   {
-    "id": "5591",
+    "id": 5591,
     "name": "Friedhof der Märzgefallenen",
     "coordinates": {
       "lng": 13.436515331268312,
@@ -918,7 +918,7 @@ const rawVenues = [
     "image": "/images/venues/5591.jpg"
   },
   {
-    "id": "5448",
+    "id": 5448,
     "name": "Parlament der Bäume gegen Krieg und Gewalt",
     "coordinates": {
       "lng": 13.376669883728027,
@@ -927,7 +927,7 @@ const rawVenues = [
     "image": "/images/venues/5448.jpg"
   },
   {
-    "id": "5323",
+    "id": 5323,
     "name": "Fort Hahneberg",
     "coordinates": {
       "lng": 13.137729308340758,
@@ -936,7 +936,7 @@ const rawVenues = [
     "image": "/images/venues/5323.jpg"
   },
   {
-    "id": "5548",
+    "id": 5548,
     "name": "Wasserstraßen um die Spreeinsel",
     "coordinates": {
       "lng": 13.393642902374268,
@@ -945,7 +945,7 @@ const rawVenues = [
     "image": "/images/venues/5548.jpg"
   },
   {
-    "id": "5251",
+    "id": 5251,
     "name": "Karl-Marx-Allee – II. Bauabschnitt",
     "coordinates": {
       "lng": 13.42310428619385,
@@ -954,7 +954,7 @@ const rawVenues = [
     "image": "/images/venues/5251.jpg"
   },
   {
-    "id": "5578",
+    "id": 5578,
     "name": "Kongresshalle (heute bcc)",
     "coordinates": {
       "lng": 13.415905237197876,
@@ -963,7 +963,7 @@ const rawVenues = [
     "image": "/images/venues/5578.jpg"
   },
   {
-    "id": "5325",
+    "id": 5325,
     "name": "Kino International",
     "coordinates": {
       "lng": 13.423015700546696,
@@ -972,7 +972,7 @@ const rawVenues = [
     "image": "/images/venues/5325.jpg"
   },
   {
-    "id": "5383",
+    "id": 5383,
     "name": "Ev. St. Marienkirche",
     "coordinates": {
       "lng": 13.406496047973633,
@@ -981,7 +981,7 @@ const rawVenues = [
     "image": "/images/venues/5383.jpg"
   },
   {
-    "id": "5495",
+    "id": 5495,
     "name": "Olympiapark Berlin",
     "coordinates": {
       "lng": 13.242516517639162,
@@ -990,7 +990,7 @@ const rawVenues = [
     "image": "/images/venues/5495.jpg"
   },
   {
-    "id": "5262",
+    "id": 5262,
     "name": "Kasernengelände Spandau und Geowissenschaftliche Sammlungen der BGR",
     "coordinates": {
       "lng": 13.185015099689437,
@@ -999,7 +999,7 @@ const rawVenues = [
     "image": "/images/venues/5262.jpg"
   },
   {
-    "id": "5260",
+    "id": 5260,
     "name": "Karl-Marx-Allee zwischen Strausberger Platz und Alexanderplatz – II. Bauabschnitt",
     "coordinates": {
       "lng": 13.4225772,
@@ -1008,7 +1008,7 @@ const rawVenues = [
     "image": "/images/venues/5260.jpg"
   },
   {
-    "id": "5395",
+    "id": 5395,
     "name": "Train-Kaserne – Smuts Barracks",
     "coordinates": {
       "lng": 13.17937677149284,
@@ -1017,7 +1017,7 @@ const rawVenues = [
     "image": "/images/venues/5395.jpg"
   },
   {
-    "id": "5499",
+    "id": 5499,
     "name": "FRIEDRICHSHAIN: Freidenkerhaus und Armenfriedhof",
     "coordinates": {
       "lng": 13.4388683,
@@ -1026,7 +1026,7 @@ const rawVenues = [
     "image": "/images/venues/5499.jpg"
   },
   {
-    "id": "5498",
+    "id": 5498,
     "name": "Märchenbrunnen im Volkspark Friedrichshain",
     "coordinates": {
       "lng": 13.4388683,
@@ -1035,7 +1035,7 @@ const rawVenues = [
     "image": "/images/venues/5498.jpg"
   },
   {
-    "id": "5342",
+    "id": 5342,
     "name": "Panoramabar im Haus Berlin",
     "coordinates": {
       "lng": 13.426940000000059,
@@ -1044,7 +1044,7 @@ const rawVenues = [
     "image": "/images/venues/5342.jpg"
   },
   {
-    "id": "5393",
+    "id": 5393,
     "name": "Marx-Engels-Denkmal",
     "coordinates": {
       "lng": 13.404693603515627,
@@ -1053,7 +1053,7 @@ const rawVenues = [
     "image": "/images/venues/5393.jpg"
   },
   {
-    "id": "5482",
+    "id": 5482,
     "name": "Palais am Festungsgraben",
     "coordinates": {
       "lng": 13.395718932151794,
@@ -1062,7 +1062,7 @@ const rawVenues = [
     "image": "/images/venues/5482.jpg"
   },
   {
-    "id": "5567",
+    "id": 5567,
     "name": "Haus des Kindes",
     "coordinates": {
       "lng": 13.4262685,
@@ -1071,7 +1071,7 @@ const rawVenues = [
     "image": "/images/venues/5567.jpg"
   },
   {
-    "id": "5349",
+    "id": 5349,
     "name": "Klosterruine",
     "coordinates": {
       "lng": 13.412235975265505,
@@ -1080,7 +1080,7 @@ const rawVenues = [
     "image": "/images/venues/5349.jpg"
   },
   {
-    "id": "5368",
+    "id": 5368,
     "name": "Akademie der Künste am Hanseatenweg",
     "coordinates": {
       "lng": 13.346668673646674,
@@ -1089,7 +1089,7 @@ const rawVenues = [
     "image": "/images/venues/5368.jpg"
   },
   {
-    "id": "5503",
+    "id": 5503,
     "name": "Das Hansaviertel der Interbau",
     "coordinates": {
       "lng": 13.342058681891784,
@@ -1098,7 +1098,7 @@ const rawVenues = [
     "image": "/images/venues/5503.jpg"
   },
   {
-    "id": "5453",
+    "id": 5453,
     "name": "Ev. Neu-Westend-Kirche",
     "coordinates": {
       "lng": 13.26303005218506,
@@ -1107,7 +1107,7 @@ const rawVenues = [
     "image": "/images/venues/5453.jpg"
   },
   {
-    "id": "5402",
+    "id": 5402,
     "name": "Magistratsbibliothek im Rathaus Charlottenburg",
     "coordinates": {
       "lng": 13.308801351332491,
@@ -1116,7 +1116,7 @@ const rawVenues = [
     "image": "/images/venues/5402.jpg"
   },
   {
-    "id": "5504",
+    "id": 5504,
     "name": "Bustour zu Projekten handwerklicher Restaurierung",
     "coordinates": {
       "lng": 13.302497344751927,
@@ -1125,7 +1125,7 @@ const rawVenues = [
     "image": "/images/venues/5504.jpg"
   },
   {
-    "id": "5588",
+    "id": 5588,
     "name": "Denkmal für die im Nationalsozialismus ermordeten Sinti und Roma Europas",
     "coordinates": {
       "lng": 13.3756806,
@@ -1134,7 +1134,7 @@ const rawVenues = [
     "image": "/images/venues/5588.jpg"
   },
   {
-    "id": "5460",
+    "id": 5460,
     "name": "Hansabücherei",
     "coordinates": {
       "lng": 13.3427522,
@@ -1143,7 +1143,7 @@ const rawVenues = [
     "image": "/images/venues/5460.jpg"
   },
   {
-    "id": "5382",
+    "id": 5382,
     "name": "Ev. Parochialkirche",
     "coordinates": {
       "lng": 13.41257929801941,
@@ -1152,7 +1152,7 @@ const rawVenues = [
     "image": "/images/venues/5382.jpg"
   },
   {
-    "id": "5590",
+    "id": 5590,
     "name": "Fördergebiet Lebendiges Zentrum und Quartier Nikolaiviertel",
     "coordinates": {
       "lng": 13.407539436824699,
@@ -1161,7 +1161,7 @@ const rawVenues = [
     "image": "/images/venues/5590.jpg"
   },
   {
-    "id": "5258",
+    "id": 5258,
     "name": "Karl-Marx- und Frankfurter Allee – I. Bauabschnitt",
     "coordinates": {
       "lng": 13.444722890853882,
@@ -1170,7 +1170,7 @@ const rawVenues = [
     "image": "/images/venues/5258.jpg"
   },
   {
-    "id": "5602",
+    "id": 5602,
     "name": "Rund um die Schinkelsche Bauakademie",
     "coordinates": {
       "lng": 13.39858430364548,
@@ -1179,7 +1179,7 @@ const rawVenues = [
     "image": "/images/venues/5602.jpg"
   },
   {
-    "id": "5442",
+    "id": 5442,
     "name": "Karl-Marx-Allee: Arbeiterpaläste im „Zuckerbäckerstil“",
     "coordinates": {
       "lng": 13.444733619689943,
@@ -1188,7 +1188,7 @@ const rawVenues = [
     "image": "/images/venues/5442.jpg"
   },
   {
-    "id": "5290",
+    "id": 5290,
     "name": "Berliner U-Bahn-Museum am Olympiastadion",
     "coordinates": {
       "lng": 13.249425888061523,
@@ -1197,7 +1197,7 @@ const rawVenues = [
     "image": "/images/venues/5290.jpg"
   },
   {
-    "id": "5607",
+    "id": 5607,
     "name": "Modellwohnung Frankfurter Tor 1",
     "coordinates": {
       "lng": 13.4528734,
@@ -1206,7 +1206,7 @@ const rawVenues = [
     "image": "/images/venues/5607.jpg"
   },
   {
-    "id": "5282",
+    "id": 5282,
     "name": "Fahrradtour: U-Bahngeschichte",
     "coordinates": {
       "lng": 13.412353992462158,
@@ -1215,7 +1215,7 @@ const rawVenues = [
     "image": "/images/venues/5282.jpg"
   },
   {
-    "id": "5485",
+    "id": 5485,
     "name": "werkstatt denkmal: Erkundungsreise durch das Internationale Congress Centrum ICC",
     "coordinates": {
       "lng": 13.298075808956911,
@@ -1224,7 +1224,7 @@ const rawVenues = [
     "image": "/images/venues/5485.jpg"
   },
   {
-    "id": "5350",
+    "id": 5350,
     "name": "Das Brandenburger Tor",
     "coordinates": {
       "lng": 13.378300666809084,
@@ -1233,7 +1233,7 @@ const rawVenues = [
     "image": "/images/venues/5350.jpg"
   },
   {
-    "id": "5328",
+    "id": 5328,
     "name": "Kath. Sankt Hedwigs-Kathedrale",
     "coordinates": {
       "lng": 13.39460849761963,
@@ -1242,7 +1242,7 @@ const rawVenues = [
     "image": "/images/venues/5328.jpg"
   },
   {
-    "id": "5430",
+    "id": 5430,
     "name": "Staatsratsgebäude",
     "coordinates": {
       "lng": 13.401908655703892,
@@ -1251,7 +1251,7 @@ const rawVenues = [
     "image": "/images/venues/5430.jpg"
   },
   {
-    "id": "5598",
+    "id": 5598,
     "name": "Stadtlandschafts-Safari der Schaustelle Nachkriegsmoderne",
     "coordinates": {
       "lng": 13.4437904,
@@ -1260,7 +1260,7 @@ const rawVenues = [
     "image": "/images/venues/5598.jpg"
   },
   {
-    "id": "5579",
+    "id": 5579,
     "name": "Von der Weberwiese zum Platz der Vereinten Nationen",
     "coordinates": {
       "lng": 13.443861794148766,
@@ -1269,7 +1269,7 @@ const rawVenues = [
     "image": "/images/venues/5579.jpg"
   },
   {
-    "id": "5550",
+    "id": 5550,
     "name": "Glaubenskirche",
     "coordinates": {
       "lng": 13.4895763,
@@ -1278,7 +1278,7 @@ const rawVenues = [
     "image": "/images/venues/5550.jpg"
   },
   {
-    "id": "5553",
+    "id": 5553,
     "name": "Kath. St.-Martin-Kirche",
     "coordinates": {
       "lng": 13.6038808,
@@ -1287,7 +1287,7 @@ const rawVenues = [
     "image": "/images/venues/5553.jpg"
   },
   {
-    "id": "5528",
+    "id": 5528,
     "name": "Stasi-Zentrale. Campus für Demokratie",
     "coordinates": {
       "lng": 13.487322,
@@ -1296,7 +1296,7 @@ const rawVenues = [
     "image": "/images/venues/5528.jpg"
   },
   {
-    "id": "5259",
+    "id": 5259,
     "name": "Krankenhauskirche im Wuhlgarten",
     "coordinates": {
       "lng": 13.567573451606759,
@@ -1305,7 +1305,7 @@ const rawVenues = [
     "image": "/images/venues/5259.jpg"
   },
   {
-    "id": "5483",
+    "id": 5483,
     "name": "Nicolaihaus",
     "coordinates": {
       "lng": 13.402959399999986,
@@ -1314,7 +1314,7 @@ const rawVenues = [
     "image": "/images/venues/5483.jpg"
   },
   {
-    "id": "5375",
+    "id": 5375,
     "name": "Archäologische Ausgrabungen am Petriplatz",
     "coordinates": {
       "lng": 13.403985500335695,
@@ -1323,7 +1323,7 @@ const rawVenues = [
     "image": "/images/venues/5375.jpg"
   },
   {
-    "id": "5530",
+    "id": 5530,
     "name": "Stadtbad Lichtenberg",
     "coordinates": {
       "lng": 13.493421239224475,
@@ -1332,7 +1332,7 @@ const rawVenues = [
     "image": "/images/venues/5530.jpg"
   },
   {
-    "id": "5404",
+    "id": 5404,
     "name": "Wohnblock und Garagen Knobelsdorffstraße",
     "coordinates": {
       "lng": 13.288414478302004,
@@ -1341,7 +1341,7 @@ const rawVenues = [
     "image": "/images/venues/5404.jpg"
   },
   {
-    "id": "5576",
+    "id": 5576,
     "name": "Ev. Epiphanienkirche",
     "coordinates": {
       "lng": 13.2848565,
@@ -1350,7 +1350,7 @@ const rawVenues = [
     "image": "/images/venues/5576.jpg"
   },
   {
-    "id": "5516",
+    "id": 5516,
     "name": "Bärenzwinger im Köllnischen Park",
     "coordinates": {
       "lng": 13.414472937583925,
@@ -1359,7 +1359,7 @@ const rawVenues = [
     "image": "/images/venues/5516.jpg"
   },
   {
-    "id": "5388",
+    "id": 5388,
     "name": "Städtischer Zentralfriedhof Friedrichsfelde",
     "coordinates": {
       "lng": 13.50077,
@@ -1368,7 +1368,7 @@ const rawVenues = [
     "image": "/images/venues/5388.jpg"
   },
   {
-    "id": "5450",
+    "id": 5450,
     "name": "Villa Skupin",
     "coordinates": {
       "lng": 13.4790500395194,
@@ -1377,7 +1377,7 @@ const rawVenues = [
     "image": "/images/venues/5450.jpg"
   },
   {
-    "id": "5412",
+    "id": 5412,
     "name": "Fahrradtour: Berliner Gas-Straßenlaternen",
     "coordinates": {
       "lng": 13.29674005508423,
@@ -1386,7 +1386,7 @@ const rawVenues = [
     "image": "/images/venues/5412.jpg"
   },
   {
-    "id": "5337",
+    "id": 5337,
     "name": "Renaissance-Theater Berlin",
     "coordinates": {
       "lng": 13.323503,
@@ -1395,7 +1395,7 @@ const rawVenues = [
     "image": "/images/venues/5337.jpg"
   },
   {
-    "id": "5357",
+    "id": 5357,
     "name": "Lietzenseepark",
     "coordinates": {
       "lng": 13.291933536529543,
@@ -1404,7 +1404,7 @@ const rawVenues = [
     "image": "/images/venues/5357.jpg"
   },
   {
-    "id": "5549",
+    "id": 5549,
     "name": "Corbusierhaus",
     "coordinates": {
       "lng": 13.243911266326904,
@@ -1413,7 +1413,7 @@ const rawVenues = [
     "image": "/images/venues/5549.jpg"
   },
   {
-    "id": "5341",
+    "id": 5341,
     "name": "Gebäudeensemble Wohn- und Atelierhaus Georg Kolbes",
     "coordinates": {
       "lng": 13.25478146860692,
@@ -1422,7 +1422,7 @@ const rawVenues = [
     "image": "/images/venues/5341.jpg"
   },
   {
-    "id": "5574",
+    "id": 5574,
     "name": "Ehem. Reichspostmuseum",
     "coordinates": {
       "lng": 13.387312889099121,
@@ -1431,7 +1431,7 @@ const rawVenues = [
     "image": "/images/venues/5574.jpg"
   },
   {
-    "id": "5547",
+    "id": 5547,
     "name": "Schloss und Schlosspark Biesdorf",
     "coordinates": {
       "lng": 13.557631578569577,
@@ -1440,7 +1440,7 @@ const rawVenues = [
     "image": "/images/venues/5547.jpg"
   },
   {
-    "id": "5340",
+    "id": 5340,
     "name": "Italienische Botschaft",
     "coordinates": {
       "lng": 13.359090000000037,
@@ -1449,7 +1449,7 @@ const rawVenues = [
     "image": "/images/venues/5340.jpg"
   },
   {
-    "id": "5390",
+    "id": 5390,
     "name": "Philharmonie",
     "coordinates": {
       "lng": 13.369932174682619,
@@ -1458,7 +1458,7 @@ const rawVenues = [
     "image": "/images/venues/5390.jpg"
   },
   {
-    "id": "5480",
+    "id": 5480,
     "name": "Logenhaus der Großen National-Mutterloge",
     "coordinates": {
       "lng": 13.262300491333008,
@@ -1467,7 +1467,7 @@ const rawVenues = [
     "image": "/images/venues/5480.jpg"
   },
   {
-    "id": "5394",
+    "id": 5394,
     "name": "Ev. Gnadenkirche Biesdorf",
     "coordinates": {
       "lng": 13.555288910865784,
@@ -1476,7 +1476,7 @@ const rawVenues = [
     "image": "/images/venues/5394.jpg"
   },
   {
-    "id": "5354",
+    "id": 5354,
     "name": "Parkwächterhaus im Lietzenseepark",
     "coordinates": {
       "lng": 13.2889777,
@@ -1485,7 +1485,7 @@ const rawVenues = [
     "image": "/images/venues/5354.jpg"
   },
   {
-    "id": "5560",
+    "id": 5560,
     "name": "Norddeutsche Eiswerke",
     "coordinates": {
       "lng": 13.425142765045168,
@@ -1494,7 +1494,7 @@ const rawVenues = [
     "image": "/images/venues/5560.jpg"
   },
   {
-    "id": "5559",
+    "id": 5559,
     "name": "Detlev-Rohwedder-Haus – Bundesministerium der Finanzen",
     "coordinates": {
       "lng": 13.38355589973327,
@@ -1503,7 +1503,7 @@ const rawVenues = [
     "image": "/images/venues/5559.jpg"
   },
   {
-    "id": "5384",
+    "id": 5384,
     "name": "Jesuskirche Kaulsdorf mit Turmmuseum",
     "coordinates": {
       "lng": 13.5807058,
@@ -1512,7 +1512,7 @@ const rawVenues = [
     "image": "/images/venues/5384.jpg"
   },
   {
-    "id": "5611",
+    "id": 5611,
     "name": "St. Matthäus-Kirche",
     "coordinates": {
       "lng": 13.3670333,
@@ -1521,7 +1521,7 @@ const rawVenues = [
     "image": "/images/venues/5611.jpg"
   },
   {
-    "id": "5527",
+    "id": 5527,
     "name": "Checkpoint Charlie",
     "coordinates": {
       "lng": 13.390316963195803,
@@ -1530,7 +1530,7 @@ const rawVenues = [
     "image": "/images/venues/5527.jpg"
   },
   {
-    "id": "5479",
+    "id": 5479,
     "name": "Reichsbahnausbesserungswerk Franz Stenzer",
     "coordinates": {
       "lng": 13.4547707,
@@ -1539,7 +1539,7 @@ const rawVenues = [
     "image": "/images/venues/5479.jpg"
   },
   {
-    "id": "5592",
+    "id": 5592,
     "name": "Ehem. Preußischer Landtag",
     "coordinates": {
       "lng": 13.38160514831543,
@@ -1548,7 +1548,7 @@ const rawVenues = [
     "image": "/images/venues/5592.jpg"
   },
   {
-    "id": "5348",
+    "id": 5348,
     "name": "Die Berliner Mauer",
     "coordinates": {
       "lng": 13.39061737060547,
@@ -1557,7 +1557,7 @@ const rawVenues = [
     "image": "/images/venues/5348.jpg"
   },
   {
-    "id": "5431",
+    "id": 5431,
     "name": "Kath. St. Michael-Kirche",
     "coordinates": {
       "lng": 13.4195241,
@@ -1566,7 +1566,7 @@ const rawVenues = [
     "image": "/images/venues/5431.jpg"
   },
   {
-    "id": "5380",
+    "id": 5380,
     "name": "Ev.-Lutherische Kirche",
     "coordinates": {
       "lng": 13.415637016296388,
@@ -1575,7 +1575,7 @@ const rawVenues = [
     "image": "/images/venues/5380.jpg"
   },
   {
-    "id": "5298",
+    "id": 5298,
     "name": "Denkmal zum 17. Juni 1953",
     "coordinates": {
       "lng": 13.39071913657742,
@@ -1584,7 +1584,7 @@ const rawVenues = [
     "image": "/images/venues/5298.jpg"
   },
   {
-    "id": "5358",
+    "id": 5358,
     "name": "Dokumentationszentrum Topographie des Terrors",
     "coordinates": {
       "lng": 13.383986949920654,
@@ -1593,7 +1593,7 @@ const rawVenues = [
     "image": "/images/venues/5358.jpg"
   },
   {
-    "id": "5265",
+    "id": 5265,
     "name": "Haus des Rundfunks und Fernsehzentrum",
     "coordinates": {
       "lng": 13.2805304,
@@ -1602,7 +1602,7 @@ const rawVenues = [
     "image": "/images/venues/5265.jpg"
   },
   {
-    "id": "5385",
+    "id": 5385,
     "name": "Dorfkirche Mahlsdorf",
     "coordinates": {
       "lng": 13.6125652,
@@ -1611,7 +1611,7 @@ const rawVenues = [
     "image": "/images/venues/5385.jpg"
   },
   {
-    "id": "5297",
+    "id": 5297,
     "name": "Theater des Westens",
     "coordinates": {
       "lng": 13.329005891948338,
@@ -1620,7 +1620,7 @@ const rawVenues = [
     "image": "/images/venues/5297.jpg"
   },
   {
-    "id": "5577",
+    "id": 5577,
     "name": "48h ICC",
     "coordinates": {
       "lng": 13.28096866607666,
@@ -1629,7 +1629,7 @@ const rawVenues = [
     "image": "/images/venues/5577.jpg"
   },
   {
-    "id": "5475",
+    "id": 5475,
     "name": "Ev. St.-Thomas-Kirche –  FÄLLT AUS",
     "coordinates": {
       "lng": 13.426580429077148,
@@ -1638,7 +1638,7 @@ const rawVenues = [
     "image": "/images/venues/5475.jpg"
   },
   {
-    "id": "5570",
+    "id": 5570,
     "name": "Rotes Haus der Nürtingen Grundschule",
     "coordinates": {
       "lng": 13.429992198944094,
@@ -1647,7 +1647,7 @@ const rawVenues = [
     "image": "/images/venues/5570.jpg"
   },
   {
-    "id": "5399",
+    "id": 5399,
     "name": "Ev. Kaiser-Wilhelm-Gedächtniskirche",
     "coordinates": {
       "lng": 13.335294018768128,
@@ -1656,7 +1656,7 @@ const rawVenues = [
     "image": "/images/venues/5399.jpg"
   },
   {
-    "id": "5302",
+    "id": 5302,
     "name": "Oberbaum-City",
     "coordinates": {
       "lng": 13.448917865753176,
@@ -1665,7 +1665,7 @@ const rawVenues = [
     "image": "/images/venues/5302.jpg"
   },
   {
-    "id": "5561",
+    "id": 5561,
     "name": "Künstlerhaus St. Lukas",
     "coordinates": {
       "lng": 13.3275157,
@@ -1674,7 +1674,7 @@ const rawVenues = [
     "image": "/images/venues/5561.jpg"
   },
   {
-    "id": "5538",
+    "id": 5538,
     "name": "Denkmale im Boxhagener Kiez",
     "coordinates": {
       "lng": 13.468186855316162,
@@ -1683,7 +1683,7 @@ const rawVenues = [
     "image": "/images/venues/5538.jpg"
   },
   {
-    "id": "5535",
+    "id": 5535,
     "name": "Filmabend vom Rostkreuz zum neuen Bahnhof Ostkreuz",
     "coordinates": {
       "lng": 13.47135334305591,
@@ -1692,7 +1692,7 @@ const rawVenues = [
     "image": "/images/venues/5535.jpg"
   },
   {
-    "id": "5295",
+    "id": 5295,
     "name": "Fontane-Apotheke im ehem. Diakonissenkrankenhaus Bethanien",
     "coordinates": {
       "lng": 13.4241227,
@@ -1701,7 +1701,7 @@ const rawVenues = [
     "image": "/images/venues/5295.jpg"
   },
   {
-    "id": "5306",
+    "id": 5306,
     "name": "Pumpstation Radialsystem XII",
     "coordinates": {
       "lng": 13.454756152114896,
@@ -1710,7 +1710,7 @@ const rawVenues = [
     "image": "/images/venues/5306.jpg"
   },
   {
-    "id": "5285",
+    "id": 5285,
     "name": "Erinnerungs- und Begegnungsstätte Bonhoeffer-Haus",
     "coordinates": {
       "lng": 13.262436352738598,
@@ -1719,7 +1719,7 @@ const rawVenues = [
     "image": "/images/venues/5285.jpg"
   },
   {
-    "id": "5532",
+    "id": 5532,
     "name": "Linienverzweiger auf dem Tuchollaplatz",
     "coordinates": {
       "lng": 13.481082916259767,
@@ -1728,7 +1728,7 @@ const rawVenues = [
     "image": "/images/venues/5532.jpg"
   },
   {
-    "id": "5344",
+    "id": 5344,
     "name": "Ev. Zwingli-Kirche",
     "coordinates": {
       "lng": 13.454711437225342,
@@ -1737,7 +1737,7 @@ const rawVenues = [
     "image": "/images/venues/5344.jpg"
   },
   {
-    "id": "5397",
+    "id": 5397,
     "name": "Museum Lichtenberg im Stadthaus",
     "coordinates": {
       "lng": 13.4805128,
@@ -1746,7 +1746,7 @@ const rawVenues = [
     "image": "/images/venues/5397.jpg"
   },
   {
-    "id": "5286",
+    "id": 5286,
     "name": "Mosaikhandwerk",
     "coordinates": {
       "lng": 13.4092838,
@@ -1755,7 +1755,7 @@ const rawVenues = [
     "image": "/images/venues/5286.jpg"
   },
   {
-    "id": "5609",
+    "id": 5609,
     "name": "Ausstellung: Architektur macht Bewegung",
     "coordinates": {
       "lng": 13.3176041,
@@ -1764,7 +1764,7 @@ const rawVenues = [
     "image": "/images/venues/5609.jpg"
   },
   {
-    "id": "5463",
+    "id": 5463,
     "name": "Stadthaus in der Oranienstraße",
     "coordinates": {
       "lng": 13.413901,
@@ -1773,7 +1773,7 @@ const rawVenues = [
     "image": "/images/venues/5463.jpg"
   },
   {
-    "id": "5424",
+    "id": 5424,
     "name": "WestkreuzPark!",
     "coordinates": {
       "lng": 13.290447592735292,
@@ -1782,7 +1782,7 @@ const rawVenues = [
     "image": "/images/venues/5424.jpg"
   },
   {
-    "id": "5335",
+    "id": 5335,
     "name": "Gründerzeitmuseum im Gutshaus Mahlsdorf",
     "coordinates": {
       "lng": 13.613929245108904,
@@ -1791,7 +1791,7 @@ const rawVenues = [
     "image": "/images/venues/5335.jpg"
   },
   {
-    "id": "5477",
+    "id": 5477,
     "name": "Literaturhaus Berlin",
     "coordinates": {
       "lng": 13.3268653,
@@ -1800,7 +1800,7 @@ const rawVenues = [
     "image": "/images/venues/5477.jpg"
   },
   {
-    "id": "5353",
+    "id": 5353,
     "name": "Maison de France",
     "coordinates": {
       "lng": 13.3247598,
@@ -1809,7 +1809,7 @@ const rawVenues = [
     "image": "/images/venues/5353.jpg"
   },
   {
-    "id": "5303",
+    "id": 5303,
     "name": "Ev. Erlöserkirche",
     "coordinates": {
       "lng": 13.481239854878048,
@@ -1818,7 +1818,7 @@ const rawVenues = [
     "image": "/images/venues/5303.jpg"
   },
   {
-    "id": "5301",
+    "id": 5301,
     "name": "20. und 42. Gemeindeschule und Blindenanstalt",
     "coordinates": {
       "lng": 13.4204778,
@@ -1827,7 +1827,7 @@ const rawVenues = [
     "image": "/images/venues/5301.jpg"
   },
   {
-    "id": "5472",
+    "id": 5472,
     "name": "werkstatt denkmal: Oberbaumbrücke",
     "coordinates": {
       "lng": 13.4182215,
@@ -1836,7 +1836,7 @@ const rawVenues = [
     "image": "/images/venues/5472.jpg"
   },
   {
-    "id": "5462",
+    "id": 5462,
     "name": "Kumi*13 – Gründerzeithaus von 1875",
     "coordinates": {
       "lng": 13.3579721,
@@ -1845,7 +1845,7 @@ const rawVenues = [
     "image": "/images/venues/5462.jpg"
   },
   {
-    "id": "5568",
+    "id": 5568,
     "name": "AVUS Tribüne",
     "coordinates": {
       "lng": 13.273272374197937,
@@ -1854,7 +1854,7 @@ const rawVenues = [
     "image": "/images/venues/5568.jpg"
   },
   {
-    "id": "5267",
+    "id": 5267,
     "name": "Fahrradtour: Mit AEG am Humboldthain, Brauerei Pfefferberg und Historischem Hafen Berlin",
     "coordinates": {
       "lng": 13.379309177398683,
@@ -1863,7 +1863,7 @@ const rawVenues = [
     "image": "/images/venues/5267.jpg"
   },
   {
-    "id": "5268",
+    "id": 5268,
     "name": "Fahrradtour: Mit Kraftwerk Charlottenburg, Westhafen, Humboldthafen und Gendarmenmarkt",
     "coordinates": {
       "lng": 13.379298448562624,
@@ -1872,7 +1872,7 @@ const rawVenues = [
     "image": "/images/venues/5268.jpg"
   },
   {
-    "id": "5408",
+    "id": 5408,
     "name": "Stolpersteine in Eichkamp",
     "coordinates": {
       "lng": 13.2681121,
@@ -1881,7 +1881,7 @@ const rawVenues = [
     "image": "/images/venues/5408.jpg"
   },
   {
-    "id": "5419",
+    "id": 5419,
     "name": "WOGA-Komplex am Lehniner PLatz",
     "coordinates": {
       "lng": 13.302000000000021,
@@ -1890,7 +1890,7 @@ const rawVenues = [
     "image": "/images/venues/5419.jpg"
   },
   {
-    "id": "5569",
+    "id": 5569,
     "name": "Ehem. Alliierte Abhörstation auf dem Teufelsberg",
     "coordinates": {
       "lng": 13.240478038787842,
@@ -1899,7 +1899,7 @@ const rawVenues = [
     "image": "/images/venues/5569.jpg"
   },
   {
-    "id": "5447",
+    "id": 5447,
     "name": "Ev. Kirche Zum Heiligen Kreuz",
     "coordinates": {
       "lng": 13.39601882906977,
@@ -1908,7 +1908,7 @@ const rawVenues = [
     "image": "/images/venues/5447.jpg"
   },
   {
-    "id": "5496",
+    "id": 5496,
     "name": "Zentralbüro der Glaswerke Stralau",
     "coordinates": {
       "lng": 13.46754312515259,
@@ -1917,7 +1917,7 @@ const rawVenues = [
     "image": "/images/venues/5496.jpg"
   },
   {
-    "id": "5452",
+    "id": 5452,
     "name": "Kinder-, Kultur- und Nachbarschaftszentrum Regenbogenfabrik",
     "coordinates": {
       "lng": 13.4266313,
@@ -1926,7 +1926,7 @@ const rawVenues = [
     "image": "/images/venues/5452.jpg"
   },
   {
-    "id": "5352",
+    "id": 5352,
     "name": "Langhans-Gedenkstätte im Mausoleum Massute",
     "coordinates": {
       "lng": 13.389673233032227,
@@ -1935,7 +1935,7 @@ const rawVenues = [
     "image": "/images/venues/5352.jpg"
   },
   {
-    "id": "5542",
+    "id": 5542,
     "name": "Mietshaus mit Tiefgarage, Werkstatt, Autosalon und Tankstelle",
     "coordinates": {
       "lng": 13.323800751342787,
@@ -1944,7 +1944,7 @@ const rawVenues = [
     "image": "/images/venues/5542.jpg"
   },
   {
-    "id": "5420",
+    "id": 5420,
     "name": "Friedhöfe vor dem Halleschen Tor – Friedhof III der Jerusalems- und Neuen Kirche",
     "coordinates": {
       "lng": 13.3896154,
@@ -1953,7 +1953,7 @@ const rawVenues = [
     "image": "/images/venues/5420.jpg"
   },
   {
-    "id": "5486",
+    "id": 5486,
     "name": "Alte Desinfektionsanstalt I",
     "coordinates": {
       "lng": 13.4294514,
@@ -1962,7 +1962,7 @@ const rawVenues = [
     "image": "/images/venues/5486.jpg"
   },
   {
-    "id": "5521",
+    "id": 5521,
     "name": "Ehem. Städtisches Arbeitshaus und Strafvollzugseinrichtung I Rummelsburg",
     "coordinates": {
       "lng": 13.484966754913332,
@@ -1971,7 +1971,7 @@ const rawVenues = [
     "image": "/images/venues/5521.jpg"
   },
   {
-    "id": "5451",
+    "id": 5451,
     "name": "Ev. Kirche Am Hohenzollernplatz",
     "coordinates": {
       "lng": 13.3269168,
@@ -1980,7 +1980,7 @@ const rawVenues = [
     "image": "/images/venues/5451.jpg"
   },
   {
-    "id": "5474",
+    "id": 5474,
     "name": "Kaserne des 1. Garde-Dragoner-Regiments –  Dragonerareal im Rathausblock",
     "coordinates": {
       "lng": 13.388085365295412,
@@ -1989,7 +1989,7 @@ const rawVenues = [
     "image": "/images/venues/5474.jpg"
   },
   {
-    "id": "5256",
+    "id": 5256,
     "name": "Offizierskasino des Kaiser-Franz-Garde-Grenadier-Regiments Nr. 2",
     "coordinates": {
       "lng": 13.4075946,
@@ -1998,7 +1998,7 @@ const rawVenues = [
     "image": "/images/venues/5256.jpg"
   },
   {
-    "id": "5558",
+    "id": 5558,
     "name": "Kath. St.-Bonifatius-Kirche",
     "coordinates": {
       "lng": 13.386009335517883,
@@ -2007,7 +2007,7 @@ const rawVenues = [
     "image": "/images/venues/5558.jpg"
   },
   {
-    "id": "5507",
+    "id": 5507,
     "name": "Kammergericht",
     "coordinates": {
       "lng": 13.357915878295898,
@@ -2016,7 +2016,7 @@ const rawVenues = [
     "image": "/images/venues/5507.jpg"
   },
   {
-    "id": "5524",
+    "id": 5524,
     "name": "Naturschutzzentrum Ökowerk Berlin im Wasserwerk Teufelssee",
     "coordinates": {
       "lng": 13.236575819491526,
@@ -2025,7 +2025,7 @@ const rawVenues = [
     "image": "/images/venues/5524.jpg"
   },
   {
-    "id": "5360",
+    "id": 5360,
     "name": "Wandgemälde auf Brandmauer im Hinterhof – FÄLLT AUS",
     "coordinates": {
       "lng": 13.4128111,
@@ -2034,7 +2034,7 @@ const rawVenues = [
     "image": "/images/venues/5360.jpg"
   },
   {
-    "id": "5425",
+    "id": 5425,
     "name": "Gasometer-Bunker Fichtestraße",
     "coordinates": {
       "lng": 13.412465371580883,
@@ -2043,7 +2043,7 @@ const rawVenues = [
     "image": "/images/venues/5425.jpg"
   },
   {
-    "id": "5456",
+    "id": 5456,
     "name": "Leibniz-Gymnasium mit Beobachtungsturm",
     "coordinates": {
       "lng": 13.396849300154178,
@@ -2052,7 +2052,7 @@ const rawVenues = [
     "image": "/images/venues/5456.jpg"
   },
   {
-    "id": "5440",
+    "id": 5440,
     "name": "Sowjetisches Ehrenmal im Treptower Park",
     "coordinates": {
       "lng": 13.468358516693117,
@@ -2061,7 +2061,7 @@ const rawVenues = [
     "image": "/images/venues/5440.jpg"
   },
   {
-    "id": "5417",
+    "id": 5417,
     "name": "Ev. Apostel-Paulus-Kirche",
     "coordinates": {
       "lng": 13.351843357086183,
@@ -2070,7 +2070,7 @@ const rawVenues = [
     "image": "/images/venues/5417.jpg"
   },
   {
-    "id": "5407",
+    "id": 5407,
     "name": "Ev. Passionskirche",
     "coordinates": {
       "lng": 13.397182238768197,
@@ -2079,7 +2079,7 @@ const rawVenues = [
     "image": "/images/venues/5407.jpg"
   },
   {
-    "id": "5614",
+    "id": 5614,
     "name": "Viktoriapark",
     "coordinates": {
       "lng": 13.38020935,
@@ -2088,7 +2088,7 @@ const rawVenues = [
     "image": "/images/venues/5614.jpg"
   },
   {
-    "id": "5422",
+    "id": 5422,
     "name": "Friedhof Dreifaltigkeit II",
     "coordinates": {
       "lng": 13.3980572,
@@ -2097,7 +2097,7 @@ const rawVenues = [
     "image": "/images/venues/5422.jpg"
   },
   {
-    "id": "5277",
+    "id": 5277,
     "name": "St.-Antonius-Hospital",
     "coordinates": {
       "lng": 13.5348687,
@@ -2106,7 +2106,7 @@ const rawVenues = [
     "image": "/images/venues/5277.jpg"
   },
   {
-    "id": "5426",
+    "id": 5426,
     "name": "Friedhof IV der Jerusalems- und Neuen Kirche",
     "coordinates": {
       "lng": 13.404082059860231,
@@ -2115,7 +2115,7 @@ const rawVenues = [
     "image": "/images/venues/5426.jpg"
   },
   {
-    "id": "5421",
+    "id": 5421,
     "name": "Luisenstädtischer Friedhof",
     "coordinates": {
       "lng": 13.4056844,
@@ -2124,7 +2124,7 @@ const rawVenues = [
     "image": "/images/venues/5421.jpg"
   },
   {
-    "id": "5502",
+    "id": 5502,
     "name": "Chamissoplatz",
     "coordinates": {
       "lng": 13.3905756,
@@ -2133,7 +2133,7 @@ const rawVenues = [
     "image": "/images/venues/5502.jpg"
   },
   {
-    "id": "5332",
+    "id": 5332,
     "name": "Die Villenkolonie Grunewald und ihre Bewohner",
     "coordinates": {
       "lng": 13.261377811431885,
@@ -2142,7 +2142,7 @@ const rawVenues = [
     "image": "/images/venues/5332.jpg"
   },
   {
-    "id": "5292",
+    "id": 5292,
     "name": "Berliner Moschee",
     "coordinates": {
       "lng": 13.311867713928224,
@@ -2151,7 +2151,7 @@ const rawVenues = [
     "image": "/images/venues/5292.jpg"
   },
   {
-    "id": "5284",
+    "id": 5284,
     "name": "Goethe-Gymnasium",
     "coordinates": {
       "lng": 13.32165433492985,
@@ -2160,7 +2160,7 @@ const rawVenues = [
     "image": "/images/venues/5284.jpg"
   },
   {
-    "id": "5520",
+    "id": 5520,
     "name": "Turmhaus am Zenner",
     "coordinates": {
       "lng": 13.4773778,
@@ -2169,7 +2169,7 @@ const rawVenues = [
     "image": "/images/venues/5520.jpg"
   },
   {
-    "id": "5346",
+    "id": 5346,
     "name": "Waldmuseum",
     "coordinates": {
       "lng": 13.251099586486818,
@@ -2178,7 +2178,7 @@ const rawVenues = [
     "image": "/images/venues/5346.jpg"
   },
   {
-    "id": "5413",
+    "id": 5413,
     "name": "Hermannplatz – zwischen Weltstadtambition und Moderne",
     "coordinates": {
       "lng": 13.424177169799805,
@@ -2187,7 +2187,7 @@ const rawVenues = [
     "image": "/images/venues/5413.jpg"
   },
   {
-    "id": "5275",
+    "id": 5275,
     "name": "Museum Berlin-Karlshorst",
     "coordinates": {
       "lng": 13.5393339,
@@ -2196,7 +2196,7 @@ const rawVenues = [
     "image": "/images/venues/5275.jpg"
   },
   {
-    "id": "5409",
+    "id": 5409,
     "name": "Archenhold-Sternwarte",
     "coordinates": {
       "lng": 13.476328233656188,
@@ -2205,7 +2205,7 @@ const rawVenues = [
     "image": "/images/venues/5409.jpg"
   },
   {
-    "id": "5304",
+    "id": 5304,
     "name": "Amalien-Orgel",
     "coordinates": {
       "lng": 13.5282598,
@@ -2214,7 +2214,7 @@ const rawVenues = [
     "image": "/images/venues/5304.jpg"
   },
   {
-    "id": "5546",
+    "id": 5546,
     "name": "Verbandshaus der Deutschen Buchdrucker",
     "coordinates": {
       "lng": 13.3838886,
@@ -2223,7 +2223,7 @@ const rawVenues = [
     "image": "/images/venues/5546.jpg"
   },
   {
-    "id": "5418",
+    "id": 5418,
     "name": "Kirche der Christlichen Wissenschaft in Wilmersdorf",
     "coordinates": {
       "lng": 13.321411,
@@ -2232,7 +2232,7 @@ const rawVenues = [
     "image": "/images/venues/5418.jpg"
   },
   {
-    "id": "5434",
+    "id": 5434,
     "name": "Alter Zwölf-Apostel-Kirchhof",
     "coordinates": {
       "lng": 13.3657225,
@@ -2241,7 +2241,7 @@ const rawVenues = [
     "image": "/images/venues/5434.jpg"
   },
   {
-    "id": "5584",
+    "id": 5584,
     "name": "Informationsort Schwerbelastungskörper",
     "coordinates": {
       "lng": 13.372120857238771,
@@ -2250,7 +2250,7 @@ const rawVenues = [
     "image": "/images/venues/5584.jpg"
   },
   {
-    "id": "5582",
+    "id": 5582,
     "name": "Spuren zum KZ Columbia",
     "coordinates": {
       "lng": 13.400337696075441,
@@ -2259,7 +2259,7 @@ const rawVenues = [
     "image": "/images/venues/5582.jpg"
   },
   {
-    "id": "5513",
+    "id": 5513,
     "name": "Flughafen Tempelhof",
     "coordinates": {
       "lng": 13.389008045196535,
@@ -2268,7 +2268,7 @@ const rawVenues = [
     "image": "/images/venues/5513.jpg"
   },
   {
-    "id": "5589",
+    "id": 5589,
     "name": "Ev. Paul-Gerhardt-Kirche",
     "coordinates": {
       "lng": 13.34888219833374,
@@ -2277,7 +2277,7 @@ const rawVenues = [
     "image": "/images/venues/5589.jpg"
   },
   {
-    "id": "5401",
+    "id": 5401,
     "name": "KAHO. Raum für Kultur / Theater Karlshorst",
     "coordinates": {
       "lng": 13.526668909104787,
@@ -2286,7 +2286,7 @@ const rawVenues = [
     "image": "/images/venues/5401.jpg"
   },
   {
-    "id": "5586",
+    "id": 5586,
     "name": "Deutschlandradio - Funkhaus Berlin",
     "coordinates": {
       "lng": 13.337091207504272,
@@ -2295,7 +2295,7 @@ const rawVenues = [
     "image": "/images/venues/5586.jpg"
   },
   {
-    "id": "5585",
+    "id": 5585,
     "name": "SCHÖNEBERG: Lern- und Gedenkort Kohlenhandlung Bruno Meyer Nachfahren",
     "coordinates": {
       "lng": 13.3608734,
@@ -2304,7 +2304,7 @@ const rawVenues = [
     "image": "/images/venues/5585.jpg"
   },
   {
-    "id": "5423",
+    "id": 5423,
     "name": "Sudhaus des KINDL – Zentrum für zeitgenössische Kunst",
     "coordinates": {
       "lng": 13.431275,
@@ -2313,7 +2313,7 @@ const rawVenues = [
     "image": "/images/venues/5423.jpg"
   },
   {
-    "id": "5333",
+    "id": 5333,
     "name": "Friedenau – eine idyllische Landgemeinde",
     "coordinates": {
       "lng": 13.328411579132082,
@@ -2322,7 +2322,7 @@ const rawVenues = [
     "image": "/images/venues/5333.jpg"
   },
   {
-    "id": "5481",
+    "id": 5481,
     "name": "werkstatt denkmal: Wohnhaus und Bewag-Schalthaus (Umspannwerk)",
     "coordinates": {
       "lng": 13.4412411,
@@ -2331,7 +2331,7 @@ const rawVenues = [
     "image": "/images/venues/5481.jpg"
   },
   {
-    "id": "5490",
+    "id": 5490,
     "name": "Relikte des Spiel- und Sportparks Neukölln auf dem Flugfeld Tempelhof",
     "coordinates": {
       "lng": 13.418490886688234,
@@ -2340,7 +2340,7 @@ const rawVenues = [
     "image": "/images/venues/5490.jpg"
   },
   {
-    "id": "5400",
+    "id": 5400,
     "name": "Gymnasium Friedenau",
     "coordinates": {
       "lng": 13.333133464095852,
@@ -2349,7 +2349,7 @@ const rawVenues = [
     "image": "/images/venues/5400.jpg"
   },
   {
-    "id": "5338",
+    "id": 5338,
     "name": "Waldsiedlung Lichtenberg in Karlshorst",
     "coordinates": {
       "lng": 13.510007858276369,
@@ -2358,7 +2358,7 @@ const rawVenues = [
     "image": "/images/venues/5338.jpg"
   },
   {
-    "id": "5583",
+    "id": 5583,
     "name": "Gedenkort SA-Gefängnis Papestraße",
     "coordinates": {
       "lng": 13.370004573616061,
@@ -2367,7 +2367,7 @@ const rawVenues = [
     "image": "/images/venues/5583.jpg"
   },
   {
-    "id": "5531",
+    "id": 5531,
     "name": "Zwangsarbeiterlager Kaulsdorf – FÄLLT AUS",
     "coordinates": {
       "lng": 13.5679134,
@@ -2376,7 +2376,7 @@ const rawVenues = [
     "image": "/images/venues/5531.jpg"
   },
   {
-    "id": "5508",
+    "id": 5508,
     "name": "Ev. Bethlehemskirche im Böhmischen Dorf",
     "coordinates": {
       "lng": 13.447458744049072,
@@ -2385,7 +2385,7 @@ const rawVenues = [
     "image": "/images/venues/5508.jpg"
   },
   {
-    "id": "5389",
+    "id": 5389,
     "name": "Flugplatz Gatow",
     "coordinates": {
       "lng": 13.141735,
@@ -2394,7 +2394,7 @@ const rawVenues = [
     "image": "/images/venues/5389.jpg"
   },
   {
-    "id": "5311",
+    "id": 5311,
     "name": "Alte Dorfschmiede auf dem Richardplatz im Böhmischen Dorf",
     "coordinates": {
       "lng": 13.446312302858413,
@@ -2403,7 +2403,7 @@ const rawVenues = [
     "image": "/images/venues/5311.jpg"
   },
   {
-    "id": "5305",
+    "id": 5305,
     "name": "Roxy-Palast",
     "coordinates": {
       "lng": 13.336718355344761,
@@ -2412,7 +2412,7 @@ const rawVenues = [
     "image": "/images/venues/5305.jpg"
   },
   {
-    "id": "5296",
+    "id": 5296,
     "name": "Autobahnüberbauung Schlangenbader Straße",
     "coordinates": {
       "lng": 13.3069706,
@@ -2421,7 +2421,7 @@ const rawVenues = [
     "image": "/images/venues/5296.jpg"
   },
   {
-    "id": "5444",
+    "id": 5444,
     "name": "Gedenkstätte für NS-Zwangsarbeiter des kirchlichen Friedhoflagers Neukölln",
     "coordinates": {
       "lng": 13.428897857666017,
@@ -2430,7 +2430,7 @@ const rawVenues = [
     "image": "/images/venues/5444.jpg"
   },
   {
-    "id": "5476",
+    "id": 5476,
     "name": "Ev. Magdalenenkirche",
     "coordinates": {
       "lng": 13.441706090603741,
@@ -2439,7 +2439,7 @@ const rawVenues = [
     "image": "/images/venues/5476.jpg"
   },
   {
-    "id": "5329",
+    "id": 5329,
     "name": "Internationales Begegnungszentrum der Wissenschaft (IBZ)",
     "coordinates": {
       "lng": 13.31691026687622,
@@ -2448,7 +2448,7 @@ const rawVenues = [
     "image": "/images/venues/5329.jpg"
   },
   {
-    "id": "5573",
+    "id": 5573,
     "name": "Haus Dahlem",
     "coordinates": {
       "lng": 13.293629765659272,
@@ -2457,7 +2457,7 @@ const rawVenues = [
     "image": "/images/venues/5573.jpg"
   },
   {
-    "id": "5387",
+    "id": 5387,
     "name": "Museum zur Geschichte der Berliner Straßenreinigung und Müllabfuhr",
     "coordinates": {
       "lng": 13.3818032,
@@ -2466,7 +2466,7 @@ const rawVenues = [
     "image": "/images/venues/5387.jpg"
   },
   {
-    "id": "5291",
+    "id": 5291,
     "name": "Garten Allinger",
     "coordinates": {
       "lng": 13.260927200317383,
@@ -2475,7 +2475,7 @@ const rawVenues = [
     "image": "/images/venues/5291.jpg"
   },
   {
-    "id": "5359",
+    "id": 5359,
     "name": "Künstlerkolonie",
     "coordinates": {
       "lng": 13.3104428,
@@ -2484,7 +2484,7 @@ const rawVenues = [
     "image": "/images/venues/5359.jpg"
   },
   {
-    "id": "5608",
+    "id": 5608,
     "name": "Jagdschloss Grunewald",
     "coordinates": {
       "lng": 13.26161947486878,
@@ -2493,7 +2493,7 @@ const rawVenues = [
     "image": "/images/venues/5608.jpg"
   },
   {
-    "id": "5416",
+    "id": 5416,
     "name": "Schilfdachkapelle zum Guten Hirten",
     "coordinates": {
       "lng": 13.127959999050837,
@@ -2502,7 +2502,7 @@ const rawVenues = [
     "image": "/images/venues/5416.jpg"
   },
   {
-    "id": "5518",
+    "id": 5518,
     "name": "Kirchhof und Dorfkirche Alt-Tempelhof",
     "coordinates": {
       "lng": 13.383180346651379,
@@ -2511,7 +2511,7 @@ const rawVenues = [
     "image": "/images/venues/5518.jpg"
   },
   {
-    "id": "5411",
+    "id": 5411,
     "name": "Ordenshaus der Großen Landesloge – Haus Heydenreich",
     "coordinates": {
       "lng": 13.295216608868536,
@@ -2520,7 +2520,7 @@ const rawVenues = [
     "image": "/images/venues/5411.jpg"
   },
   {
-    "id": "5405",
+    "id": 5405,
     "name": "Elektropolis Schöneweide",
     "coordinates": {
       "lng": 13.5187842,
@@ -2529,7 +2529,7 @@ const rawVenues = [
     "image": "/images/venues/5405.jpg"
   },
   {
-    "id": "5566",
+    "id": 5566,
     "name": "Haus Wiegand",
     "coordinates": {
       "lng": 13.299872875213623,
@@ -2538,7 +2538,7 @@ const rawVenues = [
     "image": "/images/venues/5566.jpg"
   },
   {
-    "id": "5497",
+    "id": 5497,
     "name": "STEGLITZ: Badehaus von Erwin Barth – FÄLLT AUS",
     "coordinates": {
       "lng": 13.3080736,
@@ -2547,7 +2547,7 @@ const rawVenues = [
     "image": "/images/venues/5497.jpg"
   },
   {
-    "id": "5363",
+    "id": 5363,
     "name": "Gartenstadtsiedlung Elsengrund",
     "coordinates": {
       "lng": 13.5906497,
@@ -2556,7 +2556,7 @@ const rawVenues = [
     "image": "/images/venues/5363.jpg"
   },
   {
-    "id": "5544",
+    "id": 5544,
     "name": "Siedlung Lindenhof",
     "coordinates": {
       "lng": 13.3644397,
@@ -2565,7 +2565,7 @@ const rawVenues = [
     "image": "/images/venues/5544.jpg"
   },
   {
-    "id": "5443",
+    "id": 5443,
     "name": "AEG-Transformatorenfabrik Oberschöneweide",
     "coordinates": {
       "lng": 13.515758514404299,
@@ -2574,7 +2574,7 @@ const rawVenues = [
     "image": "/images/venues/5443.jpg"
   },
   {
-    "id": "5293",
+    "id": 5293,
     "name": "Martin-Niemöller-Haus in Dahlem",
     "coordinates": {
       "lng": 13.2867028603361,
@@ -2583,7 +2583,7 @@ const rawVenues = [
     "image": "/images/venues/5293.jpg"
   },
   {
-    "id": "5396",
+    "id": 5396,
     "name": "St.-Annen-Kirche Dahlem",
     "coordinates": {
       "lng": 13.286591745572299,
@@ -2592,7 +2592,7 @@ const rawVenues = [
     "image": "/images/venues/5396.jpg"
   },
   {
-    "id": "5552",
+    "id": 5552,
     "name": "Verwaltungsbau der Nationalen Automobil-Gesellschaft (NAG)",
     "coordinates": {
       "lng": 13.529040813446045,
@@ -2601,7 +2601,7 @@ const rawVenues = [
     "image": "/images/venues/5552.jpg"
   },
   {
-    "id": "5610",
+    "id": 5610,
     "name": "Kinderheim A. S. Makarenko in der Königsheide",
     "coordinates": {
       "lng": 13.4997471,
@@ -2610,7 +2610,7 @@ const rawVenues = [
     "image": "/images/venues/5610.jpg"
   },
   {
-    "id": "5489",
+    "id": 5489,
     "name": "Wasserturm auf dem Friedhof Bergstraße",
     "coordinates": {
       "lng": 13.341833353042603,
@@ -2619,7 +2619,7 @@ const rawVenues = [
     "image": "/images/venues/5489.jpg"
   },
   {
-    "id": "5287",
+    "id": 5287,
     "name": "Rathaus Friedrichshagen",
     "coordinates": {
       "lng": 13.624746750716497,
@@ -2628,7 +2628,7 @@ const rawVenues = [
     "image": "/images/venues/5287.jpg"
   },
   {
-    "id": "5276",
+    "id": 5276,
     "name": "Altes Kladower Bauernwohnhaus",
     "coordinates": {
       "lng": 13.143677790794019,
@@ -2637,7 +2637,7 @@ const rawVenues = [
     "image": "/images/venues/5276.jpg"
   },
   {
-    "id": "5446",
+    "id": 5446,
     "name": "Zwangsarbeitslager 75/76",
     "coordinates": {
       "lng": 13.518797918499157,
@@ -2646,7 +2646,7 @@ const rawVenues = [
     "image": "/images/venues/5446.jpg"
   },
   {
-    "id": "5280",
+    "id": 5280,
     "name": "Textilverarbeitungsfabrik Otto Schneider",
     "coordinates": {
       "lng": 13.5340944,
@@ -2655,7 +2655,7 @@ const rawVenues = [
     "image": "/images/venues/5280.jpg"
   },
   {
-    "id": "5339",
+    "id": 5339,
     "name": "Key piece of modernism – Großsiedlung Britz (Hufeisensiedlung)",
     "coordinates": {
       "lng": 13.449282646179201,
@@ -2664,7 +2664,7 @@ const rawVenues = [
     "image": "/images/venues/5339.jpg"
   },
   {
-    "id": "5355",
+    "id": 5355,
     "name": "Realgymnasium – BEST-Sabel Oberschule",
     "coordinates": {
       "lng": 13.5715328,
@@ -2673,7 +2673,7 @@ const rawVenues = [
     "image": "/images/venues/5355.jpg"
   },
   {
-    "id": "5454",
+    "id": 5454,
     "name": "Christophoruskirche",
     "coordinates": {
       "lng": 13.625169955526886,
@@ -2682,7 +2682,7 @@ const rawVenues = [
     "image": "/images/venues/5454.jpg"
   },
   {
-    "id": "5539",
+    "id": 5539,
     "name": "Jesus-Christus-Kirche Dahlem",
     "coordinates": {
       "lng": 13.2823041,
@@ -2691,7 +2691,7 @@ const rawVenues = [
     "image": "/images/venues/5539.jpg"
   },
   {
-    "id": "5345",
+    "id": 5345,
     "name": "Waldsiedlung Zehlendorf – Onkel Toms Hütte",
     "coordinates": {
       "lng": 13.25303077697754,
@@ -2700,7 +2700,7 @@ const rawVenues = [
     "image": "/images/venues/5345.jpg"
   },
   {
-    "id": "5289",
+    "id": 5289,
     "name": "Großsiedlung Britz (Hufeisensiedlung): Wohnen im Welterbe",
     "coordinates": {
       "lng": 13.44954013824463,
@@ -2709,7 +2709,7 @@ const rawVenues = [
     "image": "/images/venues/5289.jpg"
   },
   {
-    "id": "5314",
+    "id": 5314,
     "name": "Großsiedlung Britz (Hufeisensiedlung)",
     "coordinates": {
       "lng": 13.4495784,
@@ -2718,7 +2718,7 @@ const rawVenues = [
     "image": "/images/venues/5314.jpg"
   },
   {
-    "id": "5343",
+    "id": 5343,
     "name": "Bahnbetriebswerk Schöneweide",
     "coordinates": {
       "lng": 13.520028591156008,
@@ -2727,7 +2727,7 @@ const rawVenues = [
     "image": "/images/venues/5343.jpg"
   },
   {
-    "id": "5356",
+    "id": 5356,
     "name": "Mies van der Rohe Villen und Garten",
     "coordinates": {
       "lng": 13.234061419715133,
@@ -2736,7 +2736,7 @@ const rawVenues = [
     "image": "/images/venues/5356.jpg"
   },
   {
-    "id": "5373",
+    "id": 5373,
     "name": "Ruderhaus Hahns Mühle",
     "coordinates": {
       "lng": 13.614556490476188,
@@ -2745,7 +2745,7 @@ const rawVenues = [
     "image": "/images/venues/5373.jpg"
   },
   {
-    "id": "5441",
+    "id": 5441,
     "name": "Internationale Jugendbauhütte am Bahnbetriebswerk Schöneweide",
     "coordinates": {
       "lng": 13.5206126,
@@ -2754,7 +2754,7 @@ const rawVenues = [
     "image": "/images/venues/5441.jpg"
   },
   {
-    "id": "5445",
+    "id": 5445,
     "name": "Gutshof Britz",
     "coordinates": {
       "lng": 13.437778396959247,
@@ -2763,7 +2763,7 @@ const rawVenues = [
     "image": "/images/venues/5445.jpg"
   },
   {
-    "id": "5473",
+    "id": 5473,
     "name": "Projektraum Kunst im TautHaus",
     "coordinates": {
       "lng": 13.447048299999999,
@@ -2772,7 +2772,7 @@ const rawVenues = [
     "image": "/images/venues/5473.jpg"
   },
   {
-    "id": "5374",
+    "id": 5374,
     "name": "Martin-Luther-Gedächtniskirche",
     "coordinates": {
       "lng": 13.378772735595703,
@@ -2781,7 +2781,7 @@ const rawVenues = [
     "image": "/images/venues/5374.jpg"
   },
   {
-    "id": "5369",
+    "id": 5369,
     "name": "KÖPENICK: Fachwerkhaus auf dem Tonnenhof des Wasser- und Schifffahrtsamtes Köpenick",
     "coordinates": {
       "lng": 13.570325374603273,
@@ -2790,7 +2790,7 @@ const rawVenues = [
     "image": "/images/venues/5369.jpg"
   },
   {
-    "id": "5281",
+    "id": 5281,
     "name": "Fahrradtour: Stammbahn und Stadtentwicklung",
     "coordinates": {
       "lng": 13.294932246208193,
@@ -2799,7 +2799,7 @@ const rawVenues = [
     "image": "/images/venues/5281.jpg"
   },
   {
-    "id": "5370",
+    "id": 5370,
     "name": "Ehem. Kraftwerk Steglitz",
     "coordinates": {
       "lng": 13.3298047,
@@ -2808,7 +2808,7 @@ const rawVenues = [
     "image": "/images/venues/5370.jpg"
   },
   {
-    "id": "5252",
+    "id": 5252,
     "name": "Landhaus Fiedler – Haus der Jugend Zehlendorf",
     "coordinates": {
       "lng": 13.23808380864341,
@@ -2817,7 +2817,7 @@ const rawVenues = [
     "image": "/images/venues/5252.jpg"
   },
   {
-    "id": "5376",
+    "id": 5376,
     "name": "Ev. Dorfkirche Mariendorf",
     "coordinates": {
       "lng": 13.386915922164917,
@@ -2826,7 +2826,7 @@ const rawVenues = [
     "image": "/images/venues/5376.jpg"
   },
   {
-    "id": "5562",
+    "id": 5562,
     "name": "Straßenbahnbetriebshof Köpenick",
     "coordinates": {
       "lng": 13.581630000000018,
@@ -2835,7 +2835,7 @@ const rawVenues = [
     "image": "/images/venues/5562.jpg"
   },
   {
-    "id": "5254",
+    "id": 5254,
     "name": "Frauengefängnis Lichterfelde",
     "coordinates": {
       "lng": 13.308628404877297,
@@ -2844,7 +2844,7 @@ const rawVenues = [
     "image": "/images/venues/5254.jpg"
   },
   {
-    "id": "5551",
+    "id": 5551,
     "name": "Alte Dorfkirche Zehlendorf",
     "coordinates": {
       "lng": 13.25998306274414,
@@ -2853,7 +2853,7 @@ const rawVenues = [
     "image": "/images/venues/5551.jpg"
   },
   {
-    "id": "5371",
+    "id": 5371,
     "name": "Heimatmuseum Zehlendorf",
     "coordinates": {
       "lng": 13.2603049,
@@ -2862,7 +2862,7 @@ const rawVenues = [
     "image": "/images/venues/5371.jpg"
   },
   {
-    "id": "5362",
+    "id": 5362,
     "name": "Dorfkirche im alten Fischerdorf Rahnsdorf",
     "coordinates": {
       "lng": 13.6929006,
@@ -2871,7 +2871,7 @@ const rawVenues = [
     "image": "/images/venues/5362.jpg"
   },
   {
-    "id": "5428",
+    "id": 5428,
     "name": "Britzer Mühle",
     "coordinates": {
       "lng": 13.43355417251587,
@@ -2880,7 +2880,7 @@ const rawVenues = [
     "image": "/images/venues/5428.jpg"
   },
   {
-    "id": "5554",
+    "id": 5554,
     "name": "Luftfahrttechnische Denkmale Adlershof und Flugfeld Johannisthal",
     "coordinates": {
       "lng": 13.531025648117067,
@@ -2889,7 +2889,7 @@ const rawVenues = [
     "image": "/images/venues/5554.jpg"
   },
   {
-    "id": "5294",
+    "id": 5294,
     "name": "Studentendorf Schlachtensee",
     "coordinates": {
       "lng": 13.21560859680176,
@@ -2898,7 +2898,7 @@ const rawVenues = [
     "image": "/images/venues/5294.jpg"
   },
   {
-    "id": "5403",
+    "id": 5403,
     "name": "K19 Studios Berlin im Studentendorf Schlachtensee",
     "coordinates": {
       "lng": 13.216041694672292,
@@ -2907,7 +2907,7 @@ const rawVenues = [
     "image": "/images/venues/5403.jpg"
   },
   {
-    "id": "5410",
+    "id": 5410,
     "name": "Landhaus und Landhausgarten Mittelhof",
     "coordinates": {
       "lng": 13.20232999999996,
@@ -2916,7 +2916,7 @@ const rawVenues = [
     "image": "/images/venues/5410.jpg"
   },
   {
-    "id": "5536",
+    "id": 5536,
     "name": "Waldkapelle Zum anklopfenden Christus in Hessenwinkel",
     "coordinates": {
       "lng": 13.7227178,
@@ -2925,7 +2925,7 @@ const rawVenues = [
     "image": "/images/venues/5536.jpg"
   },
   {
-    "id": "5595",
+    "id": 5595,
     "name": "Garten Muthesius",
     "coordinates": {
       "lng": 13.2015443,
@@ -2934,7 +2934,7 @@ const rawVenues = [
     "image": "/images/venues/5595.jpg"
   },
   {
-    "id": "5564",
+    "id": 5564,
     "name": "Spaziergang durch die Colonie Alsen",
     "coordinates": {
       "lng": 13.17938804626465,
@@ -2943,7 +2943,7 @@ const rawVenues = [
     "image": "/images/venues/5564.jpg"
   },
   {
-    "id": "5505",
+    "id": 5505,
     "name": "Erinnerungsstätte Notaufnahmelager Marienfelde",
     "coordinates": {
       "lng": 13.368752002716064,
@@ -2952,7 +2952,7 @@ const rawVenues = [
     "image": "/images/venues/5505.jpg"
   },
   {
-    "id": "5381",
+    "id": 5381,
     "name": "Ev. Friedenskirche Grünau",
     "coordinates": {
       "lng": 13.5781746,
@@ -2961,7 +2961,7 @@ const rawVenues = [
     "image": "/images/venues/5381.jpg"
   },
   {
-    "id": "5347",
+    "id": 5347,
     "name": "Ausstellung in der alten Dorfschule Rudow",
     "coordinates": {
       "lng": 13.495476916280523,
@@ -2970,7 +2970,7 @@ const rawVenues = [
     "image": "/images/venues/5347.jpg"
   },
   {
-    "id": "5288",
+    "id": 5288,
     "name": "Ensemble Bankiersvilla Jörger",
     "coordinates": {
       "lng": 13.151996825153272,
@@ -2979,7 +2979,7 @@ const rawVenues = [
     "image": "/images/venues/5288.jpg"
   },
   {
-    "id": "5257",
+    "id": 5257,
     "name": "Dorfkirche Marienfelde",
     "coordinates": {
       "lng": 13.3678936958313,
@@ -2988,7 +2988,7 @@ const rawVenues = [
     "image": "/images/venues/5257.jpg"
   },
   {
-    "id": "5467",
+    "id": 5467,
     "name": "Regattatribüne, Wassersportanlage Regattagelände Grünau",
     "coordinates": {
       "lng": 13.58747,
@@ -2997,7 +2997,7 @@ const rawVenues = [
     "image": "/images/venues/5467.jpg"
   },
   {
-    "id": "5378",
+    "id": 5378,
     "name": "Gartenstadt Falkenberg (Tuschkastensiedlung)",
     "coordinates": {
       "lng": 13.568340539932251,
@@ -3006,7 +3006,7 @@ const rawVenues = [
     "image": "/images/venues/5378.jpg"
   },
   {
-    "id": "5478",
+    "id": 5478,
     "name": "Bootshaus des Akademischen Rudervereins zu Berlin",
     "coordinates": {
       "lng": 13.592155999999932,
@@ -3015,7 +3015,7 @@ const rawVenues = [
     "image": "/images/venues/5478.jpg"
   },
   {
-    "id": "5571",
+    "id": 5571,
     "name": "Jagdschloss Glienicke",
     "coordinates": {
       "lng": 13.097333908081056,
@@ -3024,7 +3024,7 @@ const rawVenues = [
     "image": "/images/venues/5571.jpg"
   },
   {
-    "id": "5255",
+    "id": 5255,
     "name": "Gutshaus Falkenberg",
     "coordinates": {
       "lng": 13.571527004241943,
@@ -3033,7 +3033,7 @@ const rawVenues = [
     "image": "/images/venues/5255.jpg"
   },
   {
-    "id": "5541",
+    "id": 5541,
     "name": "Kath. Kirche St. Josef",
     "coordinates": {
       "lng": 13.573808,
@@ -3042,7 +3042,7 @@ const rawVenues = [
     "image": "/images/venues/5541.jpg"
   },
   {
-    "id": "5534",
+    "id": 5534,
     "name": "STAHNSDORF: Künstlerhaus Carl Metzner",
     "coordinates": {
       "lng": 13.188814461914184,
@@ -3051,7 +3051,7 @@ const rawVenues = [
     "image": "/images/venues/5534.jpg"
   },
   {
-    "id": "5439",
+    "id": 5439,
     "name": "POTSDAM: Villa Ingenheim und Ensemble",
     "coordinates": {
       "lng": 13.0295233,
@@ -3060,7 +3060,7 @@ const rawVenues = [
     "image": "/images/venues/5439.jpg"
   },
   {
-    "id": "5510",
+    "id": 5510,
     "name": "Alte Mälzerei Lichtenrade",
     "coordinates": {
       "lng": 13.397156995832272,
@@ -3069,7 +3069,7 @@ const rawVenues = [
     "image": "/images/venues/5510.jpg"
   },
   {
-    "id": "5279",
+    "id": 5279,
     "name": "RANGSDORF: Flugplatz Rangsdorf und Bücker-Werke",
     "coordinates": {
       "lng": 13.430855870246889,

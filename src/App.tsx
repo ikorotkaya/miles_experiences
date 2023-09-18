@@ -1,11 +1,12 @@
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import GoogleMapsComponent from "./components/GoogleMap";
 import Experiences from "./components/Experiences";
 
 import rawVenues from "../src/data/venues";
+import { LatLng, Venue } from "./types";
 
 export default function App() {
   const [userLocation, setUserLocation] = useState<{
@@ -13,9 +14,9 @@ export default function App() {
     lng: number;
   } | null>(null);
 
-  const [venues, setVenues] = useState<any[]>([]);
+  const [venues, setVenues] = useState<Venue[]>([]);
 
-  const getDefaultLocation = () => {
+  const getDefaultLocation = (): LatLng => {
     return { lat: 52.521918, lng: 13.413215 };
   };
   
@@ -41,8 +42,7 @@ export default function App() {
     setVenues(rawVenues);
   }, []);
 
-  const handleMarkerDragEnd = (newPosition: { lat: number; lng: number }) => {
-    // Handle the new position of the marker here
+  const handleMarkerDragEnd = (newPosition: LatLng) => {
     setUserLocation(newPosition);
   };
   return (

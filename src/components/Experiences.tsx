@@ -3,13 +3,7 @@ import { useEffect, useState } from "react";
 
 import { rideCost } from "../utils/calculateRideCost";
 
-type ExperiencesProps = {
-  userLocation: {
-    lat: number;
-    lng: number;
-  } | null;
-  venues: any[];
-};
+import { ExperiencesProps } from "../types";
 
 const Experiences: React.FC<ExperiencesProps> = ({ userLocation, venues }) => {
   const [sortedPOIs, setSortedPOIs] = useState<[string, number][]>([]);
@@ -18,7 +12,7 @@ const Experiences: React.FC<ExperiencesProps> = ({ userLocation, venues }) => {
     // Calculate distances for each POI and store them in an object
     const distances: { [key: string]: number } = {};
 
-    if (userLocation) {
+    if (userLocation !== undefined) {
       for (const venue of venues) {
         const distance = haversineDistance(userLocation, venue.coordinates);
         distances[venue.id] = distance;
@@ -39,10 +33,12 @@ const Experiences: React.FC<ExperiencesProps> = ({ userLocation, venues }) => {
       </div>
       <div className="flex flex-col mx-2">
         {sortedPOIs.map(([id, distance]) => {
-          const venue = venues.find((venue) => venue.id === id);
-          if (!venue) {
+          const venue = venues.find((venue) => venue.id === Number(id));
+          
+          if (venue === undefined) {
             return null;
           }
+
           return (
             <div
               key={venue.id}
