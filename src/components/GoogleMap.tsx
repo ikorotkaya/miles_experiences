@@ -69,9 +69,9 @@ const GoogleMapsComponent: React.FC<GoogleMapsComponentProps> = ({
     if (venueId) {
       setCenter(venues.find((venue) => venue.id === venueId)?.coordinates);
     }
+    console.log("Center->>>>" + center.lat + " " + center.lng)
   };
 
-  //  show the route on the map from the user's location to the selected venue when the user clicks on the venue marker
   const [directions, setDirections] = useState<any>(null);
 
   useEffect(() => {

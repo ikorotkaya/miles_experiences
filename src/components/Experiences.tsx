@@ -52,6 +52,7 @@ const Experiences: React.FC<ExperiencesProps> = ({ userLocation, venues }) => {
                 src={venue.image}
                 alt={venue.name}
                 className="w-36 h-36 object-cover"
+                loading="lazy"
               />
               <div className="flex flex-col ml-4 ">
                 <h2 className="text-m font-bold mb-4">{venue.name}</h2>
