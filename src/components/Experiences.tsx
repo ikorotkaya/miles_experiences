@@ -1,9 +1,9 @@
-import { haversineDistance } from "../utils/haversine";
+import { haversineDistance } from "@utils/haversine";
 import { useEffect, useState } from "react";
 
-import { rideCost } from "../utils/calculateRideCost";
+import { rideCost } from "@utils/calculateRideCost";
 
-import { ExperiencesProps } from "../types";
+import { ExperiencesProps } from "@types";
 
 const Experiences: React.FC<ExperiencesProps> = ({ userLocation, venues }) => {
   const [sortedPOIs, setSortedPOIs] = useState<[string, number][]>([]);
@@ -21,7 +21,6 @@ const Experiences: React.FC<ExperiencesProps> = ({ userLocation, venues }) => {
       // Convert the object to an array and sort it by distance in ascending order
       const sortedArray = Object.entries(distances).sort((a, b) => a[1] - b[1]);
 
-      // Set the sorted POIs in the state
       setSortedPOIs(sortedArray);
     }
   }, [userLocation, venues]);

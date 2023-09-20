@@ -1,12 +1,12 @@
-import Footer from "./components/Footer";
-import Header from "./components/Header";
+import Footer from "@components/Footer";
+import Header from "@components/Header";
 
 import { useEffect, useState } from "react";
-import GoogleMapsComponent from "./components/GoogleMap";
-import Experiences from "./components/Experiences";
+import GoogleMapsComponent from "@components/GoogleMap";
+import Experiences from "@components/Experiences";
 
-import rawVenues from "../src/data/venues";
-import { LatLng, Venue } from "./types";
+import rawVenues from "@data/venues";
+import { LatLng, Venue } from "@types"; 
 
 export default function App() {
   const [userLocation, setUserLocation] = useState<{

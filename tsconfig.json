@@ -18,7 +18,24 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "paths": {
+      "@utils/*": [
+        "./src/utils/*"
+      ],   
+      "@images/*": [
+        "./src/images/*"
+      ],    
+      "@components/*": [
+        "./src/components/*"
+      ], 
+      "@data/*": [
+        "./src/data/*"
+      ], 
+      "@types" :[
+        "./src/types.ts"
+      ]
+    }
   },
   "include": [
     "src"

@@ -6,11 +6,11 @@ import {
   InfoWindowF,
   DirectionsRenderer  
 } from "@react-google-maps/api";
-import carMarker from "../images/car-marker.png";
-import pinIcon from "../images/pin-icon.svg";
-import pinActiveIcon from "../images/pin-active-icon.svg";
-import { rideCost } from "../utils/calculateRideCost";
-import { LatLng, GoogleMapsComponentProps  } from "../types";
+import carMarker from "@images/car-marker.png";
+import pinIcon from "@images/pin-icon.svg";
+import pinActiveIcon from "@images/pin-active-icon.svg";
+import { rideCost } from "@utils/calculateRideCost";
+import { LatLng, GoogleMapsComponentProps  } from "@types";
 
 const GoogleMapsComponent: React.FC<GoogleMapsComponentProps> = ({
   userLocation,
@@ -60,9 +60,9 @@ const GoogleMapsComponent: React.FC<GoogleMapsComponentProps> = ({
     
     if (venueId !== null) {
       const selectedVenue = venues.find((venue) => venue.id === venueId);
-      const newCenter = selectedVenue?.coordinates || null;
+      const newCenter = selectedVenue?.coordinates ?? null;
 
-      if(newCenter) {
+      if(newCenter !== null) {
         const centerCoordinates: LatLng = {
           lat: newCenter.lat,
           lng: newCenter.lng
@@ -80,7 +80,7 @@ const GoogleMapsComponent: React.FC<GoogleMapsComponentProps> = ({
       const selectedVenue = venues.find((venue) => venue.id === selectedVenueId);
       const destinationCoordinates = selectedVenue?.coordinates;
 
-      if (destinationCoordinates) {
+      if (destinationCoordinates !== undefined) {
         const directionsService = new google.maps.DirectionsService();
         directionsService.route(
           {
