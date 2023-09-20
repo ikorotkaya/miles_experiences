@@ -28,7 +28,7 @@ You'll need to install dependencies and start the Vite development server:
 ```sh
 npm install
 
-npm run dev
+npm run start
 ```
 
 You'll find the running game at [http://localhost:3000](http://localhost:3000/)
