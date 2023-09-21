@@ -1,9 +1,9 @@
-import { haversineDistance } from "@utils/haversine";
+import { haversineDistance } from "utils/haversine";
 import { useEffect, useState } from "react";
 
-import { rideCost } from "@utils/calculateRideCost";
+import { rideCost } from "utils/calculateRideCost";
 
-import { ExperiencesProps } from "@types";
+import { ExperiencesProps } from "types";
 
 const Experiences: React.FC<ExperiencesProps> = ({ userLocation, venues }) => {
   const [sortedPOIs, setSortedPOIs] = useState<[string, number][]>([]);

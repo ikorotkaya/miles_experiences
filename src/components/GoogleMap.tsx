@@ -6,11 +6,11 @@ import {
   InfoWindowF,
   DirectionsRenderer  
 } from "@react-google-maps/api";
-import carMarker from "@images/car-marker.png";
-import pinIcon from "@images/pin-icon.svg";
-import pinActiveIcon from "@images/pin-active-icon.svg";
-import { rideCost } from "@utils/calculateRideCost";
-import { LatLng, GoogleMapsComponentProps  } from "@types";
+import carMarker from "images/car-marker.png";
+import pinIcon from "images/pin-icon.svg";
+import pinActiveIcon from "images/pin-active-icon.svg";
+import { rideCost } from "utils/calculateRideCost";
+import { LatLng, GoogleMapsComponentProps  } from "types";
 
 const GoogleMapsComponent: React.FC<GoogleMapsComponentProps> = ({
   userLocation,

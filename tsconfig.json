@@ -19,22 +19,20 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
+    "baseUrl": "./src",
     "paths": {
-      "@utils/*": [
-        "./src/utils/*"
+      "utils/*": [
+        "utils/*"
       ],   
-      "@images/*": [
-        "./src/images/*"
+      "images/*": [
+        "images/*"
       ],    
-      "@components/*": [
-        "./src/components/*"
+      "components/*": [
+        "components/*"
       ], 
-      "@data/*": [
-        "./src/data/*"
+      "data": [
+        "data/*"
       ], 
-      "@types" :[
-        "./src/types.ts"
-      ]
     }
   },
   "include": [
