@@ -10,6 +10,7 @@ const Experiences: React.FC<ExperiencesProps> = ({ userLocation, venues }) => {
   const [sortedPOIs, setSortedPOIs] = useState<[string, number][]>([]);
   const highlightedVenueId = useStore((state: any) => state.highlightedVenueId);
   const highlightVenue = useStore((state: any) => state.setHiglightedVenueId);
+  const selectVenue = useStore((state: any) => state.setSelectedVenueId);
 
   useEffect(() => {
     // Calculate distances for each POI and store them in an object
@@ -29,7 +30,7 @@ const Experiences: React.FC<ExperiencesProps> = ({ userLocation, venues }) => {
   }, [userLocation, venues]);
 
   const handleVenueClick = (venueId: number) => {
-    console.log(venueId);
+    selectVenue(venueId);
   };
 
   const handleVenueMouseOver = (venueId: number) => {    

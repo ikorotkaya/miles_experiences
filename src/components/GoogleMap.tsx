@@ -24,7 +24,7 @@ const GoogleMapsComponent: React.FC<GoogleMapsComponentProps> = ({
   const highlightedVenueId = useStore((state: any) => state.highlightedVenueId);
   const highlightVenue = useStore((state: any) => state.setHiglightedVenueId)
   const selectedVenueId = useStore((state: any) => state.selectedVenueId);
-  const selectVenue = useStore((state: any) => state.setSelectedVenueId)
+  const selectVenue = useStore((state: any) => state.setSelectedVenueId);
 
   const updateMapHeight = () => {
     const header = document.getElementById("header");
