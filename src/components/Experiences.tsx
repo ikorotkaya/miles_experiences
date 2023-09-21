@@ -25,6 +25,15 @@ const Experiences: React.FC<ExperiencesProps> = ({ userLocation, venues }) => {
     }
   }, [userLocation, venues]);
 
+  const handleVenueClick = (venueId: number) => {
+  };
+
+  const handleVenueMouseOver = (venueId: number) => {
+  };
+
+  const handleVenueMouseOut = (venueId: number | null) => {
+  };
+
   return (
     <div className="w-full flex flex-col bg-black">
       <div className="flex justify-center text-white">
@@ -42,6 +51,9 @@ const Experiences: React.FC<ExperiencesProps> = ({ userLocation, venues }) => {
             <div
               key={venue.id}
               className="flex flex-row border-white border-4 hover:text-white hover:bg-black p-4 m-2  bg-white text-black"
+              onClick={() => handleVenueClick(venue.id)}
+              onMouseOver={() => handleVenueMouseOver(venue.id)}
+              onMouseOut={() => handleVenueMouseOut(null)}
             >
               <img
                 src={venue.image}
