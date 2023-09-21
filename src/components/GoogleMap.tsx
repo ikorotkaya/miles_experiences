@@ -11,17 +11,19 @@ import pinIcon from "images/pin-icon.svg";
 import pinActiveIcon from "images/pin-active-icon.svg";
 import { rideCost } from "utils/calculateRideCost";
 import { LatLng, GoogleMapsComponentProps  } from "types";
+import { useStore } from "store";
 
 const GoogleMapsComponent: React.FC<GoogleMapsComponentProps> = ({
   userLocation,
   onMarkerDragEnd,
   venues,
 }) => {
-  const [selectedVenueId, setSelectedVenueId] = useState<number | null>(null);
-  const [hoverVenueId, setHoverVenueId] = useState<number | null>(null);
+  const [selectedVenueId, setSelectedVenueId] = useState<number | null>(null);  
   const [center, setCenter] = useState<LatLng>(userLocation);
   const [isGoogleMapsLoaded, setIsGoogleMapsLoaded] = useState(false);
   const [mapHeight, setMapHeight] = useState(0);
+  const highlightedVenueId = useStore((state: any) => state.highlightedVenueId);
+  const highlightVenue = useStore((state: any) => state.setHiglightedVenueId)
 
   const updateMapHeight = () => {
     const header = document.getElementById("header");
@@ -71,6 +73,14 @@ const GoogleMapsComponent: React.FC<GoogleMapsComponentProps> = ({
         setCenter(centerCoordinates);
       }
     }
+  };
+
+  const handleMarkerMouseOver = (venueId: number) => {
+    highlightVenue(venueId);
+  };
+
+  const handleMarkerMouseOut = () => {    
+    highlightVenue(null);
   };
 
   const [directions, setDirections] = useState<google.maps.DirectionsResult | null>(null);
@@ -148,12 +158,12 @@ const GoogleMapsComponent: React.FC<GoogleMapsComponentProps> = ({
                 position={venue.coordinates}
                 title={venue.name}
                 onClick={() => handleMarkerClick(venue.id)}
-                onMouseOver={() => setHoverVenueId(venue.id)}
-                onMouseOut={() => setHoverVenueId(null)}
+                onMouseOver={() => handleMarkerMouseOver(venue.id)}
+                onMouseOut={() => handleMarkerMouseOut()}
                 options={{
                   icon: {
                     url:
-                      hoverVenueId === venue.id || selectedVenueId === venue.id
+                      highlightedVenueId === venue.id || selectedVenueId === venue.id
                         ? pinActiveIcon
                         : pinIcon,
                     scaledSize: new window.google.maps.Size(32, 48),

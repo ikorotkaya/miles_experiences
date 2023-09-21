@@ -4,9 +4,12 @@ import { useEffect, useState } from "react";
 import { rideCost } from "utils/calculateRideCost";
 
 import { ExperiencesProps } from "types";
+import { useStore } from "store";
 
 const Experiences: React.FC<ExperiencesProps> = ({ userLocation, venues }) => {
   const [sortedPOIs, setSortedPOIs] = useState<[string, number][]>([]);
+  const highlightedVenueId = useStore((state: any) => state.highlightedVenueId);
+  const highlightVenue = useStore((state: any) => state.setHiglightedVenueId);
 
   useEffect(() => {
     // Calculate distances for each POI and store them in an object
@@ -26,18 +29,21 @@ const Experiences: React.FC<ExperiencesProps> = ({ userLocation, venues }) => {
   }, [userLocation, venues]);
 
   const handleVenueClick = (venueId: number) => {
+    console.log(venueId);
   };
 
-  const handleVenueMouseOver = (venueId: number) => {
+  const handleVenueMouseOver = (venueId: number) => {    
+    highlightVenue(venueId);
   };
 
-  const handleVenueMouseOut = (venueId: number | null) => {
+  const handleVenueMouseOut = () => {    
+    highlightVenue(null);
   };
 
   return (
     <div className="w-full flex flex-col bg-black">
       <div className="flex justify-center text-white">
-        <h1 className="text-4xl font-bold m-10">Experiences</h1>
+        <h1 className="text-4xl font-bold m-10">Experiences</h1>        
       </div>
       <div className="flex flex-col mx-2">
         {sortedPOIs.map(([id, distance]) => {
@@ -50,10 +56,10 @@ const Experiences: React.FC<ExperiencesProps> = ({ userLocation, venues }) => {
           return (
             <div
               key={venue.id}
-              className="flex flex-row border-white border-4 hover:text-white hover:bg-black p-4 m-2  bg-white text-black"
+              className={`flex flex-row border-white border-4 p-4 m-2  ${highlightedVenueId === venue.id ? "cursor-pointer text-white bg-black" : "bg-white text-black"}`}
               onClick={() => handleVenueClick(venue.id)}
               onMouseOver={() => handleVenueMouseOver(venue.id)}
-              onMouseOut={() => handleVenueMouseOut(null)}
+              onMouseOut={() => handleVenueMouseOut()}
             >
               <img
                 src={venue.image}

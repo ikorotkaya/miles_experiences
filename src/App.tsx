@@ -14,11 +14,11 @@ export default function App() {
     lng: number;
   } | null>(null);
 
-  const [venues, setVenues] = useState<Venue[]>([]);
+  const [venues, setVenues] = useState<Venue[]>([]);  
 
   const getDefaultLocation = (): LatLng => {
     return { lat: 52.521918, lng: 13.413215 };
-  };
+  };  
   
   useEffect(() => {
     const getUserLocation = () => {
