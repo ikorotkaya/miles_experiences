@@ -4,13 +4,13 @@ import {
   LoadScript,
   MarkerF,
   InfoWindowF,
-  DirectionsRenderer,
+  DirectionsRenderer  
 } from "@react-google-maps/api";
 import carMarker from "images/car-marker.png";
 import pinIcon from "images/pin-icon.svg";
 import pinActiveIcon from "images/pin-active-icon.svg";
 import { rideCost } from "utils/calculateRideCost";
-import { LatLng, GoogleMapsComponentProps } from "types";
+import { LatLng, GoogleMapsComponentProps  } from "types";
 
 const GoogleMapsComponent: React.FC<GoogleMapsComponentProps> = ({
   userLocation,
@@ -26,12 +26,12 @@ const GoogleMapsComponent: React.FC<GoogleMapsComponentProps> = ({
   const updateMapHeight = () => {
     const header = document.getElementById("header");
     const footer = document.getElementById("footer");
-
-    if (header && footer) {
+    
+    if(header && footer) {
       const headerHeight = header.clientHeight;
       const footerHeight = footer.clientHeight;
       const windowHeight = window.innerHeight;
-
+      
       const newMapHeight = windowHeight - headerHeight - footerHeight;
 
       setMapHeight(newMapHeight);
@@ -40,7 +40,7 @@ const GoogleMapsComponent: React.FC<GoogleMapsComponentProps> = ({
 
   useEffect(() => {
     updateMapHeight();
-
+    
     window.addEventListener("resize", updateMapHeight);
 
     return () => window.removeEventListener("resize", updateMapHeight);
@@ -57,30 +57,27 @@ const GoogleMapsComponent: React.FC<GoogleMapsComponentProps> = ({
 
   const handleMarkerClick = (venueId: number | null) => {
     setSelectedVenueId(venueId);
-
+    
     if (venueId !== null) {
       const selectedVenue = venues.find((venue) => venue.id === venueId);
       const newCenter = selectedVenue?.coordinates ?? null;
 
-      if (newCenter !== null) {
+      if(newCenter !== null) {
         const centerCoordinates: LatLng = {
           lat: newCenter.lat,
-          lng: newCenter.lng,
-        };
-
+          lng: newCenter.lng
+        }
+        
         setCenter(centerCoordinates);
       }
     }
   };
 
-  const [directions, setDirections] =
-    useState<google.maps.DirectionsResult | null>(null);
+  const [directions, setDirections] = useState<google.maps.DirectionsResult | null>(null);
 
   useEffect(() => {
     if (selectedVenueId !== null) {
-      const selectedVenue = venues.find(
-        (venue) => venue.id === selectedVenueId
-      );
+      const selectedVenue = venues.find((venue) => venue.id === selectedVenueId);
       const destinationCoordinates = selectedVenue?.coordinates;
 
       if (destinationCoordinates !== undefined) {
@@ -109,11 +106,9 @@ const GoogleMapsComponent: React.FC<GoogleMapsComponentProps> = ({
   return (
     <div>
       <LoadScript
-        googleMapsApiKey={
-          process.env.REACT_APP_GOOGLE_MAPS_API_KEY !== undefined
-            ? process.env.REACT_APP_GOOGLE_MAPS_API_KEY
-            : ""
-        }
+        googleMapsApiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY !== undefined
+          ? process.env.REACT_APP_GOOGLE_MAPS_API_KEY
+          : ""}
         onLoad={handleGoogleMapsLoad}
       >
         <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={12}>
@@ -178,7 +173,7 @@ const GoogleMapsComponent: React.FC<GoogleMapsComponentProps> = ({
                         src={venue.image}
                         alt={venue.name}
                       />
-                      {routeDistance !== undefined && (
+                      { routeDistance !== undefined && 
                         <div className="flex flex-col items-left">
                           <p className="text-sm">Distance: {routeDistance}</p>
                           <p className="text-sm">Duration: {routeDuration}</p>
@@ -186,7 +181,7 @@ const GoogleMapsComponent: React.FC<GoogleMapsComponentProps> = ({
                             Cost: {rideCost(parseFloat(routeDistance))}€
                           </p>
                         </div>
-                      )}
+                      }
                     </div>
                   </InfoWindowF>
                 )}
