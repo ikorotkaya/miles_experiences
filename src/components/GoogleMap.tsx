@@ -136,7 +136,7 @@ const GoogleMapsComponent: React.FC<GoogleMapsComponentProps> = ({
               options={{
                 icon: {
                   url: carMarker,
-                  scaledSize: new window.google.maps.Size(64, 64),
+                  scaledSize: new window.google.maps.Size(116, 50),
                 },
               }}
             />
