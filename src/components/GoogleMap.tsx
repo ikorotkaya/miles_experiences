@@ -17,13 +17,14 @@ const GoogleMapsComponent: React.FC<GoogleMapsComponentProps> = ({
   userLocation,
   onMarkerDragEnd,
   venues,
-}) => {
-  const [selectedVenueId, setSelectedVenueId] = useState<number | null>(null);  
+}) => {  
   const [center, setCenter] = useState<LatLng>(userLocation);
   const [isGoogleMapsLoaded, setIsGoogleMapsLoaded] = useState(false);
   const [mapHeight, setMapHeight] = useState(0);
   const highlightedVenueId = useStore((state: any) => state.highlightedVenueId);
   const highlightVenue = useStore((state: any) => state.setHiglightedVenueId)
+  const selectedVenueId = useStore((state: any) => state.selectedVenueId);
+  const selectVenue = useStore((state: any) => state.setSelectedVenueId)
 
   const updateMapHeight = () => {
     const header = document.getElementById("header");
@@ -58,21 +59,7 @@ const GoogleMapsComponent: React.FC<GoogleMapsComponentProps> = ({
   };
 
   const handleMarkerClick = (venueId: number | null) => {
-    setSelectedVenueId(venueId);
-    
-    if (venueId !== null) {
-      const selectedVenue = venues.find((venue) => venue.id === venueId);
-      const newCenter = selectedVenue?.coordinates ?? null;
-
-      if(newCenter !== null) {
-        const centerCoordinates: LatLng = {
-          lat: newCenter.lat,
-          lng: newCenter.lng
-        }
-        
-        setCenter(centerCoordinates);
-      }
-    }
+    selectVenue(venueId);
   };
 
   const handleMarkerMouseOver = (venueId: number) => {
