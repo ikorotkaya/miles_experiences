@@ -8,9 +8,9 @@ import { useStore } from "store";
 
 const Experiences: React.FC<ExperiencesProps> = ({ userLocation, venues }) => {
   const [sortedPOIs, setSortedPOIs] = useState<[string, number][]>([]);
-  const highlightedVenueId = useStore((state: any) => state.highlightedVenueId);
-  const highlightVenue = useStore((state: any) => state.setHiglightedVenueId);
-  const selectVenue = useStore((state: any) => state.setSelectedVenueId);
+  const highlightedVenueId = useStore((state) => state.highlightedVenueId);
+  const highlightVenue = useStore((state) => state.setHighlightedVenueId);
+  const selectVenue = useStore((state) => state.setSelectedVenueId);
 
   useEffect(() => {
     // Calculate distances for each POI and store them in an object

@@ -10,7 +10,7 @@ import carMarker from "images/car-marker.png";
 import pinIcon from "images/pin-icon.svg";
 import pinActiveIcon from "images/pin-active-icon.svg";
 import { rideCost } from "utils/calculateRideCost";
-import { LatLng, GoogleMapsComponentProps  } from "types";
+import { GoogleMapsComponentProps  } from "types";
 import { useStore } from "store";
 
 const GoogleMapsComponent: React.FC<GoogleMapsComponentProps> = ({
@@ -18,13 +18,13 @@ const GoogleMapsComponent: React.FC<GoogleMapsComponentProps> = ({
   onMarkerDragEnd,
   venues,
 }) => {  
-  const [center, setCenter] = useState<LatLng>(userLocation);
+  // const [center, setCenter] = useState<LatLng>(userLocation);
   const [isGoogleMapsLoaded, setIsGoogleMapsLoaded] = useState(false);
   const [mapHeight, setMapHeight] = useState(0);
-  const highlightedVenueId = useStore((state: any) => state.highlightedVenueId);
-  const highlightVenue = useStore((state: any) => state.setHiglightedVenueId)
-  const selectedVenueId = useStore((state: any) => state.selectedVenueId);
-  const selectVenue = useStore((state: any) => state.setSelectedVenueId);
+  const highlightedVenueId = useStore((state) => state.highlightedVenueId);
+  const highlightVenue = useStore((state) => state.setHighlightedVenueId)
+  const selectedVenueId = useStore((state) => state.selectedVenueId);
+  const selectVenue = useStore((state) => state.setSelectedVenueId);
 
   const updateMapHeight = () => {
     const header = document.getElementById("header");
@@ -67,7 +67,7 @@ const GoogleMapsComponent: React.FC<GoogleMapsComponentProps> = ({
   };
 
   const handleMarkerMouseOut = () => {    
-    highlightVenue(null);
+    highlightVenue(null)
   };
 
   const [directions, setDirections] = useState<google.maps.DirectionsResult | null>(null);
@@ -108,7 +108,7 @@ const GoogleMapsComponent: React.FC<GoogleMapsComponentProps> = ({
           : ""}
         onLoad={handleGoogleMapsLoad}
       >
-        <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={12}>
+        <GoogleMap mapContainerStyle={containerStyle} center={userLocation} zoom={12}>
           {directions && (
             <DirectionsRenderer
               directions={directions}
