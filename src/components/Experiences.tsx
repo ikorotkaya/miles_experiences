@@ -62,12 +62,14 @@ const Experiences: React.FC<ExperiencesProps> = ({ userLocation, venues }) => {
               onMouseOver={() => handleVenueMouseOver(venue.id)}
               onMouseOut={() => handleVenueMouseOut()}
             >
-              <img
-                src={venue.image}
-                alt={venue.name}
-                className="w-36 h-36 object-cover"
-                loading="lazy"
-              />
+              <div className="w-36 h-36 relative bg-slate-100 shrink-0">
+                <img
+                  src={venue.image}
+                  alt={venue.name}
+                  className="w-full h-full block object-cover absolute top-0 left-0"
+                  loading="lazy"                
+                />
+              </div>
               <div className="flex flex-col ml-4 ">
                 <h2 className="text-l font-bold mb-4">{venue.name}</h2>
                 <p className="text-xs mb-3">{venue.description}</p>
