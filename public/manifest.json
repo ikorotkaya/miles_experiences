@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Miles Experiences",
+  "name": "A possible implementation of Experiences features for the Miles car sharing app.",
   "icons": [
     {
       "src": "favicon.ico",
