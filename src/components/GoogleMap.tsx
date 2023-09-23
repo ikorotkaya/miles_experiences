@@ -163,7 +163,7 @@ const GoogleMapsComponent: React.FC<GoogleMapsComponentProps> = ({
                     onCloseClick={() => handleMarkerClick(null)}
                     options={{ disableAutoPan: true }}
                   >
-                    <div className="w-64">
+                    <div className="w-64 font-normal">
                       <h2 className="text-xl font-bold mb-2">{venue.name}</h2>
                       <img
                         className="block w-64 mb-3"
