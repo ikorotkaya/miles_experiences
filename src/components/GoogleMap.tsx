@@ -170,11 +170,12 @@ const GoogleMapsComponent: React.FC<GoogleMapsComponentProps> = ({
                         src={venue.image}
                         alt={venue.name}
                       />
+                      <p className="mb-2 text-sm">{venue.description}</p>
                       { routeDistance !== undefined && 
                         <div className="flex flex-col items-left">
-                          <p className="text-sm">Distance: {routeDistance}</p>
-                          <p className="text-sm">Duration: {routeDuration}</p>
-                          <p className="text-sm">
+                          <p className="text-xs">Distance: {routeDistance}</p>
+                          <p className="text-xs">Duration: {routeDuration}</p>
+                          <p className="text-xs">
                             Cost: {rideCost(parseFloat(routeDistance))}€
                           </p>
                         </div>

@@ -1,6 +1,8 @@
 import Footer from "components/Footer";
 import Header from "components/Header";
 
+import "./App.css";
+
 import { useEffect, useState } from "react";
 import GoogleMapsComponent from "components/GoogleMap";
 import Experiences from "components/Experiences";

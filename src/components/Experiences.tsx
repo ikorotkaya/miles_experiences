@@ -69,11 +69,13 @@ const Experiences: React.FC<ExperiencesProps> = ({ userLocation, venues }) => {
                 loading="lazy"
               />
               <div className="flex flex-col ml-4 ">
-                <h2 className="text-m font-bold mb-4">{venue.name}</h2>
-                <p className="text-sm">
+                <h2 className="text-l font-bold mb-4">{venue.name}</h2>
+                <p className="text-xs mb-3">{venue.description}</p>
+
+                <p className="text-xs">
                   Approx. distance: {distance.toFixed(2)} km
                 </p>
-                <p className="text-sm">
+                <p className="text-xs">
                   Approximate cost: {rideCost(distance)}€
                 </p>
               </div>
