@@ -10,18 +10,21 @@ import carMarker from "images/car-marker.png";
 import pinIcon from "images/pin-icon.svg";
 import pinActiveIcon from "images/pin-active-icon.svg";
 import { rideCost } from "utils/calculateRideCost";
-import { LatLng, GoogleMapsComponentProps  } from "types";
+import { GoogleMapsComponentProps  } from "types";
+import { useStore } from "store";
 
 const GoogleMapsComponent: React.FC<GoogleMapsComponentProps> = ({
   userLocation,
   onMarkerDragEnd,
   venues,
-}) => {
-  const [selectedVenueId, setSelectedVenueId] = useState<number | null>(null);
-  const [hoverVenueId, setHoverVenueId] = useState<number | null>(null);
-  const [center, setCenter] = useState<LatLng>(userLocation);
+}) => {  
+  // const [center, setCenter] = useState<LatLng>(userLocation);
   const [isGoogleMapsLoaded, setIsGoogleMapsLoaded] = useState(false);
   const [mapHeight, setMapHeight] = useState(0);
+  const highlightedVenueId = useStore((state) => state.highlightedVenueId);
+  const highlightVenue = useStore((state) => state.setHighlightedVenueId)
+  const selectedVenueId = useStore((state) => state.selectedVenueId);
+  const selectVenue = useStore((state) => state.setSelectedVenueId);
 
   const updateMapHeight = () => {
     const header = document.getElementById("header");
@@ -56,21 +59,15 @@ const GoogleMapsComponent: React.FC<GoogleMapsComponentProps> = ({
   };
 
   const handleMarkerClick = (venueId: number | null) => {
-    setSelectedVenueId(venueId);
-    
-    if (venueId !== null) {
-      const selectedVenue = venues.find((venue) => venue.id === venueId);
-      const newCenter = selectedVenue?.coordinates ?? null;
+    selectVenue(venueId);
+  };
 
-      if(newCenter !== null) {
-        const centerCoordinates: LatLng = {
-          lat: newCenter.lat,
-          lng: newCenter.lng
-        }
-        
-        setCenter(centerCoordinates);
-      }
-    }
+  const handleMarkerMouseOver = (venueId: number) => {
+    highlightVenue(venueId);
+  };
+
+  const handleMarkerMouseOut = () => {    
+    highlightVenue(null)
   };
 
   const [directions, setDirections] = useState<google.maps.DirectionsResult | null>(null);
@@ -111,7 +108,7 @@ const GoogleMapsComponent: React.FC<GoogleMapsComponentProps> = ({
           : ""}
         onLoad={handleGoogleMapsLoad}
       >
-        <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={12}>
+        <GoogleMap mapContainerStyle={containerStyle} center={userLocation} zoom={12}>
           {directions && (
             <DirectionsRenderer
               directions={directions}
@@ -148,12 +145,12 @@ const GoogleMapsComponent: React.FC<GoogleMapsComponentProps> = ({
                 position={venue.coordinates}
                 title={venue.name}
                 onClick={() => handleMarkerClick(venue.id)}
-                onMouseOver={() => setHoverVenueId(venue.id)}
-                onMouseOut={() => setHoverVenueId(null)}
+                onMouseOver={() => handleMarkerMouseOver(venue.id)}
+                onMouseOut={() => handleMarkerMouseOut()}
                 options={{
                   icon: {
                     url:
-                      hoverVenueId === venue.id || selectedVenueId === venue.id
+                      highlightedVenueId === venue.id || selectedVenueId === venue.id
                         ? pinActiveIcon
                         : pinIcon,
                     scaledSize: new window.google.maps.Size(32, 48),
@@ -173,11 +170,12 @@ const GoogleMapsComponent: React.FC<GoogleMapsComponentProps> = ({
                         src={venue.image}
                         alt={venue.name}
                       />
+                      <p className="mb-2 text-sm">{venue.description}</p>
                       { routeDistance !== undefined && 
                         <div className="flex flex-col items-left">
-                          <p className="text-sm">Distance: {routeDistance}</p>
-                          <p className="text-sm">Duration: {routeDuration}</p>
-                          <p className="text-sm">
+                          <p className="text-xs">Distance: {routeDistance}</p>
+                          <p className="text-xs">Duration: {routeDuration}</p>
+                          <p className="text-xs">
                             Cost: {rideCost(parseFloat(routeDistance))}€
                           </p>
                         </div>

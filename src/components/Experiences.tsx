@@ -4,9 +4,13 @@ import { useEffect, useState } from "react";
 import { rideCost } from "utils/calculateRideCost";
 
 import { ExperiencesProps } from "types";
+import { useStore } from "store";
 
 const Experiences: React.FC<ExperiencesProps> = ({ userLocation, venues }) => {
   const [sortedPOIs, setSortedPOIs] = useState<[string, number][]>([]);
+  const highlightedVenueId = useStore((state) => state.highlightedVenueId);
+  const highlightVenue = useStore((state) => state.setHighlightedVenueId);
+  const selectVenue = useStore((state) => state.setSelectedVenueId);
 
   useEffect(() => {
     // Calculate distances for each POI and store them in an object
@@ -25,10 +29,22 @@ const Experiences: React.FC<ExperiencesProps> = ({ userLocation, venues }) => {
     }
   }, [userLocation, venues]);
 
+  const handleVenueClick = (venueId: number) => {
+    selectVenue(venueId);
+  };
+
+  const handleVenueMouseOver = (venueId: number) => {    
+    highlightVenue(venueId);
+  };
+
+  const handleVenueMouseOut = () => {    
+    highlightVenue(null);
+  };
+
   return (
     <div className="w-full flex flex-col bg-black">
       <div className="flex justify-center text-white">
-        <h1 className="text-4xl font-bold m-10">Experiences</h1>
+        <h1 className="text-4xl font-bold m-10">Experiences</h1>        
       </div>
       <div className="flex flex-col mx-2">
         {sortedPOIs.map(([id, distance]) => {
@@ -41,7 +57,10 @@ const Experiences: React.FC<ExperiencesProps> = ({ userLocation, venues }) => {
           return (
             <div
               key={venue.id}
-              className="flex flex-row border-white border-4 hover:text-white hover:bg-black p-4 m-2  bg-white text-black"
+              className={`flex flex-row border-white border-4 p-4 m-2  ${highlightedVenueId === venue.id ? "cursor-pointer text-white bg-black" : "bg-white text-black"}`}
+              onClick={() => handleVenueClick(venue.id)}
+              onMouseOver={() => handleVenueMouseOver(venue.id)}
+              onMouseOut={() => handleVenueMouseOut()}
             >
               <img
                 src={venue.image}
@@ -50,11 +69,13 @@ const Experiences: React.FC<ExperiencesProps> = ({ userLocation, venues }) => {
                 loading="lazy"
               />
               <div className="flex flex-col ml-4 ">
-                <h2 className="text-m font-bold mb-4">{venue.name}</h2>
-                <p className="text-sm">
+                <h2 className="text-l font-bold mb-4">{venue.name}</h2>
+                <p className="text-xs mb-3">{venue.description}</p>
+
+                <p className="text-xs">
                   Approx. distance: {distance.toFixed(2)} km
                 </p>
-                <p className="text-sm">
+                <p className="text-xs">
                   Approximate cost: {rideCost(distance)}€
                 </p>
               </div>

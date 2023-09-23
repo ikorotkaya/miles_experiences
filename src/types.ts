@@ -8,6 +8,7 @@ export interface Venue {
   name: string;
   image: string;
   coordinates: LatLng;
+  description: string;
 }
 
 export interface GoogleMapsComponentProps {

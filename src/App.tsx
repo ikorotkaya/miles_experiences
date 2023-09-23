@@ -1,6 +1,8 @@
 import Footer from "components/Footer";
 import Header from "components/Header";
 
+import "./App.css";
+
 import { useEffect, useState } from "react";
 import GoogleMapsComponent from "components/GoogleMap";
 import Experiences from "components/Experiences";
@@ -8,17 +10,17 @@ import Experiences from "components/Experiences";
 import rawVenues from "data/venues";
 import { LatLng, Venue } from "types"; 
 
-export default function App() {
-  const [userLocation, setUserLocation] = useState<{
-    lat: number;
-    lng: number;
-  } | null>(null);
+import { useStore } from "store";
 
-  const [venues, setVenues] = useState<Venue[]>([]);
+export default function App() {
+  const [venues, setVenues] = useState<Venue[]>([]);  
 
   const getDefaultLocation = (): LatLng => {
     return { lat: 52.521918, lng: 13.413215 };
-  };
+  };  
+
+  const userLocation = useStore((state) => state.userLocation) as LatLng | null;
+  const setUserLocation = useStore((state) => state.setUserLocation);
   
   useEffect(() => {
     const getUserLocation = () => {
