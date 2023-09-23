@@ -23,7 +23,7 @@ export default function Menu() {
             className="menu-dropdown__link block md:text-3xl text-2xl" data-testid="menu-dropdown__link"
             onClick={closeMenu}
           >
-            Invite Irina for an interview!
+            Invite Irina for an interview! 📧
           </a>
         </div>
       )}
