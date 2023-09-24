@@ -9,25 +9,13 @@ export default function Experience({ venue, distance }: ExperienceProps) {
   const highlightVenue = useStore((state) => state.setHighlightedVenueId);
   const selectVenue = useStore((state) => state.setSelectedVenueId);
 
-  const handleVenueClick = (venueId: number) => {
-    selectVenue(venueId);
-  };
-
-  const handleVenueMouseOver = (venueId: number) => {    
-    highlightVenue(venueId);
-  };
-
-  const handleVenueMouseOut = () => {    
-    highlightVenue(null);
-  };
-
   return (
     <div
       key={venue.id}
       className={`flex flex-row border-white border-4 p-4 m-2 ${highlightedVenueId === venue.id ? "cursor-pointer text-white bg-black" : "bg-white text-black"}`}
-      onClick={() => handleVenueClick(venue.id)}
-      onMouseOver={() => handleVenueMouseOver(venue.id)}
-      onMouseOut={() => handleVenueMouseOut()}
+      onClick={() => selectVenue(venue.id)}
+      onMouseOver={() => highlightVenue(venue.id)}
+      onMouseOut={() => highlightVenue(null)}
     >
       <div className="w-36 h-36 relative bg-slate-100 shrink-0">
         <img

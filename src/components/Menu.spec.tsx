@@ -8,13 +8,13 @@ describe("Menu", () => {
     expect(menuButton).toBeInTheDocument();
   });
 
-  test('initially the menu is closed', () => {
+  test("initially the menu is closed", () => {
     render(<Menu />);
     const menuDropdown = screen.queryByTestId("menu-dropdown__link");
     expect(menuDropdown).not.toBeInTheDocument();
   });
 
-  test('the menu opens when the menu icon is clicked', () => {
+  test("the menu opens when the menu icon is clicked", () => {
     render(<Menu />);
     const menuButton = screen.getByRole("button");
     fireEvent.click(menuButton);
@@ -22,7 +22,7 @@ describe("Menu", () => {
     expect(menuDropdown).toBeInTheDocument();
   });
 
-  test('check if there is an email link in the dropdown menu', () => {
+  test("check if there is an email link in the dropdown menu", () => {
     render(<Menu />);
     const menuButton = screen.getByRole("button");
     fireEvent.click(menuButton);

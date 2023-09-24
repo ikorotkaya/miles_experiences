@@ -3,7 +3,6 @@ import { InvitationButtonProps } from "types";
 export default function InvitationButton({
   setMenuOpen,
 }: InvitationButtonProps) {
-
   const closeMenu = () => {
     setMenuOpen(false);
   };

@@ -62,18 +62,6 @@ export default function GoogleMapsComponent({
     setIsGoogleMapsLoaded(true);
   };
 
-  const handleMarkerClick = (venueId: number | null) => {
-    selectVenue(venueId);
-  };
-
-  const handleMarkerMouseOver = (venueId: number) => {
-    highlightVenue(venueId);
-  };
-
-  const handleMarkerMouseOut = () => {    
-    highlightVenue(null)
-  };
-
   const [directions, setDirections] = useState<google.maps.DirectionsResult | null>(null);
 
   useEffect(() => {
@@ -148,9 +136,9 @@ export default function GoogleMapsComponent({
                 key={index}
                 position={venue.coordinates}
                 title={venue.name}
-                onClick={() => handleMarkerClick(venue.id)}
-                onMouseOver={() => handleMarkerMouseOver(venue.id)}
-                onMouseOut={() => handleMarkerMouseOut()}
+                onClick={() => selectVenue(venue.id)}
+                onMouseOver={() => highlightVenue(venue.id)}
+                onMouseOut={() => highlightVenue(null)}
                 options={{
                   icon: {
                     url:
@@ -164,7 +152,7 @@ export default function GoogleMapsComponent({
                 {selectedVenueId === venue.id && (
                   <InfoWindowF
                     position={venue.coordinates}
-                    onCloseClick={() => handleMarkerClick(null)}
+                    onCloseClick={() => selectVenue(null)}
                     options={{ disableAutoPan: true }}
                   >
                     <VenuePopUp venue={venue} routeDistance={routeDistance} routeDuration={routeDuration} />

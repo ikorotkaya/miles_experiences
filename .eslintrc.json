@@ -10,6 +10,7 @@
         "@typescript-eslint"
     ],
     "rules": {
+        "quotes": [2, "double", { "avoidEscape": true }],
         "@typescript-eslint/strict-boolean-expressions": [
             2,
             {
