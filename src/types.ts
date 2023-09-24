@@ -30,3 +30,9 @@ export type ExperienceProps = {
 export type InvitationButtonProps = {
   setMenuOpen: (open: boolean) => void;
 };
+
+export type VenuePopUpProps = {
+  routeDistance: string | undefined;
+  venue: Venue;
+  routeDuration: string | undefined;
+};
