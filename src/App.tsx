@@ -3,7 +3,9 @@ import Header from "components/Header";
 
 import { useEffect, useState } from "react";
 import GoogleMapsComponent from "components/GoogleMap";
-import Experiences from "components/Experiences";
+import Experiences from "components/ExperienceList";
+
+import { calculateSphericalDistance } from "utils/calculateSphericalDistance";
 
 import rawVenues from "data/venues";
 import { LatLng, Venue } from "types"; 
@@ -22,11 +24,21 @@ export default function App() {
   
   useEffect(() => {
     const getUserLocation = () => {
+
       if ("geolocation" in navigator) {
         navigator.geolocation.getCurrentPosition(
           (position) => {
             const { latitude, longitude } = position.coords;
-            setUserLocation({ lat: latitude, lng: longitude });
+            const userCoordinates = { lat: latitude, lng: longitude };
+
+            const distanceToBerlin = calculateSphericalDistance(userCoordinates, getDefaultLocation());
+
+            if (distanceToBerlin <= 50) {
+              setUserLocation(userCoordinates);
+              return;
+            } else {
+              setUserLocation(getDefaultLocation());
+            }
           },
           (error) => {
             console.error("Error getting user location:", error);
@@ -38,6 +50,7 @@ export default function App() {
         setUserLocation(getDefaultLocation());
       }
     };
+
     getUserLocation();
     setVenues(rawVenues);
   }, []);
