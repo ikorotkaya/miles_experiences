@@ -170,9 +170,16 @@ const GoogleMapsComponent: React.FC<GoogleMapsComponentProps> = ({
                         src={venue.image}
                         alt={venue.name}
                       />
-                      <p className="mb-2 text-sm">{venue.description}</p>
+                      <p className="text-sm">{venue.description}.</p>
+                      <a 
+                        className="text-sm underline"
+                        href={`https://denkmaltag.berlin.de/denkmal/?id=${venue.id}`}
+                        target="_blank"
+                        title="Read more info about this venue">
+                          Read more!
+                      </a>
                       { routeDistance !== undefined && 
-                        <div className="flex flex-col items-left">
+                        <div className="mt-2 flex flex-col items-left">
                           <p className="text-xs">Distance: {routeDistance}</p>
                           <p className="text-xs">Duration: {routeDuration}</p>
                           <p className="text-xs">

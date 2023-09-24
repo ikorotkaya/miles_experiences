@@ -72,7 +72,7 @@ const Experiences: React.FC<ExperiencesProps> = ({ userLocation, venues }) => {
               </div>
               <div className="flex flex-col ml-4 ">
                 <h2 className="text-l font-bold mb-4">{venue.name}</h2>
-                <p className="text-sm mb-3">{venue.description}</p>
+                <p className="text-sm mb-3">{venue.description}.</p>
 
                 <p className="text-xs">
                   {/* DESIGN NOTE: 1_estimated_price_calculation.md */}
