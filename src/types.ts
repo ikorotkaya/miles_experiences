@@ -26,3 +26,7 @@ export type ExperienceProps = {
   venue: Venue;
   distance: number;
 };
+
+export type InvitationButtonProps = {
+  setMenuOpen: (open: boolean) => void;
+};
