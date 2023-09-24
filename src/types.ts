@@ -1,9 +1,9 @@
-export interface LatLng {
+export type LatLng = {
   lat: number;
   lng: number;
 }
 
-export interface Venue {
+export type Venue = {
   id: number;
   name: string;
   image: string;
@@ -11,13 +11,18 @@ export interface Venue {
   description: string;
 }
 
-export interface GoogleMapsComponentProps {
+export type GoogleMapsComponentProps = {
   userLocation: LatLng;
   venues: Venue[];
   onMarkerDragEnd: (position: LatLng) => void;
 }
 
-export type ExperiencesProps = {
+export type ExperienceListProps = {
   userLocation: LatLng;
   venues: Venue[];
+};
+
+export type ExperienceProps = {
+  venue: Venue;
+  distance: number;
 };

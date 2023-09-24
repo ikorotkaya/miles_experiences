@@ -1,14 +1,12 @@
+import { useEffect, useState } from "react";
 import Footer from "components/Footer";
 import Header from "components/Header";
-
-import { useEffect, useState } from "react";
 import GoogleMapsComponent from "components/GoogleMap";
-import Experiences from "components/ExperienceList";
-
-import { calculateSphericalDistance } from "utils/calculateSphericalDistance";
-
+import ExperienceList from "components/ExperienceList";
 import rawVenues from "data/venues";
 import { LatLng, Venue } from "types"; 
+
+import { calculateSphericalDistance } from "utils/calculateSphericalDistance";
 
 import { useStore } from "store";
 
@@ -58,6 +56,7 @@ export default function App() {
   const handleMarkerDragEnd = (newPosition: LatLng) => {
     setUserLocation(newPosition);
   };
+  
   return (
     <div className="app w-full h-full fixed top-0 left-0">
       <div className="app__inner h-full grid grid-rows-[100px,1fr,100px] grid-cols-[2fr,1fr] overflow-hidden ">
@@ -73,7 +72,7 @@ export default function App() {
         )}
         {userLocation && (
           <div className="hidden md:block app__experiences row-start-2 col-start-2 overflow-y-scroll overflow-x-hidden">
-            <Experiences venues={venues} userLocation={userLocation} />
+            <ExperienceList venues={venues} userLocation={userLocation} />
           </div>
         )}
         <Footer />

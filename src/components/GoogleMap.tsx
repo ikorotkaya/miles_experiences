@@ -6,18 +6,22 @@ import {
   InfoWindowF,
   DirectionsRenderer  
 } from "@react-google-maps/api";
+
 import carMarker from "images/car-marker.png";
 import pinIcon from "images/pin-icon.svg";
 import pinActiveIcon from "images/pin-active-icon.svg";
+
 import { rideCost } from "utils/calculateRideCost";
 import { GoogleMapsComponentProps  } from "types";
+
 import { useStore } from "store";
 
-const GoogleMapsComponent: React.FC<GoogleMapsComponentProps> = ({
+export default function GoogleMapsComponent({
   userLocation,
   onMarkerDragEnd,
   venues,
-}) => {  
+}: GoogleMapsComponentProps) {  
+  
   // const [center, setCenter] = useState<LatLng>(userLocation);
   const [isGoogleMapsLoaded, setIsGoogleMapsLoaded] = useState(false);
   const [mapHeight, setMapHeight] = useState(0);
@@ -196,6 +200,4 @@ const GoogleMapsComponent: React.FC<GoogleMapsComponentProps> = ({
       </LoadScript>
     </div>
   );
-};
-
-export default GoogleMapsComponent;
+}
