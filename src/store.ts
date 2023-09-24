@@ -1,20 +1,15 @@
 import { create } from "zustand";
 
-interface StoreState {
+type StoreState = {
   highlightedVenueId: number | null;
   selectedVenueId: number | null;
   userLocation: { lat: number; lng: number } | null;
-}
-
-interface StoreActions {
   setHighlightedVenueId: (venueId: number | null) => void;
   setSelectedVenueId: (venueId: number | null) => void;
   setUserLocation: (location: { lat: number; lng: number } | null) => void;
 }
 
-type AppStore = StoreState & StoreActions;
-
-export const useStore = create<AppStore>((set) => ({
+export const useStore = create<StoreState>((set) => ({
   highlightedVenueId: null,
   selectedVenueId: null,
   userLocation: null,
