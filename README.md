@@ -1,10 +1,10 @@
 # Miles Experiences
 
+Explore Berlin's iconic and hidden gems with Miles Experiences. Calculate travel costs and journey times to your chosen destination.
+
 ![Miles Experiences App](https://raw.githubusercontent.com/ikorotkaya/miles_experiences/main/misc/allow_location.gif)
 
 ![GitHub License MIT](https://img.shields.io/github/license/sqlhabit/sql_schema_visualizer?color=%2347A3F3)
-
-Explore Berlin's iconic and hidden gems with Miles Experiences. Calculate travel costs and journey times to your chosen destination.
 
 ## How to use
 
@@ -12,13 +12,13 @@ Explore Berlin's iconic and hidden gems with Miles Experiences. Calculate travel
 
 ![Block Location](https://raw.githubusercontent.com/ikorotkaya/miles_experiences/main/misc/block_location.gif)
 
-- *Nearby Attractions:* Conveniently find nearby attractions, sorted by distance, on the right side of the app.
+- *Search for nearby attractions:* Conveniently find nearby attractions, sorted by distance, on the right side of the app.
 
 - *Customise your adventure:* Personalise your adventure by dragging the location marker or the Miles car. Prices, routes and experiences are updated based on your new location.
 
-- *Venue Details:* Click on a experience card on the right or a marker on the map to get more information about the attraction. This includes a brief description, exact times and prices, and a link to the official website [Berlin Monument Authority](https://www.berlin.de/landesdenkmalamt/) for more information.
+- *Check venue details:* Click on a experience card on the right or a marker on the map to get more information about the attraction. This includes a brief description, exact times and prices, and a link to the official website [Berlin Monument Authority](https://www.berlin.de/landesdenkmalamt/) for more information.
 
-- *Route visualisation:* By clicking on a location on the right-hand side of the list, you can view the route to the destination on the map.
+- *See route visualisation:* By clicking on a location on the right-hand side of the list, you can view the route to the destination on the map.
 
 ## How it works
 
