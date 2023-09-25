@@ -3,7 +3,7 @@
 We have chosen to include sites from the 'Tag des offenen Denkmals' (Day of Open Monuments) event organised by the Berlin State Monuments Office. This event offers a unique opportunity to explore places that are not normally open to the public.
 
 1. A list of these venues can be obtained from the website console, as shown in the screenshot below:
-![Parse venues screenshot](https://raw.githubusercontent.com/ikorotkaya/miles_experiences/main/design_notes/images/venues.png)
+![Parse venues screenshot](https://raw.githubusercontent.com/ikorotkaya/miles_experiences/main/design_notes/images/venues_list.png)
 
 2. Each venue in the list is identified by a unique id and contains information such as title, latitude (lat) and longitude (lng) coordinates.
 
