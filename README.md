@@ -2,15 +2,27 @@
 
 ![GitHub License MIT](https://img.shields.io/github/license/sqlhabit/sql_schema_visualizer?color=%2347A3F3)
 
-Discover Berlin's iconic and hidden sights. Calculate travel costs and time till chosen Experience, and get the best routes instantly.
+Explore Berlin's iconic and hidden gems with Miles Experiences. Calculate travel costs and journey times to your chosen destination.
 
 ## How to use
 
-- Enable location access to explore experiences around you. Alternatively, start your journey from Alexanderplatz, as a default user location. 
+- *Location Access:* Activate Location Access in your web browser to discover experiences around you. Alternatively, start your journey from Alexanderplatz, which is set as the default user location.
 
-- User can find nearby attractions conveniently sorted by distance on the right side of the app. 
+- *Nearby Attractions:* Conveniently find nearby attractions, sorted by distance, on the right side of the app.
 
-- Customize your adventure by moving the location marker (the Miles car!) to update prices, routes, and experiences.
+- *Customise your adventure:* Personalise your adventure by dragging the location marker or the Miles car. Prices, routes and experiences are updated based on your new location.
+
+- *Venue Details:* Click on a experience card on the right or a marker on the map to get more information about the attraction. This includes a brief description, exact times and prices, and a link to the official website [Berlin Monument Authority](https://www.berlin.de/landesdenkmalamt/) for more information.
+
+- *Route visualisation:* By clicking on a location on the right-hand side of the list, you can view the route to the destination on the map.
+
+## How it works
+
+*Real-Time Calculation:* These details are calculated in real-time using the Google Directions API. This ensures that users receive accurate pricing information based on their current location and the selected venue which you can find in Info Window popup.
+
+*Limited Location Availability:* Please note that the application is currently available only for Berlin. If you are located within Berlin, you can enjoy all the features the app has to offer. However, if you are located more than 50 kilometers away from Berlin or if you choose not to share your location, the app will use Alexanderplatz as the default location.
+
+*Important Note:* To ensure that you have access to accurate pricing details, please make sure you have correctly configured your Google Maps API key. Detailed instructions on how to obtain and configure your API key can be found in the [Google Maps JavaScript API documentation](https://developers.google.com/maps/documentation/javascript/get-api-key).
 
 ## Technologies Used
 
@@ -20,22 +32,27 @@ Discover Berlin's iconic and hidden sights. Calculate travel costs and time till
 - Google Maps API
 - Google Directions API
 - HTML
+- Zustand (state management)
 
 ## Development
 
-You'll need to install dependencies and start the Vite development server:
+To get started with development, follow these steps:
 
+1. Install dependencies:
 ```sh
 npm install
+```
+2. Start the development server:
 
+```sh
 npm run start
 ```
 
-You'll find the running game at [http://localhost:3000](http://localhost:3000/)
+You can access the application at [localhost:3000](http://localhost:3000/)
 
 ## Testing
 
-Tests are written with the [React Testing Library](https://testing-library.com/docs/react-testing-library/example-intro). Run all of them via
+Tests are written with the [React Testing Library](https://testing-library.com/docs/react-testing-library/example-intro). To run all the tests, use the following command
 
 ```sh
 npm run test
@@ -43,14 +60,14 @@ npm run test
 
 ## Credits
 
-All venues and images were taken from the https://denkmaltag.berlin.de/, all rights to these images belong to [Landesdenkmal­amt, Berlin](https://www.berlin.de/landesdenkmalamt/).
+All locations and images are from the https://denkmaltag.berlin.de/, all image rights are owned by [Landesdenkmal­amt, Berlin](https://www.berlin.de/landesdenkmalamt/).
 
-Style inspired by [Miles Mobility GmbH](https://miles-mobility.com/en-de).
+The style of the app was inspired by [Miles Mobility GmbH](https://miles-mobility.com/en-de).
 
 ## Contributions
 
 Contributions to the Miles Experiences app are welcome! If you have any suggestions, bug reports, or feature requests, feel free to submit an issue or a pull request.
 
-## License
+## Licence
 
-This project is licensed under the MIT License. Feel free to use, modify, and distribute the code as per the terms of the license.
+This project is released under the MIT Licence. Feel free to use, modify, and redistribute the code under the terms of the licence.
