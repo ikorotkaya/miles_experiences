@@ -18,6 +18,7 @@ export default function VenuePopUp({ venue, routeDistance, routeDuration}: Venue
         title="Read more info about this venue">
           Read more!
       </a>
+      {/* Design note: 2_accurate_price_calculation.md */}
       { routeDistance !== undefined && 
         <div className="mt-2 flex flex-col items-left">
           <p className="text-xs">Distance: {routeDistance}</p>

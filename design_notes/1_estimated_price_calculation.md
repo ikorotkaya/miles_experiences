@@ -12,3 +12,5 @@ There're 2 problems with showing precise prices:
 ## Solution
 
 Since we know both user location (spherical coordinates) and the venue location, let's simply estimate the distance using the spherical distance formula aka ["haversine formula"](https://en.wikipedia.org/wiki/Haversine_formula).
+
+Then, we can use the [calculateRideCost()](../src/utils/calculateRideCost.ts) function to guess the price. This cost estimation includes a fixed fee to unlock the ride and a fixed rate for each kilometer traveled.

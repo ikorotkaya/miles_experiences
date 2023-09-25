@@ -11,6 +11,7 @@ import { calculateSphericalDistance } from "utils/calculateSphericalDistance";
 import { useStore } from "store";
 
 export default function App() {
+  // Design note: 3_parse_venues.md
   const [venues, setVenues] = useState<Venue[]>([]);  
 
   const getDefaultLocation = (): LatLng => {
@@ -23,6 +24,7 @@ export default function App() {
   useEffect(() => {
     const getUserLocation = () => {
 
+      // Design note: 5_limited_berlin_area.md
       if ("geolocation" in navigator) {
         navigator.geolocation.getCurrentPosition(
           (position) => {

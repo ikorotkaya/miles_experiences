@@ -11,7 +11,7 @@ const rawVenues = [
     "name": "Städtische Zentrale Buch",
     "coordinates": { "lng": 13.508387804031374, "lat": 52.63562184170191 },
     "image": "/images/venues/5253.jpg",
-    "description": "Städtische Zentrale Buch is believed to be a central book archive or library in the city"
+    "description": "The Städtische Zentrale Buch, built in 1904-13 by Ludwig Hoffmann, once produced electricity for the Bucher Heilstätten and now houses artist studios and exhibition spaces, with a complex history including forced labor during WWII."
   },
   {
     "id": 5468,
