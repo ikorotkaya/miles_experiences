@@ -94,6 +94,7 @@ export default function GoogleMapsComponent({
 
   return (
     <div>
+      {/* DESIGN NOTE: 4_add_googlemaps_apy_key.md */}
       <LoadScript
         googleMapsApiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY !== undefined
           ? process.env.REACT_APP_GOOGLE_MAPS_API_KEY
