@@ -91,6 +91,11 @@ export default function GoogleMapsComponent({
     mapRef.current?.panTo({ lat, lng });
   }
 
+  const handleInfoWindowCloseClick = () => {
+    selectVenue(null);
+    setDirections(null);
+  }
+
   const getLabel = (pointCount: number): google.maps.MarkerLabel => {
     return { 
       text: pointCount.toString(), 
@@ -254,7 +259,7 @@ export default function GoogleMapsComponent({
                     {selectedVenueId === properties.venue.id && (
                       <InfoWindowF
                         position={properties.venue.coordinates}
-                        onCloseClick={() => selectVenue(null)}
+                        onCloseClick={() => handleInfoWindowCloseClick()}
                         options={{ 
                           disableAutoPan: false
                         }}
