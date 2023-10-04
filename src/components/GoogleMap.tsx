@@ -227,6 +227,41 @@ export default function GoogleMapsComponent({
               const [lng, lat] = geometry.coordinates;
               const { cluster, point_count } = properties;
 
+            if (selectedVenueId !== null) {
+              if (cluster === false && selectedVenueId === properties.venue.id) {
+                return <MarkerF
+                    key={id}
+                    position={properties.venue.coordinates}
+                    title={properties.venue.name}
+                    onClick={() => selectVenue(properties.venue.id)}
+                    onMouseOver={() => highlightVenue(properties.venue.id)}
+                    onMouseOut={() => highlightVenue(null)}
+                    options={{
+                      icon: {
+                        url:
+                          highlightedVenueId === properties.venue.id || selectedVenueId === properties.venue.id
+                            ? pinActiveIcon
+                            : pinIcon,
+                        scaledSize: new window.google.maps.Size(32, 48),
+                      },
+                    }}
+                  >
+                    {selectedVenueId === properties.venue.id && (
+                      <InfoWindowF
+                        position={properties.venue.coordinates}
+                        onCloseClick={() => handleInfoWindowCloseClick()}
+                        options={{ 
+                          disableAutoPan: false
+                        }}
+                      >
+                        <VenuePopUp venue={properties.venue} routeDistance={routeDistance} routeDuration={routeDuration} />
+                      </InfoWindowF>
+                    )}
+                  </MarkerF>;
+              } else {
+                return null;
+              }
+            } else {
               return cluster // eslint-disable-line @typescript-eslint/strict-boolean-expressions
                   ? <MarkerF
                       key={`cluster-${id}`}
@@ -268,6 +303,7 @@ export default function GoogleMapsComponent({
                       </InfoWindowF>
                     )}
                   </MarkerF>;
+            }
             })
           }
         </GoogleMap>
