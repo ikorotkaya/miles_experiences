@@ -12,7 +12,7 @@ import carMarker from "images/car-marker.png";
 import pinIcon from "images/pin-icon.svg";
 import pinActiveIcon from "images/pin-active-icon.svg";
 
-import { GoogleMapsComponentProps  } from "types";
+import { Venue, GoogleMapsComponentProps  } from "types";
 import VenuePopUp from "./VenuePopUp";
 
 import { useStore } from "store";
@@ -100,6 +100,14 @@ export default function GoogleMapsComponent({
     }
   }
 
+  const formatDataToGeoJsonPoints = (venues: Venue[]): GeoJSON.Feature<GeoJSON.Point>[] => {
+    return venues.map((venue) => ({
+      type: "Feature",
+      geometry: { type: "Point", coordinates: [venue.coordinates.lat, venue.coordinates.lng] },
+      properties: { cluster: false, ...venue }
+    }));
+  }
+
   const [directions, setDirections] = useState<google.maps.DirectionsResult | null>(null);
 
   useEffect(() => {
@@ -126,6 +134,13 @@ export default function GoogleMapsComponent({
       }
     }
   }, [userLocation, selectedVenueId, venues]);
+
+  useEffect(() => {
+    if (mapRef.current) {
+      supercluster.load(formatDataToGeoJsonPoints(venues) as PointFeature<GeoJSON.Feature<GeoJSON.Point>>[]);
+      setClusters(supercluster.getClusters(bounds, zoom));
+    }
+  }, [venues, bounds, zoom]);
 
   const routeDistance = directions?.routes[0]?.legs[0]?.distance?.text;
   const routeDuration = directions?.routes[0]?.legs[0]?.duration?.text;
