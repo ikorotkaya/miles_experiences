@@ -38,16 +38,18 @@ export default function GoogleMapsComponent({
   
   const [isGoogleMapsLoaded, setIsGoogleMapsLoaded] = useState(false);
   const [mapHeight, setMapHeight] = useState(0);
+
   const highlightedVenueId = useStore((state) => state.highlightedVenueId);
   const highlightVenue = useStore((state) => state.setHighlightedVenueId)
   const selectedVenueId = useStore((state) => state.selectedVenueId);
   const selectVenue = useStore((state) => state.setSelectedVenueId);
+
+  const [directions, setDirections] = useState<google.maps.DirectionsResult | null>(null);
   
   const mapRef = useRef<Map>();
   const [zoom, setZoom] = useState<number>(12);
   const [bounds, setBounds] = useState<GeoJSON.BBox>([0, 0, 0, 0]);
   const [clusters, setClusters] = useState<ClusterFeature<any>[]>([]);
-  const [center, setCenter] = useState<google.maps.LatLngLiteral>(userLocation);
   const [supercluster, setSupercluster] = useState<Supercluster<any>>(new Supercluster({ radius: 75, maxZoom: googleMapOptions.maxZoom, minPoints: MIN_CLUSTER_POINTS }));
   
   const updateMapHeight = () => {
@@ -124,8 +126,6 @@ export default function GoogleMapsComponent({
     }));
   }
 
-  const [directions, setDirections] = useState<google.maps.DirectionsResult | null>(null);
-
   useEffect(() => {
     if (selectedVenueId !== null) {
       const selectedVenue = venues.find((venue) => venue.id === selectedVenueId);
@@ -152,11 +152,7 @@ export default function GoogleMapsComponent({
   }, [userLocation, selectedVenueId, venues]);
 
   useEffect(() => {
-    // const radius = Math.min(75, 75 * googleMapOptions.maxZoom / zoom);
-    const radius = 100;
-
-    console.log("radius", radius)
-    console.log("zoom", zoom)
+    const radius = 100 * googleMapOptions.maxZoom / zoom;
     
     setSupercluster(new Supercluster({ 
       radius: radius, 
@@ -189,7 +185,7 @@ export default function GoogleMapsComponent({
           onBoundsChanged={handleBoundsChanged}
           onZoomChanged={handleZoomChanged}
           mapContainerStyle={containerStyle} 
-          center={center} 
+          center={userLocation} 
           options={googleMapOptions}
           zoom={zoom}>
           {directions && (
@@ -259,14 +255,15 @@ export default function GoogleMapsComponent({
                       <InfoWindowF
                         position={properties.venue.coordinates}
                         onCloseClick={() => selectVenue(null)}
-                        options={{ disableAutoPan: true }}
+                        options={{ 
+                          disableAutoPan: false
+                        }}
                       >
                         <VenuePopUp venue={properties.venue} routeDistance={routeDistance} routeDuration={routeDuration} />
                       </InfoWindowF>
                     )}
                   </MarkerF>;
-            }
-            )
+            })
           }
         </GoogleMap>
       </LoadScript>
