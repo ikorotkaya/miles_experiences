@@ -10,6 +10,7 @@ import Supercluster, { ClusterFeature, PointFeature } from "supercluster";
 
 import carMarker from "images/car-marker.png";
 import pinIcon from "images/pin-icon.svg";
+import clusterPinIcon from "images/cluster-pin-icon.svg";
 import pinActiveIcon from "images/pin-active-icon.svg";
 
 import { Venue, GoogleMapsComponentProps  } from "types";
@@ -27,7 +28,7 @@ const options = {
 
 type Map = google.maps.Map & { zoom: number };
 
-const supercluster = new Supercluster({ radius: 40, maxZoom: options.maxZoom });
+const supercluster = new Supercluster({ radius: 50, maxZoom: options.maxZoom });
 
 export default function GoogleMapsComponent({
   userLocation,
@@ -45,7 +46,7 @@ export default function GoogleMapsComponent({
   const mapRef = useRef<Map>();
   const [zoom, setZoom] = useState<number>(12);
   const [bounds, setBounds] = useState<GeoJSON.BBox>([0, 0, 0, 0]);
-  const [clusters, setClusters] = useState<ClusterFeature<any>[]>();
+  const [clusters, setClusters] = useState<ClusterFeature<any>[]>([]);
   const [center, setCenter] = useState<google.maps.LatLngLiteral>(userLocation);
   
   const updateMapHeight = () => {
@@ -87,6 +88,14 @@ export default function GoogleMapsComponent({
     mapRef.current?.panTo({ lat, lng });
   }
 
+  const getLabel = (pointCount: number): google.maps.MarkerLabel => {
+    return { 
+      text: pointCount.toString(), 
+      color: "#FFF", 
+      fontWeight: "bold"      
+    };
+  }
+
   const handleBoundsChanged= () => {
     if (mapRef.current) {
       const bounds = mapRef.current.getBounds()?.toJSON();
@@ -110,7 +119,7 @@ export default function GoogleMapsComponent({
     return venues.map((venue) => ({
       type: "Feature",
       geometry: { type: "Point", coordinates: [venue.coordinates.lng, venue.coordinates.lat] },
-      properties: { cluster: false, ...venue }
+      properties: { cluster: false, venue }
     }));
   }
 
@@ -203,35 +212,52 @@ export default function GoogleMapsComponent({
             />
           )}
           {isGoogleMapsLoaded &&
-            venues.map((venue, index) => (
-              <MarkerF
-                key={index}
-                position={venue.coordinates}
-                title={venue.name}
-                onClick={() => selectVenue(venue.id)}
-                onMouseOver={() => highlightVenue(venue.id)}
-                onMouseOut={() => highlightVenue(null)}
-                options={{
-                  icon: {
-                    url:
-                      highlightedVenueId === venue.id || selectedVenueId === venue.id
-                        ? pinActiveIcon
-                        : pinIcon,
-                    scaledSize: new window.google.maps.Size(32, 48),
-                  },
-                }}
-              >
-                {selectedVenueId === venue.id && (
-                  <InfoWindowF
-                    position={venue.coordinates}
-                    onCloseClick={() => selectVenue(null)}
-                    options={{ disableAutoPan: true }}
+            clusters.map(({ id, geometry, properties }) => {
+              const [lng, lat] = geometry.coordinates;
+              const { cluster, point_count } = properties;
+
+              return cluster // eslint-disable-line @typescript-eslint/strict-boolean-expressions
+                  ? <MarkerF
+                      key={`cluster-${id}`}
+                      onClick={() => handleClusterClick({ id: id as number, lat, lng })}
+                      position={{ lat, lng }}
+                      options={{
+                        icon: {
+                          url: clusterPinIcon,
+                          scaledSize: new window.google.maps.Size(48, 48)
+                        },
+                      }}
+                      label={getLabel(point_count)} />
+                  : <MarkerF
+                    key={id}
+                    position={properties.venue.coordinates}
+                    title={properties.venue.name}
+                    onClick={() => selectVenue(properties.venue.id)}
+                    onMouseOver={() => highlightVenue(properties.venue.id)}
+                    onMouseOut={() => highlightVenue(null)}
+                    options={{
+                      icon: {
+                        url:
+                          highlightedVenueId === properties.venue.id || selectedVenueId === properties.venue.id
+                            ? pinActiveIcon
+                            : pinIcon,
+                        scaledSize: new window.google.maps.Size(32, 48),
+                      },
+                    }}
                   >
-                    <VenuePopUp venue={venue} routeDistance={routeDistance} routeDuration={routeDuration} />
-                  </InfoWindowF>
-                )}
-              </MarkerF>
-            ))}
+                    {selectedVenueId === properties.venue.id && (
+                      <InfoWindowF
+                        position={properties.venue.coordinates}
+                        onCloseClick={() => selectVenue(null)}
+                        options={{ disableAutoPan: true }}
+                      >
+                        <VenuePopUp venue={properties.venue} routeDistance={routeDistance} routeDuration={routeDuration} />
+                      </InfoWindowF>
+                    )}
+                  </MarkerF>;
+            }
+            )
+          }
         </GoogleMap>
       </LoadScript>
     </div>
