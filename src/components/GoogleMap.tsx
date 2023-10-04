@@ -35,7 +35,6 @@ export default function GoogleMapsComponent({
   venues,
 }: GoogleMapsComponentProps) {  
   
-  // const [center, setCenter] = useState<LatLng>(userLocation);
   const [isGoogleMapsLoaded, setIsGoogleMapsLoaded] = useState(false);
   const [mapHeight, setMapHeight] = useState(0);
   const highlightedVenueId = useStore((state) => state.highlightedVenueId);
@@ -44,10 +43,11 @@ export default function GoogleMapsComponent({
   const selectVenue = useStore((state) => state.setSelectedVenueId);
   
   const mapRef = useRef<Map>();
-  const [zoom, setZoom] = useState<number>(options.minZoom);
+  const [zoom, setZoom] = useState<number>(12);
   const [bounds, setBounds] = useState<GeoJSON.BBox>([0, 0, 0, 0]);
   const [clusters, setClusters] = useState<ClusterFeature<any>[]>();
-
+  const [center, setCenter] = useState<google.maps.LatLngLiteral>(userLocation);
+  
   const updateMapHeight = () => {
     const header = document.getElementById("header");
     const footer = document.getElementById("footer");
@@ -80,6 +80,25 @@ export default function GoogleMapsComponent({
     setIsGoogleMapsLoaded(true);
     mapRef.current = map as Map;
   };  
+
+  const handleClusterClick = ({ id, lat, lng }: { id: number, lat: number, lng: number }) => {
+    const expansionZoom = Math.min(supercluster.getClusterExpansionZoom(id), 20);
+    mapRef.current?.setZoom(expansionZoom);
+    mapRef.current?.panTo({ lat, lng });
+  }
+
+  const handleBoundsChanged= () => {
+    if (mapRef.current) {
+      const bounds = mapRef.current.getBounds()?.toJSON();
+      // setBounds([bounds?.west || 0, bounds?.south || 0, bounds?.east || 0, bounds?.north || 0]);
+    }
+  }
+
+  const handleZoomChanged = () => {
+    if (mapRef.current) {
+      setZoom(mapRef.current?.zoom);
+    }
+  }
 
   const [directions, setDirections] = useState<google.maps.DirectionsResult | null>(null);
 
@@ -121,9 +140,12 @@ export default function GoogleMapsComponent({
       >
         <GoogleMap 
           onLoad={handleGoogleMapsLoad}
+          onBoundsChanged={handleBoundsChanged}
+          onZoomChanged={handleZoomChanged}
           mapContainerStyle={containerStyle} 
-          center={userLocation} 
-          zoom={12}>
+          center={center} 
+          options={options}
+          zoom={zoom}>
           {directions && (
             <DirectionsRenderer
               directions={directions}
