@@ -30,6 +30,8 @@ const MIN_CLUSTER_POINTS = 3;
 
 type Map = google.maps.Map & { zoom: number };
 
+type VenueCluster = ClusterFeature<{ venue: Venue }> & { properties: { venue: Venue } };
+
 export default function GoogleMapsComponent({
   userLocation,
   onMarkerDragEnd,
@@ -49,8 +51,8 @@ export default function GoogleMapsComponent({
   const mapRef = useRef<Map>();
   const [zoom, setZoom] = useState<number>(12);
   const [bounds, setBounds] = useState<GeoJSON.BBox>([0, 0, 0, 0]);
-  const [clusters, setClusters] = useState<ClusterFeature<any>[]>([]);
-  const [supercluster, setSupercluster] = useState<Supercluster<any>>(new Supercluster({ radius: 75, maxZoom: googleMapOptions.maxZoom, minPoints: MIN_CLUSTER_POINTS }));
+  const [clusters, setClusters] = useState<VenueCluster[]>([]);
+  const [supercluster, setSupercluster] = useState<Supercluster>(new Supercluster({ radius: 75, maxZoom: googleMapOptions.maxZoom, minPoints: MIN_CLUSTER_POINTS }));
   
   const updateMapHeight = () => {
     const header = document.getElementById("header");
@@ -170,7 +172,7 @@ export default function GoogleMapsComponent({
     if (mapRef.current) {
       supercluster.load(formatDataToGeoJsonPoints(venues) as PointFeature<GeoJSON.Feature<GeoJSON.Point>>[]);
       
-      setClusters(supercluster.getClusters(bounds, zoom));
+      setClusters(supercluster.getClusters(bounds, zoom) as VenueCluster[]);
     }
   }, [venues, bounds, zoom]);  
 
