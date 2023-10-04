@@ -235,7 +235,7 @@ export default function GoogleMapsComponent({
               if (selectedVenueId !== null && selectedVenueId !== properties.venue.id) {
                 return null;
               }
-              return cluster // eslint-disable-line @typescript-eslint/strict-boolean-expressions
+              return cluster
                 ? <MarkerF
                     key={`cluster-${id}`}
                     onClick={() => handleClusterClick({ id: id as number, lat, lng })}
