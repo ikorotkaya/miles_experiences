@@ -25,6 +25,8 @@ const options = {
   minZoom: 6
 };
 
+type Map = google.maps.Map & { zoom: number };
+
 const supercluster = new Supercluster({ radius: 40, maxZoom: options.maxZoom });
 
 export default function GoogleMapsComponent({
@@ -74,9 +76,10 @@ export default function GoogleMapsComponent({
     height: mapHeight + "px",
   };
 
-  const handleGoogleMapsLoad = () => {
+  const handleGoogleMapsLoad = (map: google.maps.Map) => {
     setIsGoogleMapsLoaded(true);
-  };
+    mapRef.current = map as Map;
+  };  
 
   const [directions, setDirections] = useState<google.maps.DirectionsResult | null>(null);
 
@@ -115,9 +118,12 @@ export default function GoogleMapsComponent({
         googleMapsApiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY !== undefined
           ? process.env.REACT_APP_GOOGLE_MAPS_API_KEY
           : ""}
-        onLoad={handleGoogleMapsLoad}
       >
-        <GoogleMap mapContainerStyle={containerStyle} center={userLocation} zoom={12}>
+        <GoogleMap 
+          onLoad={handleGoogleMapsLoad}
+          mapContainerStyle={containerStyle} 
+          center={userLocation} 
+          zoom={12}>
           {directions && (
             <DirectionsRenderer
               directions={directions}
