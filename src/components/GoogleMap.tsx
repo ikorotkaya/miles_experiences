@@ -18,17 +18,17 @@ import VenuePopUp from "./VenuePopUp";
 
 import { useStore } from "store";
 
-const options = {
+const googleMapOptions = {
   streetViewControl: false,
   mapTypeControl: false,
   fullscreenControl: false,
-  maxZoom: 20,
+  maxZoom: 16,
   minZoom: 6
 };
 
-type Map = google.maps.Map & { zoom: number };
+const MIN_CLUSTER_POINTS = 3;
 
-const supercluster = new Supercluster({ radius: 50, maxZoom: options.maxZoom });
+type Map = google.maps.Map & { zoom: number };
 
 export default function GoogleMapsComponent({
   userLocation,
@@ -48,6 +48,7 @@ export default function GoogleMapsComponent({
   const [bounds, setBounds] = useState<GeoJSON.BBox>([0, 0, 0, 0]);
   const [clusters, setClusters] = useState<ClusterFeature<any>[]>([]);
   const [center, setCenter] = useState<google.maps.LatLngLiteral>(userLocation);
+  const [supercluster, setSupercluster] = useState<Supercluster<any>>(new Supercluster({ radius: 75, maxZoom: googleMapOptions.maxZoom, minPoints: MIN_CLUSTER_POINTS }));
   
   const updateMapHeight = () => {
     const header = document.getElementById("header");
@@ -151,17 +152,26 @@ export default function GoogleMapsComponent({
   }, [userLocation, selectedVenueId, venues]);
 
   useEffect(() => {
-    if (mapRef.current) {
-      supercluster.load(formatDataToGeoJsonPoints(venues) as PointFeature<GeoJSON.Feature<GeoJSON.Point>>[]);
-      setClusters(supercluster.getClusters(bounds, zoom));
-    }
-  }, [venues, bounds, zoom]);
+    // const radius = Math.min(75, 75 * googleMapOptions.maxZoom / zoom);
+    const radius = 100;
+
+    console.log("radius", radius)
+    console.log("zoom", zoom)
+    
+    setSupercluster(new Supercluster({ 
+      radius: radius, 
+      maxZoom: googleMapOptions.maxZoom,
+      minPoints: MIN_CLUSTER_POINTS 
+    }));
+  }, [zoom]);
 
   useEffect(() => {
-    console.log("clusters: ", clusters);
-    console.log("bounds: ", bounds);
-    console.log("zoom: ", zoom);
-  }, [clusters, bounds, zoom]);
+    if (mapRef.current) {
+      supercluster.load(formatDataToGeoJsonPoints(venues) as PointFeature<GeoJSON.Feature<GeoJSON.Point>>[]);
+      
+      setClusters(supercluster.getClusters(bounds, zoom));
+    }
+  }, [venues, bounds, zoom]);  
 
   const routeDistance = directions?.routes[0]?.legs[0]?.distance?.text;
   const routeDuration = directions?.routes[0]?.legs[0]?.duration?.text;
@@ -180,7 +190,7 @@ export default function GoogleMapsComponent({
           onZoomChanged={handleZoomChanged}
           mapContainerStyle={containerStyle} 
           center={center} 
-          options={options}
+          options={googleMapOptions}
           zoom={zoom}>
           {directions && (
             <DirectionsRenderer
