@@ -90,7 +90,13 @@ export default function GoogleMapsComponent({
   const handleBoundsChanged= () => {
     if (mapRef.current) {
       const bounds = mapRef.current.getBounds()?.toJSON();
-      // setBounds([bounds?.west || 0, bounds?.south || 0, bounds?.east || 0, bounds?.north || 0]);
+      
+      setBounds([        
+        bounds?.west || 0, // eslint-disable-line @typescript-eslint/strict-boolean-expressions
+        bounds?.south || 0, // eslint-disable-line @typescript-eslint/strict-boolean-expressions
+        bounds?.east || 0, // eslint-disable-line @typescript-eslint/strict-boolean-expressions
+        bounds?.north || 0 // eslint-disable-line @typescript-eslint/strict-boolean-expressions
+      ]);
     }
   }
 
@@ -103,7 +109,7 @@ export default function GoogleMapsComponent({
   const formatDataToGeoJsonPoints = (venues: Venue[]): GeoJSON.Feature<GeoJSON.Point>[] => {
     return venues.map((venue) => ({
       type: "Feature",
-      geometry: { type: "Point", coordinates: [venue.coordinates.lat, venue.coordinates.lng] },
+      geometry: { type: "Point", coordinates: [venue.coordinates.lng, venue.coordinates.lat] },
       properties: { cluster: false, ...venue }
     }));
   }
@@ -141,6 +147,12 @@ export default function GoogleMapsComponent({
       setClusters(supercluster.getClusters(bounds, zoom));
     }
   }, [venues, bounds, zoom]);
+
+  useEffect(() => {
+    console.log("clusters: ", clusters);
+    console.log("bounds: ", bounds);
+    console.log("zoom: ", zoom);
+  }, [clusters, bounds, zoom]);
 
   const routeDistance = directions?.routes[0]?.legs[0]?.distance?.text;
   const routeDuration = directions?.routes[0]?.legs[0]?.duration?.text;
