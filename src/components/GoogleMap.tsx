@@ -1,11 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import {
   GoogleMap,
   LoadScript,
   MarkerF,
   InfoWindowF,
-  DirectionsRenderer  
+  DirectionsRenderer
 } from "@react-google-maps/api";
+import Supercluster, { ClusterFeature, PointFeature } from "supercluster";
 
 import carMarker from "images/car-marker.png";
 import pinIcon from "images/pin-icon.svg";
@@ -15,6 +16,16 @@ import { GoogleMapsComponentProps  } from "types";
 import VenuePopUp from "./VenuePopUp";
 
 import { useStore } from "store";
+
+const options = {
+  streetViewControl: false,
+  mapTypeControl: false,
+  fullscreenControl: false,
+  maxZoom: 20,
+  minZoom: 6
+};
+
+const supercluster = new Supercluster({ radius: 40, maxZoom: options.maxZoom });
 
 export default function GoogleMapsComponent({
   userLocation,
@@ -29,6 +40,11 @@ export default function GoogleMapsComponent({
   const highlightVenue = useStore((state) => state.setHighlightedVenueId)
   const selectedVenueId = useStore((state) => state.selectedVenueId);
   const selectVenue = useStore((state) => state.setSelectedVenueId);
+  
+  const mapRef = useRef<Map>();
+  const [zoom, setZoom] = useState<number>(options.minZoom);
+  const [bounds, setBounds] = useState<GeoJSON.BBox>([0, 0, 0, 0]);
+  const [clusters, setClusters] = useState<ClusterFeature<any>[]>();
 
   const updateMapHeight = () => {
     const header = document.getElementById("header");
