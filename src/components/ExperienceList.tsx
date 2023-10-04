@@ -43,7 +43,7 @@ export default function ExperienceList({
             return null;
           }
 
-          return <Experience distance={distance} venue={venue} />;
+          return <Experience distance={distance} key={venue.id} venue={venue} />;
         })}
       </div>
     </div>

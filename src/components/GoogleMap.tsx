@@ -227,47 +227,53 @@ export default function GoogleMapsComponent({
               const [lng, lat] = geometry.coordinates;
               const { cluster, point_count } = properties;
 
+              if (selectedVenueId !== null && cluster === true) {
+                return null;
+              }
+              if (selectedVenueId !== null && selectedVenueId !== properties.venue.id) {
+                return null;
+              }
               return cluster // eslint-disable-line @typescript-eslint/strict-boolean-expressions
-                  ? <MarkerF
-                      key={`cluster-${id}`}
-                      onClick={() => handleClusterClick({ id: id as number, lat, lng })}
-                      position={{ lat, lng }}
-                      options={{
-                        icon: {
-                          url: clusterPinIcon,
-                          scaledSize: new window.google.maps.Size(48, 48)
-                        },
-                      }}
-                      label={getLabel(point_count)} />
-                  : <MarkerF
-                    key={id}
-                    position={properties.venue.coordinates}
-                    title={properties.venue.name}
-                    onClick={() => selectVenue(properties.venue.id)}
-                    onMouseOver={() => highlightVenue(properties.venue.id)}
-                    onMouseOut={() => highlightVenue(null)}
+                ? <MarkerF
+                    key={`cluster-${id}`}
+                    onClick={() => handleClusterClick({ id: id as number, lat, lng })}
+                    position={{ lat, lng }}
                     options={{
                       icon: {
-                        url:
-                          highlightedVenueId === properties.venue.id || selectedVenueId === properties.venue.id
-                            ? pinActiveIcon
-                            : pinIcon,
-                        scaledSize: new window.google.maps.Size(32, 48),
+                        url: clusterPinIcon,
+                        scaledSize: new window.google.maps.Size(48, 48)
                       },
                     }}
-                  >
-                    {selectedVenueId === properties.venue.id && (
-                      <InfoWindowF
-                        position={properties.venue.coordinates}
-                        onCloseClick={() => handleInfoWindowCloseClick()}
-                        options={{ 
-                          disableAutoPan: false
-                        }}
-                      >
-                        <VenuePopUp venue={properties.venue} routeDistance={routeDistance} routeDuration={routeDuration} />
-                      </InfoWindowF>
-                    )}
-                  </MarkerF>;
+                    label={getLabel(point_count)} />
+                : <MarkerF
+                  key={properties.venue.id}
+                  position={properties.venue.coordinates}
+                  title={properties.venue.name}
+                  onClick={() => selectVenue(properties.venue.id)}
+                  onMouseOver={() => highlightVenue(properties.venue.id)}
+                  onMouseOut={() => highlightVenue(null)}
+                  options={{
+                    icon: {
+                      url:
+                        highlightedVenueId === properties.venue.id || selectedVenueId === properties.venue.id
+                          ? pinActiveIcon
+                          : pinIcon,
+                      scaledSize: new window.google.maps.Size(32, 48),
+                    },
+                  }}
+                >
+                  {selectedVenueId === properties.venue.id && (
+                    <InfoWindowF
+                      position={properties.venue.coordinates}
+                      onCloseClick={() => handleInfoWindowCloseClick()}
+                      options={{ 
+                        disableAutoPan: false
+                      }}
+                    >
+                      <VenuePopUp venue={properties.venue} routeDistance={routeDistance} routeDuration={routeDuration} />
+                    </InfoWindowF>
+                  )}
+                </MarkerF>;
             })
           }
         </GoogleMap>
