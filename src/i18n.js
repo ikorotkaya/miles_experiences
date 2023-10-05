@@ -21,7 +21,6 @@ const resources = {
   }
 };
 
-export const initI18n = () => {
   i18n
   .use(Backend)
   .use(LanguageDetector)
@@ -35,8 +34,5 @@ export const initI18n = () => {
       escapeValue: false, // not needed for react as it escapes by default
     },
   });
-}
-
-initI18n();
 
 export default i18n;

@@ -41,3 +41,7 @@ export type VenuePopUpProps = {
   venue: Venue;
   routeDuration: string | undefined;
 };
+
+export type LanguageDropDownMenuProps = {
+  setMenuOpen: (open: boolean) => void;
+};
