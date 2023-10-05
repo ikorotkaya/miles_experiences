@@ -10,7 +10,11 @@ import { calculateSphericalDistance } from "utils/calculateSphericalDistance";
 
 import { useStore } from "store";
 
+import "./i18n"
+import { useTranslation } from "react-i18next";
+
 export default function App() {
+  const { t } = useTranslation();
   // Design note: 3_parse_venues.md
   const [venues, setVenues] = useState<Venue[]>([]);  
 
@@ -61,8 +65,9 @@ export default function App() {
   
   return (
     <div className="app w-full h-full fixed top-0 left-0">
+      <h1>{t("title")}</h1>
       <div className="app__inner h-full grid grid-rows-[100px,1fr,100px] grid-cols-[2fr,1fr] overflow-hidden ">
-        <Header />
+          <Header />
         {userLocation && (
           <div className="app__map row-start-2 col-start-1 md:col-span-1 col-span-2" id="app__map">
             <GoogleMapsComponent
