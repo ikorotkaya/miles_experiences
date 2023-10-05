@@ -31,6 +31,11 @@ export type InvitationButtonProps = {
   setMenuOpen: (open: boolean) => void;
 };
 
+export type LanguageSwitcherProps = {
+  language: string;
+  setLanguage: (language: string) => void;
+};
+
 export type VenuePopUpProps = {
   routeDistance: string | undefined;
   venue: Venue;

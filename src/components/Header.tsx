@@ -1,6 +1,7 @@
 import React from "react";
 import Menu from "./Menu";
 import Logo from "./Logo";
+import LanguageButton from "./LanguageSwitcher";
 
 export default function Header() {
   return (
@@ -8,6 +9,7 @@ export default function Header() {
       <div className="h-full flex justify-between text-white items-center	mx-2.5">
         <Logo />
         <div className="flex justify-between">
+          <LanguageButton />
           <Menu />
         </div>
       </div>
