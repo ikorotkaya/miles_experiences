@@ -1,8 +1,8 @@
 {
   "title": "Título",
+  "de": "Deutsch",
+  "en": "English",
   "es": "Español",
-  "en": "Inglés",
-  "de": "Alemán",
   "experienceList": "Experiencia",
   "invitation": "Invite a Irina a una entrevista! 📧",
   "imageLink": "/images/spanish.svg"

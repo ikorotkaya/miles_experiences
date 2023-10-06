@@ -10,7 +10,7 @@ import { calculateSphericalDistance } from "utils/calculateSphericalDistance";
 
 import { useStore } from "store";
 
-import "./i18n"
+import "./i18n";
 
 export default function App() {
   // Design note: 3_parse_venues.md

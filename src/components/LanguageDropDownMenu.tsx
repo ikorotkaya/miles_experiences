@@ -17,9 +17,9 @@ export default function LanguageDropDownMenu({
   const availableLanguages = typeof i18n.options.resources === "object" ? Object.keys(i18n.options.resources) : [];
 
   return (
-    <div className="menu-dropdown top-full flex flex-col items-center absolute right-0 z-10 md:w-max w-max origin-top-right border-4 text-black md:border-black border-white md:bg-white p-7">
+    <div className="menu-dropdown top-full flex flex-col items-center absolute right-0 z-10 md:w-max w-max origin-top-right border-4 text-black md:border-black border-white md:bg-white ">
       {availableLanguages.map((language) => (
-        <div className="flex flex-col items-center justify-center cursor-pointer"
+        <div className="flex flex-col items-center justify-center cursor-pointer hover:bg-[#80DCAC] p-2 w-24"
           key={language}
           onClick={() => handleChange(language)}
           >
