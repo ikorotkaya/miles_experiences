@@ -1,6 +1,8 @@
 {
   "title": "Title",
-  "language": "English",
+  "en": "English",
+  "de": "German",
+  "es": "Spanish",
   "experienceList": "Experience List",
   "invitation": "Invite Irina for an interview! 📧",
   "imageLink": "/images/english.svg"
