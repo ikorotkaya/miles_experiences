@@ -3,18 +3,21 @@ import Footer from "components/Footer";
 import Header from "components/Header";
 import GoogleMapsComponent from "components/GoogleMap";
 import ExperienceList from "components/ExperienceList";
-import rawVenues from "data/venues";
+// import rawVenues from "data/venues";
 import { LatLng, Venue } from "types"; 
 
 import { calculateSphericalDistance } from "utils/calculateSphericalDistance";
 
 import { useStore } from "store";
 
+import { useTranslation } from "react-i18next";
 import "./i18n";
 
 export default function App() {
+  const { t, i18n } = useTranslation();
   // Design note: 3_parse_venues.md
-  const [venues, setVenues] = useState<Venue[]>([]);  
+  const [venues, setVenues] = useState<Venue[]>([]);
+  const [locale, setLocale] = useState<string>("en");
 
   const getDefaultLocation = (): LatLng => {
     return { lat: 52.521918, lng: 13.413215 };
@@ -54,8 +57,13 @@ export default function App() {
     };
 
     getUserLocation();
-    setVenues(rawVenues);
+    setVenues(t("rawVenues", { returnObjects: true }));
   }, []);
+
+  useEffect(() => {
+    setLocale(i18n.language);
+    setVenues(t("rawVenues", { returnObjects: true }));
+  }, [i18n.language]);
 
   const handleMarkerDragEnd = (newPosition: LatLng) => {
     setUserLocation(newPosition);
