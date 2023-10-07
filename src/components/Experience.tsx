@@ -4,10 +4,14 @@ import { rideCost } from "utils/calculateRideCost";
 
 import { ExperienceProps } from "types";
 
+import { useTranslation } from "react-i18next";
+
 export default function Experience({ venue, distance }: ExperienceProps) {
   const highlightedVenueId = useStore((state) => state.highlightedVenueId);
   const highlightVenue = useStore((state) => state.setHighlightedVenueId);
   const selectVenue = useStore((state) => state.setSelectedVenueId);
+
+  const { t } = useTranslation();
 
   return (
     <div
@@ -27,14 +31,14 @@ export default function Experience({ venue, distance }: ExperienceProps) {
       </div>
       <div className="flex flex-col ml-4 ">
         <h2 className="text-l font-bold mb-4">{venue.name}</h2>
-        <p className="text-sm mb-3">{venue.description}.</p>
+        <p className="text-sm mb-3">{venue.description}</p>
 
         <p className="text-xs">
           {/* DESIGN NOTE: 1_estimated_price_calculation.md */}
-          Approx. distance: {distance.toFixed(2)} km
+          {t("approxDist")} {distance.toFixed(2)} km
         </p>
         <p className="text-xs">
-          Approximate cost: {rideCost(distance)}€
+          {t("approxCost")} {rideCost(distance)}€
         </p>
       </div>
     </div>

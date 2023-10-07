@@ -1,7 +1,11 @@
 import { VenuePopUpProps } from "types"
 import { rideCost } from "utils/calculateRideCost";
 
+import { useTranslation } from "react-i18next";
+
 export default function VenuePopUp({ venue, routeDistance, routeDuration}: VenuePopUpProps) {
+  const { t } = useTranslation();
+  
   return (
     <div className="w-64 font-normal">
       <h2 className="text-xl font-bold mb-2">{venue.name}</h2>
@@ -11,20 +15,13 @@ export default function VenuePopUp({ venue, routeDistance, routeDuration}: Venue
         alt={venue.name}
       />
       <p className="text-sm">{venue.description}.</p>
-      <a 
-        className="text-sm underline"
-        href={`https://denkmaltag.berlin.de/denkmal/?id=${venue.id}`}
-        target="_blank"
-        title="Read more info about this venue">
-          Read more!
-      </a>
       {/* Design note: 2_accurate_price_calculation.md */}
       { routeDistance !== undefined && 
         <div className="mt-2 flex flex-col items-left">
-          <p className="text-xs">Distance: {routeDistance}</p>
-          <p className="text-xs">Duration: {routeDuration}</p>
+          <p className="text-xs">{t("distance")} {routeDistance}</p>
+          <p className="text-xs">{t("duration")} {routeDuration}</p>
           <p className="text-xs">
-            Cost: {rideCost(parseFloat(routeDistance))}€
+            {t("cost")} {rideCost(parseFloat(routeDistance))}€
           </p>
         </div>
       }

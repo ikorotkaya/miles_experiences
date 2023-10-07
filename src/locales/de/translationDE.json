@@ -1,11 +1,15 @@
 {
-  "title": "Titel",
   "de": "Deutsch",
   "en": "English",
   "es": "Español",
   "experienceList": "Erfahrungsliste",
   "invitation": "Lade Irina zu einem Interview ein! 📧",
   "imageLink": "/images/german.svg",
+  "approxDist": "Entfernung ca.:",
+  "approxCost": "Kosten ca.:",
+  "distance": "Entfernung",
+  "duration": "Dauer",
+  "cost": "Kosten",
   "rawVenues": [
     {
       "id": 5270,

@@ -15,8 +15,6 @@ export default function LanguageDropDownMenu({
 
   const availableLanguages = typeof i18n.options.resources === "object" ? Object.keys(i18n.options.resources) : [];
 
-  console.log(availableLanguages)
-
   return (
     <div className="menu-dropdown top-full flex flex-col items-center absolute right-0 z-10 md:w-max w-max origin-top-right border-4 text-black md:border-black border-white md:bg-white ">
       {availableLanguages.map((language) => (
