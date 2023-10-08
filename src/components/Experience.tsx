@@ -4,15 +4,31 @@ import { rideCost } from "utils/calculateRideCost";
 
 import { ExperienceProps } from "types";
 
-export default function Experience({ venue, distance }: ExperienceProps) {
+import { useTranslation } from "react-i18next";
+
+export default function Experience({
+  venue,
+  distance,
+  locale,
+}: ExperienceProps) {
   const highlightedVenueId = useStore((state) => state.highlightedVenueId);
   const highlightVenue = useStore((state) => state.setHighlightedVenueId);
   const selectVenue = useStore((state) => state.setSelectedVenueId);
 
+  const { t } = useTranslation();
+
+  const venueDescription = (venue.description as { [key: string]: string })[
+    locale
+  ];
+
   return (
     <div
       key={venue.id}
-      className={`flex flex-row border-white border-4 p-4 m-2 ${highlightedVenueId === venue.id ? "cursor-pointer text-white bg-black" : "bg-white text-black"}`}
+      className={`flex flex-row border-white border-4 p-4 m-2 ${
+        highlightedVenueId === venue.id
+          ? "cursor-pointer text-white bg-black"
+          : "bg-white text-black"
+      }`}
       onClick={() => selectVenue(venue.id)}
       onMouseOver={() => highlightVenue(venue.id)}
       onMouseOut={() => highlightVenue(null)}
@@ -22,21 +38,21 @@ export default function Experience({ venue, distance }: ExperienceProps) {
           src={venue.image}
           alt={venue.name}
           className="w-full h-full block object-cover absolute top-0 left-0"
-          loading="lazy"                
+          loading="lazy"
         />
       </div>
       <div className="flex flex-col ml-4 ">
         <h2 className="text-l font-bold mb-4">{venue.name}</h2>
-        <p className="text-sm mb-3">{venue.description}.</p>
+        <p className="text-sm mb-3">{venueDescription}</p>
 
         <p className="text-xs">
           {/* DESIGN NOTE: 1_estimated_price_calculation.md */}
-          Approx. distance: {distance.toFixed(2)} km
+          {t("approxDist")} {distance.toFixed(2)} km
         </p>
         <p className="text-xs">
-          Approximate cost: {rideCost(distance)}€
+          {t("approxCost")} {rideCost(distance)}€
         </p>
       </div>
     </div>
-  )
+  );
 }

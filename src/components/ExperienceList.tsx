@@ -4,11 +4,16 @@ import { calculateSphericalDistance } from "utils/calculateSphericalDistance";
 import { ExperienceListProps } from "types";
 import Experience from "./Experience";
 
+import { useTranslation } from "react-i18next";
+
 export default function ExperienceList({
   userLocation,
   venues,
+  locale,
 }: ExperienceListProps) {
   const [sortedPOIs, setSortedPOIs] = useState<[string, number][]>([]);
+
+  const { t } = useTranslation();
 
   useEffect(() => {
     // Calculate distances for each POI and store them in an object
@@ -33,7 +38,7 @@ export default function ExperienceList({
   return (
     <div className="w-full flex flex-col bg-black">
       <div className="flex justify-center text-white">
-        <h1 className="text-4xl font-bold m-10">ExperienceList</h1>
+        <h1 className="text-4xl font-bold m-10">{t("experienceList")}</h1>
       </div>
       <div className="flex flex-col mx-2">
         {sortedPOIs.map(([id, distance]) => {
@@ -43,7 +48,14 @@ export default function ExperienceList({
             return null;
           }
 
-          return <Experience distance={distance} key={venue.id} venue={venue} />;
+          return (
+            <Experience
+              distance={distance}
+              key={venue.id}
+              venue={venue}
+              locale={locale}
+            />
+          );
         })}
       </div>
     </div>
