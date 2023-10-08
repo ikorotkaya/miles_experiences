@@ -6,19 +6,29 @@ import { ExperienceProps } from "types";
 
 import { useTranslation } from "react-i18next";
 
-export default function Experience({ venue, distance, locale }: ExperienceProps) {
+export default function Experience({
+  venue,
+  distance,
+  locale,
+}: ExperienceProps) {
   const highlightedVenueId = useStore((state) => state.highlightedVenueId);
   const highlightVenue = useStore((state) => state.setHighlightedVenueId);
   const selectVenue = useStore((state) => state.setSelectedVenueId);
 
   const { t } = useTranslation();
 
-  const venueDescription = (venue.description as {[key: string]: string})[locale];
+  const venueDescription = (venue.description as { [key: string]: string })[
+    locale
+  ];
 
   return (
     <div
       key={venue.id}
-      className={`flex flex-row border-white border-4 p-4 m-2 ${highlightedVenueId === venue.id ? "cursor-pointer text-white bg-black" : "bg-white text-black"}`}
+      className={`flex flex-row border-white border-4 p-4 m-2 ${
+        highlightedVenueId === venue.id
+          ? "cursor-pointer text-white bg-black"
+          : "bg-white text-black"
+      }`}
       onClick={() => selectVenue(venue.id)}
       onMouseOver={() => highlightVenue(venue.id)}
       onMouseOut={() => highlightVenue(null)}
@@ -28,7 +38,7 @@ export default function Experience({ venue, distance, locale }: ExperienceProps)
           src={venue.image}
           alt={venue.name}
           className="w-full h-full block object-cover absolute top-0 left-0"
-          loading="lazy"                
+          loading="lazy"
         />
       </div>
       <div className="flex flex-col ml-4 ">
@@ -44,5 +54,5 @@ export default function Experience({ venue, distance, locale }: ExperienceProps)
         </p>
       </div>
     </div>
-  )
+  );
 }

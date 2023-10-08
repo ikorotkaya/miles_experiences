@@ -27,6 +27,9 @@ describe("Menu", () => {
     const menuButton = screen.getByRole("button");
     fireEvent.click(menuButton);
     const menuDropdown = screen.getByTestId("menu-dropdown__link");
-    expect(menuDropdown).toHaveAttribute("href", "mailto:irina@korotkaya.com?subject=Interview request from your portfolio website&body=Hi Irina, I would like to invite you for an interview.");
+    expect(menuDropdown).toHaveAttribute(
+      "href",
+      "mailto:irina@korotkaya.com?subject=Interview request from your portfolio website&body=Hi Irina, I would like to invite you for an interview."
+    );
   });
 });

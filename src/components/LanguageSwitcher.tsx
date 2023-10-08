@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import LanguageDropDownMenu from "./LanguageDropDownMenu";
 import { useTranslation } from "react-i18next";
 
-export default function LanguageSwitcher () {
+export default function LanguageSwitcher() {
   const { t } = useTranslation();
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -17,7 +17,7 @@ export default function LanguageSwitcher () {
       if (menuOpen && !target.closest(".menu-icon")) setMenuOpen(false);
     });
   }, [menuOpen]);
-  
+
   return (
     <div className="relative flex items-center justify-end mr-6">
       <div role="button" className="menu-icon w-7" onClick={toggleMenu}>
@@ -25,5 +25,5 @@ export default function LanguageSwitcher () {
       </div>
       {menuOpen && <LanguageDropDownMenu setMenuOpen={setMenuOpen} />}
     </div>
-  )
+  );
 }
