@@ -8,23 +8,26 @@ export type Venue = {
   name: string;
   image: string;
   coordinates: LatLng;
-  description: string;
+  description: object;
 }
 
 export type GoogleMapsComponentProps = {
   userLocation: LatLng;
   venues: Venue[];
   onMarkerDragEnd: (position: LatLng) => void;
+  locale: string;
 }
 
 export type ExperienceListProps = {
   userLocation: LatLng;
   venues: Venue[];
+  locale: string;
 };
 
 export type ExperienceProps = {
   venue: Venue;
   distance: number;
+  locale: string;
 };
 
 export type InvitationButtonProps = {
@@ -40,6 +43,7 @@ export type VenuePopUpProps = {
   routeDistance: string | undefined;
   venue: Venue;
   routeDuration: string | undefined;
+  locale: string;
 };
 
 export type LanguageDropDownMenuProps = {

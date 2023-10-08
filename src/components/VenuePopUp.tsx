@@ -3,8 +3,10 @@ import { rideCost } from "utils/calculateRideCost";
 
 import { useTranslation } from "react-i18next";
 
-export default function VenuePopUp({ venue, routeDistance, routeDuration}: VenuePopUpProps) {
+export default function VenuePopUp({ venue, routeDistance, routeDuration, locale }: VenuePopUpProps) {
   const { t } = useTranslation();
+
+  const venueDescription = (venue.description as {[key: string]: string})[locale];
   
   return (
     <div className="w-64 font-normal">
@@ -14,7 +16,7 @@ export default function VenuePopUp({ venue, routeDistance, routeDuration}: Venue
         src={venue.image}
         alt={venue.name}
       />
-      <p className="text-sm">{venue.description}.</p>
+      <p className="text-sm">{venueDescription}.</p>
       {/* Design note: 2_accurate_price_calculation.md */}
       { routeDistance !== undefined && 
         <div className="mt-2 flex flex-col items-left">

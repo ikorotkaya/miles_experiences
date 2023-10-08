@@ -3,7 +3,7 @@ import Footer from "components/Footer";
 import Header from "components/Header";
 import GoogleMapsComponent from "components/GoogleMap";
 import ExperienceList from "components/ExperienceList";
-// import rawVenues from "data/venues";
+import rawVenues from "data/venues";
 import { LatLng, Venue } from "types"; 
 
 import { calculateSphericalDistance } from "utils/calculateSphericalDistance";
@@ -14,7 +14,7 @@ import { useTranslation } from "react-i18next";
 import "./i18n";
 
 export default function App() {
-  const { t, i18n } = useTranslation();
+  const { i18n } = useTranslation();
   // Design note: 3_parse_venues.md
   const [venues, setVenues] = useState<Venue[]>([]);
   const [locale, setLocale] = useState<string>("en");
@@ -57,12 +57,13 @@ export default function App() {
     };
 
     getUserLocation();
-    setVenues(t("rawVenues", { returnObjects: true }));
+    setVenues(rawVenues);
   }, []);
 
   useEffect(() => {
     setLocale(i18n.language);
-    setVenues(t("rawVenues", { returnObjects: true }));
+    setVenues(rawVenues);
+    console.log(locale)
   }, [i18n.language]);
 
   const handleMarkerDragEnd = (newPosition: LatLng) => {
@@ -79,12 +80,13 @@ export default function App() {
               userLocation={userLocation}
               onMarkerDragEnd={handleMarkerDragEnd}
               venues={venues}
+              locale={locale}
             />
           </div>
         )}
         {userLocation && (
           <div className="hidden md:block app__experiences row-start-2 col-start-2 overflow-y-scroll overflow-x-hidden">
-            <ExperienceList venues={venues} userLocation={userLocation} />
+            <ExperienceList venues={venues} userLocation={userLocation} locale={locale} />
           </div>
         )}
         <Footer />

@@ -36,6 +36,7 @@ export default function GoogleMapsComponent({
   userLocation,
   onMarkerDragEnd,
   venues,
+  locale,
 }: GoogleMapsComponentProps) {  
   
   const [isGoogleMapsLoaded, setIsGoogleMapsLoaded] = useState(false);
@@ -272,7 +273,7 @@ export default function GoogleMapsComponent({
                         disableAutoPan: false
                       }}
                     >
-                      <VenuePopUp venue={properties.venue} routeDistance={routeDistance} routeDuration={routeDuration} />
+                      <VenuePopUp venue={properties.venue} routeDistance={routeDistance} routeDuration={routeDuration} locale={locale} />
                     </InfoWindowF>
                   )}
                 </MarkerF>;
