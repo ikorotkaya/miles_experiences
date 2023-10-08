@@ -14,13 +14,13 @@ export default function LanguageSwitcher() {
     document.addEventListener("click", (event) => {
       const target = event.target as HTMLElement;
       if (!menuOpen) return;
-      if (menuOpen && !target.closest(".menu-icon")) setMenuOpen(false);
+      if (menuOpen && !target.closest(".language-icon")) setMenuOpen(false);
     });
   }, [menuOpen]);
 
   return (
     <div className="relative flex items-center justify-end mr-6">
-      <div role="button" className="menu-icon w-7" onClick={toggleMenu}>
+      <div role="button" className="language-icon w-7" onClick={toggleMenu}>
         <img src={t("imageLink")} alt="choose-language" />
       </div>
       {menuOpen && <LanguageDropDownMenu setMenuOpen={setMenuOpen} />}
