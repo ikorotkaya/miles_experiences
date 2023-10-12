@@ -9,21 +9,5 @@
   "approxCost": "Kosten ca.:",
   "distance": "Entfernung",
   "duration": "Dauer",
-  "cost": "Kosten",
-  "rawVenues": [
-    {
-      "id": 5270,
-      "name": "IV. Städtische Irrenanstalt (Genesungsheim)",
-      "coordinates": { "lng": 13.4904715, "lat": 52.6385434 },
-      "image": "/images/venues/5270.jpg",
-      "description": "Die IV. Städtische Irrenanstalt, auch bekannt als Genesungsheim, ist eine historische psychiatrische Einrichtung"
-    },
-    {
-      "id": 5253,
-      "name": "Städtische Zentrale Buch",
-      "coordinates": { "lng": 13.508387804031374, "lat": 52.63562184170191 },
-      "image": "/images/venues/5253.jpg",
-      "description": "Die 1904-13 von Ludwig Hoffmann erbaute Städtische Zentrale Buch, die einst Strom für die Bucher Heilstätten produzierte, beherbergt heute Künstlerateliers und Ausstellungsräume und hat eine komplexe Geschichte, zu der auch die Zwangsarbeit im Zweiten Weltkrieg gehört."
-    }
-  ]
+  "cost": "Kosten"
 }

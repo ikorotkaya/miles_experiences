@@ -9,21 +9,5 @@
   "approxCost": "Costo aprox.:",
   "distance": "Distancia:",
   "duration": "Duración:",
-  "cost": "Costo:",
-  "rawVenues": [
-    {
-      "id": 5270,
-      "name": "IV. Städtische Irrenanstalt (Genesungsheim)",
-      "coordinates": { "lng": 13.4904715, "lat": 52.6385434 },
-      "image": "/images/venues/5270.jpg",
-      "description": "El IV. Städtische Irrenanstalt, también conocido como Genesungsheim, es un centro histórico de salud mental."
-    },
-    {
-      "id": 5253,
-      "name": "Städtische Zentrale Buch",
-      "coordinates": { "lng": 13.508387804031374, "lat": 52.63562184170191 },
-      "image": "/images/venues/5253.jpg",
-      "description": "El Städtische Zentrale Buch, construido en 1904-13 por Ludwig Hoffmann, producía electricidad para los Bucher Heilstätten y ahora alberga estudios de artistas y espacios de exposición, con una compleja historia que incluye trabajos forzados durante la Segunda Guerra Mundial."
-    }
-  ]
+  "cost": "Costo:"
 }

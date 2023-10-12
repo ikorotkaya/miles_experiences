@@ -28,6 +28,8 @@ Explore Berlin's iconic and hidden gems with Miles Experiences. Calculate travel
 
 🔑 *Important Note:* To ensure that you have access to accurate pricing details, please make sure you have correctly configured your Google Maps API key. Detailed instructions on how to obtain and configure your API key can be found in the [Google Maps JavaScript API documentation](https://developers.google.com/maps/documentation/javascript/get-api-key).
 
+🗣️ *Different languages are available:* This application is available in three languages at the moment, making it user-friendly. To access your preferred language, simply click on the flag icon and all interface elements, including venues, their descriptions and destination costs, will be translated accordingly. Design Note 8 provides detailed instructions on how to easily add new languages.
+
 ## Technologies Used
 
 - React
@@ -37,6 +39,7 @@ Explore Berlin's iconic and hidden gems with Miles Experiences. Calculate travel
 - Google Directions API
 - HTML
 - Zustand (state management)
+- i18next internationalization-framework
 
 ## Development
 

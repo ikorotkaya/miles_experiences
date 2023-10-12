@@ -14,6 +14,7 @@ import { useTranslation } from "react-i18next";
 import "./i18n";
 
 export default function App() {
+  // Design note: 8_add_app_language.md 
   const { i18n } = useTranslation();
   // Design note: 3_parse_venues.md
   const [venues, setVenues] = useState<Venue[]>([]);
