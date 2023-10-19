@@ -30,6 +30,8 @@ Explore Berlin's iconic and hidden gems with Miles Experiences. Calculate travel
 
 🗣️ *Different languages are available:* This application is available in three languages at the moment, making it user-friendly. To access your preferred language, simply click on the flag icon and all interface elements, including venues, their descriptions and destination costs, will be translated accordingly. Design Note 8 provides detailed instructions on how to easily add new languages.
 
+![Change language](https://raw.githubusercontent.com/ikorotkaya/miles_experiences/main/misc/change_language.gif)
+
 ## Technologies Used
 
 - React
