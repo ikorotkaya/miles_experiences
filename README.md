@@ -2,7 +2,7 @@
 
 Explore Berlin's iconic and hidden gems with Miles Experiences. Calculate travel costs and journey times to your chosen destination. 🚗
 
-![Miles Experiences App](https://raw.githubusercontent.com/ikorotkaya/miles_experiences/main/misc/allow_location.mov)
+![Miles Experiences App](https://raw.githubusercontent.com/ikorotkaya/miles_experiences/main/misc/allow_location.gif)
 
 ![GitHub License MIT](https://img.shields.io/github/license/sqlhabit/sql_schema_visualizer?color=%2347A3F3)
 
@@ -10,7 +10,7 @@ Explore Berlin's iconic and hidden gems with Miles Experiences. Calculate travel
 
 🚀 *Ensure location access:* Activate Location Access in your web browser to discover experiences around you. Alternatively, start your journey from Alexanderplatz, which is set as the default user location.
 
-![Block Location](https://raw.githubusercontent.com/ikorotkaya/miles_experiences/main/misc/block_location.mov)
+![Block Location](https://raw.githubusercontent.com/ikorotkaya/miles_experiences/main/misc/block_location.gif)
 
 🎡 *Search for nearby attractions:* Conveniently find nearby attractions, sorted by distance, on the right side of the app.
 
