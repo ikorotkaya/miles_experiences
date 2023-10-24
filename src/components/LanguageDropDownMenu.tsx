@@ -18,7 +18,7 @@ export default function LanguageDropDownMenu({
       : [];
 
   return (
-    <div className="menu-dropdown top-full flex flex-col items-center absolute right-0 z-10 md:w-max w-max origin-top-right border-4 text-black md:border-black border-white md:bg-white ">
+    <div className="menu-dropdown top-full flex flex-col items-center absolute right-0 z-10 md:w-max w-max origin-top-right border-4 text-black md:border-black border-white bg-white ">
       {availableLanguages.map((language) => (
         <div
           className="flex flex-col items-center justify-center cursor-pointer hover:bg-[#80DCAC] p-2 w-24"
